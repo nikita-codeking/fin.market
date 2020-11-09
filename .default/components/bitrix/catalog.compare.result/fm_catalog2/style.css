@@ -1,0 +1,22 @@
+.compare_view .image_wrapper_block{max-height: 100px;}
+.compare_view .image_wrapper_block a{max-height: 100px;}
+#bx_catalog_compare_block{margin-top: 40px;}
+#content .notetext{padding-top: 20px; display: none;}
+.seo_compare{margin-top: 40px;}
+.bx_compare .frame{overflow: inherit !important;}
+#bx_catalog_compare_block{overflow-x: scroll;}
+.bx_sort_container .wrap_remove_button{top:10px !important;}
+.prop_title_table{background: #fff;}
+.scroll_btns{position: absolute;left: 0px;margin-top: 10px;font-family: "Open Sans", Helvetica, Arial, sans-serif;}
+@media (max-width: 500px){.scroll_btns {position: absolute;left: 0px;font-family: "Open Sans", Helvetica, Arial, sans-serif;width: 200px;top: 52px;}.wrap_remove_button{display: inline-block}}
+#content .right_block.wide_N{width: 100% !important;}
+.fast_view_block{position: relative !important;
+    margin: 0px auto; left: 0px !important; padding: 0px 14px 0px 36px; width: auto !important;
+    z-index: 10000 !important; display: block; visibility: visible !important; opacity: 1 !important;
+    margin-left: 0px !important; margin-top: 10px !important; border-radius: 8px !important;}
+.left_block{display: none;}
+@media (max-width: 500px){
+    .bx_sort_container.tabs{width: 100%;overflow-y: scroll; display: block; height: 60px;}
+    .bx_sort_container.tabs .line_button{display: block; width: 1600px; position: relative;}
+    .bx_sort_container.tabs .line_button .btn{display: inline-block; margin-right: 10px;}
+}

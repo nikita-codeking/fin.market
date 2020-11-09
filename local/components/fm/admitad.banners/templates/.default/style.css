@@ -1,0 +1,8 @@
+.admitad_wrapper .admitad_slider .item_m{width:100%;}
+.admitad_wrapper .admitad_slider .item_m img{width:100% !important; height: auto !important; }
+.admitad_wrapper .admitad_slider .item_m>div>div{width: 100% !important; height: auto !important; }
+.admitad_wrapper .admitad_slider .count_slides{display: none;}
+.admitad_wrapper .admitad_slider_mobile .item_m{width:100%;}
+.admitad_wrapper .admitad_slider_mobile .item_m img{width:100% !important; height: auto !important; }
+.admitad_wrapper .admitad_slider_mobile .item_m>div>div{width: 100% !important; height: auto !important; }
+.admitad_wrapper .admitad_slider_mobile .count_slides{display: none;}

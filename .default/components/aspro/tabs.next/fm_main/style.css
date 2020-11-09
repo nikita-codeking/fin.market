@@ -1,0 +1,71 @@
+.tab_slider_wrapp .top_blocks .title_block{text-align: center;}
+.tab_slider_wrapp .top_blocks .title_block img{height: 80px; cursor:pointer;}
+.tab_slider_wrapp .top_blocks .title_block .black_img {
+     -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: grayscale(100%); filter: gray; /* IE 6-9 */
+    /*Добавим вот такой вот код*/
+    -webkit-transition: all 1s; -moz-transition: all 1s; -o-transition: all 1s; transition: all 1s;
+    /*конец кода с transition*/
+}
+.tab_slider_wrapp .top_blocks .title_block .black_img:hover {
+    -webkit-filter: none; -moz-filter: none; -ms-filter: none; -o-filter: none;  filter: none;  filter: none; /* IE 6-9 */
+}
+.tab_slider_wrapp .top_blocks .title_block>a{color: black; display: block;text-align: center;width: 100%;}
+.tab_slider_wrapp .top_blocks .title_block>a:hover{color: #1569bc;}
+.tab_slider_wrapp .like_icons .compare_item.to{background: #fff;}
+.tab_slider_wrapp .like_icons{left:inherit;right: 10px;top:10px;}
+.tab_slider_wrapp .title_wrapper{margin-bottom: 20px;}
+@media screen and (max-width: 800px) {
+    /*.tab_slider_wrapp .top_blocks .title_block img{display: none;}*/
+    .tab_slider_wrapp .top_blocks .title_block{margin-right: 10px;/*display: block;*/}
+    .tab_slider_wrapp .top_blocks .title_block>a{text-align: left;font-size: 16px;}
+    .tab_slider_wrapp .top_blocks .title_wrapper{overflow-y: scroll !important;display: block;}
+    .tab_slider_wrapp .top_blocks .title_wrapper .title_pod_wrapper{overflow-y: hidden; /* width: 630px !important; */ display: flex;flex-wrap: nowrap;}
+
+
+    .tab_slider_wrapp .top_blocks .title_wrapper img{width: 100%; height: auto; margin-bottom: 10px;}
+    .tab_slider_wrapp .top_blocks .title_block>a{position: absolute; z-index: 100;padding-left: 4px;color: #fff;background: linear-gradient(181deg, #009bd6, transparent);font-weight: normal;}
+    .tab_slider_wrapp .top_blocks .title_block{position: relative;}
+
+
+    .tab_slider_wrapp ul.tabs.ajax{/* overflow: hidden; display: block; width: 1600px; */ display: flex;flex-wrap: nowrap;overflow: scroll;padding: 0 0 15px;}
+    .best_block.tab_slider_wrapp .top_blocks{overflow: hidden !important;}
+    .tab_slider_wrapp .stickers{display: none;}
+}
+body .tabs_slider .catalog_item .inner_wrap{border:none !important;}
+@media screen and (max-width: 500px) {
+    .top_blocks {margin-top: 15px;}
+    .tab_slider_wrapp .props_list{display: none;}
+}
+.catalog_block.items .item_block{float:left !important;}
+.tabs_content .top_wrapper{
+    overflow: hidden;
+}
+.tabs_slider .catalog_item_wrapp{width: 100% !important;}
+.tabs_slider .owl-dots{display: none !important;}
+@media (min-width: 1200px){
+    .tabs_slider .top_wrapper{overflow: hidden;}
+    .tabs_slider .owl-dots{display: none !important;}
+}
+.tabs_slider .items_wrapper{
+    overflow-x: scroll !important;
+    overflow-y: hidden !important;
+}
+.best_block.tab_slider_wrapp ul.tabs_content li.tab.opacity1 > .tabs_slider .top_wrapper{overflow: hidden !important;}
+.best_block.tab_slider_wrapp ul.tabs_content li.tab .catalog_block{/*height: 290px; overflow: hidden;*/}
+@media screen and (max-width: 451px) {
+    .best_block.tab_slider_wrapp ul.tabs_content li.tab .catalog_block{max-height: 100%; padding: 0 0 15px;}
+    .best_block.tab_slider_wrapp ul.tabs_content li.tab > .tabs_slider{min-height: 200px !important; max-height: 200px;}
+}
+.tab_slider_wrapp .like_icons{left:inherit !important; right: 10px !important; top:10px !important;}
+.tab_slider_wrapp .top_blocks .title_block>a{font-size: 16px;}
+.tab_slider_wrapp .stickers{display: none;}
+.tabs_slider .item_info span{margin-top: 0px !important;}
+
+.tab_slider_wrapp ul.tabs > li span{font-size: 12px; line-height: 16px;}
+.tab_slider_wrapp .top_blocks .title_wrapper img{width: 100%; height: auto; margin-bottom: 10px;}
+.tab_slider_wrapp .top_blocks .title_block>a{position: absolute; z-index: 100;padding-left: 4px;color: #fff;background: linear-gradient(181deg, #009bd6, transparent);font-weight: normal;text-transform: none;border-radius: 8px;}
+.tab_slider_wrapp .top_blocks .title_block{position: relative;}
+.tab_slider_wrapp .top_blocks .title_block .black_title{background: linear-gradient(181deg, #a9a9a9, transparent);}
+
+.section_id_slider{display: none;}
+.tab_slider_wrapp .invise_tabs{display: none;}

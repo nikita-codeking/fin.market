@@ -1,0 +1,10 @@
+.main_q_submit{background-color: #fff; color: #1976d2; border-radius: 8px; margin-top: 20px; border: 1px solid; font-size: 20px; line-height: 18px; font-weight: normal; text-transform: none; text-decoration: none; padding: 7px 18px 9px; overflow: hidden;}
+.main_name_q_label{display: none !important;}
+.main_name_q_input{display: none !important;}
+.data-table{width:100% !important;}
+.data-table td{display: block;width: 100%;}
+.common_select .common_select-link{line-height: 33px !important; height: 37px !important;}
+.bx_filter .bx_filter_select_arrow, .common_select .common_select-link .trigger{height: 37px !important;line-height: 36px !important;}
+.data-table tr{margin-bottom: 10px; display: block;}
+.data-table tr>td:nth-child(1){font-weight: bold;}
+.add_file{cursor: pointer;cursor: pointer; margin-top: 20px; background-color: #fff; color: #1976d2; border-radius: 8px; border: 1px solid; font-size: 16px; line-height: 18px; font-weight: normal; text-transform: none; text-decoration: none; padding: 5px 18px 7px; overflow: hidden; width: 70px;}

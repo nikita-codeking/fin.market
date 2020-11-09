@@ -1,0 +1,105 @@
+/*убрать после переноса компонента на главную*/
+.wrapper_inner .right_block.wide_ {
+	width: 100%!important;
+}
+/*конец уборки*/
+.all_lists span.active, .hit_lists span.active{
+	color: #4b6cf9;
+}
+.sections .fc-sections-item {
+	width: 300px;
+	height: auto;
+	display: flex;
+	align-items: center;
+	padding: 20px;
+	padding-left: 0px;
+}
+.sections .fc-sections-item img {
+	filter: grayscale(1);
+	transition: .3s;
+}
+.sections .fc-sections-item:hover img,
+.sections .fc-sections-item.active img {
+	filter: grayscale(0);
+}
+
+.sections .fc-sections-item, .all_lists span, .hit_lists span{
+	cursor:pointer;
+}
+.sections + h4 {
+	margin: 20px 0;
+}
+.card-item {
+	text-align: center;
+	flex-shrink: 0;
+	position: relative;
+	transition-property: transform;
+	width: min-content;
+}
+.card-item a {
+	margin-bottom: 10px;
+	font-weight: 700;
+	display: block;
+}
+.card-item a p {
+	margin: 0;
+}
+.card-item img {
+	border-radius: 8px;
+}
+.card-item-name + div p {
+	margin: 0;
+	font-size: 13px;
+}
+.links a{
+	margin: 10px 0;
+}
+.choose-result-wrap, .all_lists, .hit_lists {
+	position: relative;
+	margin-bottom: 15px;
+}
+#choose_result{
+	margin: 25px 0px;
+}
+
+.fc-sections-item img {
+	max-width: 100%;
+	border-radius: 8px;
+}
+.fc-result.swiper-button-prev,
+.fc-result.swiper-button-next,
+.fc-sections.swiper-button-prev,
+.fc-sections.swiper-button-next {
+	display: flex;
+}
+.fc-sections.swiper-button-lock {
+	display: none;
+}
+.all_lists .sticker,
+.hit_lists .sticker{
+	min-width: 140px;
+	/*max-width: 220px;*/
+	width: fit-content;
+	line-height: 1.2em;
+	font-weight: 700;
+	color: black;
+	white-space: nowrap;
+}
+.fc-all_lists,
+.fc-hit_lists{
+	top: 1em;
+}
+.fc-result {
+	top: 90px;
+}
+.choose-result-wrap .card-item .props_list{width: 100%;margin-top: 10px;}
+.choose-result-wrap .card-item .props_list tr{line-height: 1.2;}
+.choose-result-wrap .card-item .props_list tr td:first-child{text-align: left; padding-right: 10px; padding-left: 0px;font-size: 13px;}
+.choose-result-wrap .card-item .props_list tr td{padding: 0px;text-align: right;font-size: 13px;}
+.choose-result-wrap .card-item .props_list tr td span{white-space: nowrap; font-size: 10px;padding-right: 12px; position: relative;background: #FFF;padding: 0px; display: inline-block; color: #666;}
+.choose-result-wrap .card-item .fast_title{height: 50px;overflow: hidden;}
+.choose-result-wrap .card-item{padding:20px;}
+.choose-result-wrap .card-item:first-child{padding-left:0px;}
+.choose-result-wrap .card-item:hover{box-shadow: 0 0 10px rgba(0,0,0,0.5); border-radius: 8px;}
+.all_lists .fc-all_lists{/*display: none;*/}
+.hit_lists .fc-hit_lists{display: none;}

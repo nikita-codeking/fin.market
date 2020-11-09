@@ -1,0 +1,1170 @@
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+$this->setFrameMode(true);
+use \Bitrix\Main\Localization\Loc;
+if($arResult["ITEMS"]){?>
+    <div class="bx_filter bx_filter_vertical swipeignore 11">
+        <div class="bx_filter_section">
+            <form name="<?echo $arResult["FILTER_NAME"]."_form"?>" action="<?echo $arResult["FORM_ACTION"]?>" method="get" class="smartfilter">
+                <div class="bx_filter_parameters_box active title">
+                    <div class="bx_filter_parameters_box_title"><?=Loc::getMessage("FILTER_TITLE");?></div>
+                </div>
+
+                <div class="bx_filter_parameters">
+                    <input type="hidden" name="del_url" id="del_url" value="<?echo str_replace('/filter/clear/apply/','/',$arResult["SEF_DEL_FILTER_URL"]);?>" />
+                    <?foreach($arResult["HIDDEN"] as $arItem):?>
+                        <input type="hidden" name="<?echo $arItem["CONTROL_NAME"]?>" id="<?echo $arItem["CONTROL_ID"]?>" value="<?echo $arItem["HTML_VALUE"]?>" />
+                    <?endforeach;
+                    $isFilter=false;
+                    $numVisiblePropValues = 5;
+                    $arrCheckbox = Array();
+                    $arrCheckbox[] = "KHARAKTERISTIKI_PLATEZHNAYA_SISTEMA";
+                    $arrCheckbox[] = "KHARAKTERISTIKI_TIP_KARTY";
+                    ?>
+
+                    <div class="bx_filter_parameters_box view_mobile active">
+                        <div class="bx_filter_parameters_box_title icons_fa">
+                            <div>
+                                Сортировка
+                                <div class="char_name">
+                                    <div class="props_list">
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!--.bx_filter_parameters_box_title-->
+                        <div class="bx_filter_block " style="">
+                            <div class="bx_filter_parameters_box_container ">
+                                <?php
+                                $this_url = $APPLICATION->GetCurPage();
+                                $pos_credit_cart = strpos($this_url, 'kreditnye_karty');
+                                $pos_credit_nal  = strpos($this_url, 'kredity_nalichnymi');
+                                $pos_debit_cart = strpos($this_url, 'debetovye_karty');
+                                $pos_zaymi  = strpos($this_url, 'zaymy');
+                                $pos_autocredity  = strpos($this_url, 'avtokredity');
+                                $pos_ipoteka  = strpos($this_url, 'ipoteka');
+                                $pos_refinansirovanie  = strpos($this_url, 'refinansirovanie');
+                                $pos_rko         = strpos($this_url, 'raschetnye_scheta');
+                                if($pos_credit_cart>0 || $pos_credit_nal>0 || $pos_zaymi>0 || $pos_autocredity>0 || $pos_ipoteka>0 || $pos_refinansirovanie>0 || $pos_debit_cart>0):
+                                    ?>
+                                    <div class="sort_filter mobile_filter_compact">
+                                        <?if($pos_debit_cart>0):?>
+                                            <?if($_GET["sort"] == "property_OT_DO_GOD_OBSL_MAX"):?>
+                                                <a href="<?=$this_url?>?sort=property_OT_DO_GOD_OBSL_MAX&method=<?if($_GET["method"]=='desc'):?>asc<?else:?>desc<?endif;?>" class="sort_btn <?if($_GET["sort"] == "property_OT_DO_GOD_OBSL_MAX" || is_null($_GET["sort"])):?>current <?=$_GET["method"]?><?else:?>desc<?endif;?>" rel="nofollow">
+                                                    <i class="icon" title="годовое обслуживание"></i><span>Годовое обслуживание</span><i class="arr icons_fa"></i>
+                                                </a>
+                                            <?endif;?>
+                                        <?else:?>
+                                            <?if($_GET["sort"] == "property_OT_DO_CREDIT_LIM_MAX"):?>
+                                                <a href="<?=$this_url?>?sort=property_OT_DO_CREDIT_LIM_MAX&method=<?if($_GET['method']=='desc'):?>asc<?else:?>desc<?endif;?>" class="sort_btn <?if($_GET["sort"] == "property_OT_DO_CREDIT_LIM_MAX" || is_null($_GET["sort"])):?>current <?=$_GET["method"]?><?else:?>desc<?endif;?>" rel="nofollow">
+                                                    <i class="icon" title="кредитный лимит"></i><span>Кредитный лимит</span><i class="arr icons_fa"></i>
+                                                </a>
+                                            <?endif;?>
+                                            <?if($_GET["sort"] == "property_OT_DO_PROZ_ST_MAX"):?>
+                                                <a href="<?=$this_url?>?sort=property_OT_DO_PROZ_ST_MAX&method=<?if($_GET["method"]=='desc'):?>asc<?else:?>desc<?endif;?>" class="sort_btn <?if($_GET["sort"] == "property_OT_DO_PROZ_ST_MAX"):?>current <?=$_GET["method"]?><?else:?>desc<?endif;?>" rel="nofollow">
+                                                    <i class="icon" title="процентная ставка"></i><span>Процентная ставка</span><i class="arr icons_fa"></i>
+                                                </a>
+                                            <?endif;?>
+                                        <?endif;?>
+                                        <?if($pos_credit_nal>0 || $pos_zaymi>0 || $pos_ipoteka>0 || $pos_autocredity || $pos_debit_cart>0):?>
+                                        <?else:?>
+                                            <?if($_GET["sort"] == "property_OT_DO_LGOTNIY_PERIOD_MAX"):?>
+                                                <a href="<?=$this_url?>?sort=property_OT_DO_LGOTNIY_PERIOD_MAX&method=<?if($_GET["method"]=='desc'):?>asc<?else:?>desc<?endif;?>" class="sort_btn <?if($_GET["sort"] == "property_OT_DO_LGOTNIY_PERIOD_MAX"):?>current <?=$_GET["method"]?><?else:?>desc<?endif;?>" rel="nofollow">
+                                                    <i class="icon" title="льготный период"></i><span>Льготный период</span><i class="arr icons_fa"></i>
+                                                </a>
+                                            <?endif;?>
+                                        <?endif;?>
+
+
+
+                                        <?if($pos_debit_cart>0):?>
+                                            <?if($_GET["sort"] != "property_OT_DO_GOD_OBSL_MAX"):?>
+                                                <a href="<?=$this_url?>?sort=property_OT_DO_GOD_OBSL_MAX&method=<?if($_GET["method"]=='desc'):?>asc<?else:?>desc<?endif;?>" class="sort_btn <?if($_GET["sort"] == "property_OT_DO_GOD_OBSL_MAX" || is_null($_GET["sort"])):?>current <?=$_GET["method"]?><?else:?>desc<?endif;?>" rel="nofollow">
+                                                    <i class="icon" title="годовое обслуживание"></i><span>Годовое обслуживание</span><i class="arr icons_fa"></i>
+                                                </a>
+                                            <?endif;?>
+                                        <?else:?>
+                                            <?if($_GET["sort"] != "property_OT_DO_CREDIT_LIM_MAX"):?>
+                                                <a href="<?=$this_url?>?sort=property_OT_DO_CREDIT_LIM_MAX&method=<?if($_GET['method']=='desc'):?>asc<?else:?>desc<?endif;?>" class="sort_btn <?if($_GET["sort"] == "property_OT_DO_CREDIT_LIM_MAX" || is_null($_GET["sort"])):?>current <?=$_GET["method"]?><?else:?>desc<?endif;?>" rel="nofollow">
+                                                    <i class="icon" title="кредитный лимит"></i><span>Кредитный лимит</span><i class="arr icons_fa"></i>
+                                                </a>
+                                            <?endif;?>
+                                            <?if($_GET["sort"] != "property_OT_DO_PROZ_ST_MAX"):?>
+                                                <a href="<?=$this_url?>?sort=property_OT_DO_PROZ_ST_MAX&method=<?if($_GET["method"]=='desc'):?>asc<?else:?>desc<?endif;?>" class="sort_btn <?if($_GET["sort"] == "property_OT_DO_PROZ_ST_MAX"):?>current <?=$_GET["method"]?><?else:?>desc<?endif;?>" rel="nofollow">
+                                                    <i class="icon" title="процентная ставка"></i><span>Процентная ставка</span><i class="arr icons_fa"></i>
+                                                </a>
+                                            <?endif;?>
+                                        <?endif;?>
+                                        <?if($pos_credit_nal>0 || $pos_zaymi>0 || $pos_ipoteka>0 || $pos_autocredity || $pos_debit_cart>0):?>
+                                        <?else:?>
+                                            <?if($_GET["sort"] != "property_OT_DO_LGOTNIY_PERIOD_MAX"):?>
+                                                <a href="<?=$this_url?>?sort=property_OT_DO_LGOTNIY_PERIOD_MAX&method=<?if($_GET["method"]=='desc'):?>asc<?else:?>desc<?endif;?>" class="sort_btn <?if($_GET["sort"] == "property_OT_DO_LGOTNIY_PERIOD_MAX"):?>current <?=$_GET["method"]?><?else:?>desc<?endif;?>" rel="nofollow">
+                                                    <i class="icon" title="льготный период"></i><span>Льготный период</span><i class="arr icons_fa"></i>
+                                                </a>
+                                            <?endif;?>
+                                        <?endif;?>
+                                    </div>
+                                <?endif;?>
+                                <?if($pos_rko>0):?>
+                                    <div class="sort_filter mobile_filter_compact">
+                                        <?if($_GET["sort"] == "property_OT_DO_OBSLUGIVANIE_MAX"):?>
+                                            <a href="<?=$arResult["SECTION_PAGE_URL"]?>?sort=property_OT_DO_OBSLUGIVANIE_MAX&method=<?if($_GET["method"]=='desc'):?>asc<?else:?>desc<?endif;?>" class="sort_btn <?if($_GET["sort"] == "property_OT_DO_OBSLUGIVANIE_MAX" || is_null($_GET["sort"])):?>current <?=$_GET["method"]?><?else:?>desc<?endif;?>" rel="nofollow">
+                                                <i class="icon" title="обслуживание в месяц"></i><span>Обслуживание в месяц</span><i class="arr icons_fa"></i>
+                                            </a>
+                                        <?else:?>
+                                            <a href="<?=$arResult["SECTION_PAGE_URL"]?>?sort=property_OT_DO_OBSLUGIVANIE_MAX&method=<?if($_GET["method"]=='desc'):?>asc<?else:?>desc<?endif;?>" class="sort_btn <?if($_GET["sort"] == "property_OT_DO_OBSLUGIVANIE_MAX" || is_null($_GET["sort"])):?>current <?=$_GET["method"]?><?else:?>desc<?endif;?>" rel="nofollow">
+                                                <i class="icon" title="обслуживание в месяц"></i><span>Обслуживание в месяц</span><i class="arr icons_fa"></i>
+                                            </a>
+                                        <?endif;?>
+                                    </div>
+                                <?endif;?>
+                                <!--/noindex-->
+                                <div class="sort_display">
+                                    <?foreach($arDisplays as $displayType):?>
+                                        <?
+                                        $current_url = '';
+                                        $current_url = $APPLICATION->GetCurPageParam('display='.$displayType, 	array('display'));
+                                        $url = str_replace('+', '%2B', $current_url);
+                                        ?>
+                                        <a rel="nofollow" href="<?=$url;?>" class="sort_btn <?=$displayType?> <?=($display == $displayType ? 'current' : '')?>"><i title="<?=GetMessage("SECT_DISPLAY_".strtoupper($displayType))?>"></i></a>
+                                    <?endforeach;?>
+                                </div>
+                            </div>
+                            <div class="clb"></div>
+                        </div><!--.bx_filter_block-->
+                    </div><!--.bx_filter_parameters_box -->
+		    <?
+            $vis_sr = false;
+			if($pos_credit_cart>0 && $vis_sr)
+			{
+			  $select_array = array("OT_DO_PROZ_ST_MAX"=>"Процентная ставка","OT_DO_CREDIT_LIM_MAX"=>"Кредитный лимит","OT_DO_LGOTNIY_PERIOD_MAX"=>"Льготный период","OT_DO_GOD_OBSL_MAX"=>"Годовое обслуживание");
+			  ?>
+			    <div class="bx_filter_parameters_box">
+				<div class="bx_filter_parameters_box_title icons_fa">
+				  <div><b>Сравнить товары</b></div>
+				</div>
+				<div class="bx_filter_block limited_block new_groups" style="display: block;">
+				<?
+				  foreach($select_array as $key =>$value)
+				  {
+				  	echo '<div class="bx_filter_block limited_block">';
+					echo '<div class="bx_filter_parameters_box_container invise_label_check" style="margin-top:5px;">';
+					  echo '<input type="checkbox" style="display:initial" class="radio-btn" name="compare_filter_'.$key.'" id="compare_filter_'.$key.'">';
+					   //echo '<label data-role="label_compare_filter_'.$key.'" class="bx_filter_param_label last" for="compare_filter_'.$key.'">';
+					   //echo '<span class="bx_filter_input_checkbox"><span class="bx_filter_param_text" title="Да">Да</span></span>';
+					   //echo '</label>';
+					   echo '<div class="prop_horizont radio-text">'.$value.'</div>';
+					echo '</div>';
+					echo '<div class="clb"></div>';
+					echo '</div>';
+				  }
+				  ?>
+				  <p style="font-size:14px;margin:0px;"><b>Сортировать по:</b></p>
+				  <?
+				  foreach($select_array as $key =>$value)
+				  {
+				  	echo '<div class="bx_filter_block limited_block">';
+					echo '<div class="bx_filter_parameters_box_container invise_label_check" style="margin-top:5px;">';
+					  echo '<input type="radio" class="radio-btn" name="compare_filter_r_radio" id="compare_filter_r_'.$key.'">';
+					  echo '<div class="prop_horizont radio-text">'.$value.'</div>';
+					echo '</div>';
+					echo '<div class="clb"></div>';
+					echo '</div>';
+				  }
+				?>
+				<div style="padding-top:20px;"><button class="btn btn-default ofo-href desc" style="width: 100%;" id="compare-btn">Сравнить</button></div>
+				</div>
+			    </div>
+			  <?
+			}
+		    ?>
+                    <?
+                    foreach($arResult["ITEMS"] as $key => $arItem){
+                        if(isset($arItem["ASPRO_FILTER_SORT"]) && $arItem["VALUES"]){
+                            $class = $arItem["DISPLAY_EXPANDED"] === "Y" ? "active" : '';
+                            $style = $arItem["DISPLAY_EXPANDED"] !== "Y" ? "style='display:none;'" : '';
+                            $isFilter = true;
+                            $checkedItemExist = false;
+                            ?>
+                        <div class="bx_filter_parameters_box bx_sort_filter <?=$class;?>" data-expanded="<?=($arItem["DISPLAY_EXPANDED"] ? $arItem["DISPLAY_EXPANDED"] : "N");?>" data-prop_code="<?=strtolower($arItem["CODE"]);?>" data-property_id="<?=$arItem["ID"]?>">
+                            <span data-f="<?=Loc::getMessage('CT_BCSF_SET_FILTER')?>" data-fi="<?=Loc::getMessage('CT_BCSF_SET_FILTER_TI')?>" data-fr="<?=Loc::getMessage('CT_BCSF_SET_FILTER_TR')?>" data-frm="<?=Loc::getMessage('CT_BCSF_SET_FILTER_TRM')?>" class="bx_filter_container_modef"></span>
+                            <div class="bx_filter_parameters_box_title icons_fa" ><div><?=$arItem["NAME"]?></div></div>
+                            <div class="bx_filter_block <?=($arItem["PROPERTY_TYPE"]!="N" && ($arItem["DISPLAY_TYPE"] != "P" && $arItem["DISPLAY_TYPE"] != "R") ? "limited_block" : "");?>" <?=$style;?>>
+                                <div class="bx_filter_parameters_box_container <?=($arItem["DISPLAY_TYPE"]=="G" ? "pict_block" : "");?>">
+                                    <div class="bx_filter_select_container">
+                                        <div class="bx_filter_select_block" onclick="smartFilter.showDropDownPopup(this, '<?=CUtil::JSEscape($key)?>')">
+                                            <div class="bx_filter_select_text" data-role="currentOption">
+                                                <?
+                                                foreach ($arItem["VALUES"] as $val => $ar)
+                                                {
+                                                    if ($ar["CHECKED"] && $ar["CHECKED"]=="Y")
+                                                    {
+                                                        echo $ar["VALUE"];
+                                                        $checkedItemExist = true;
+                                                    }
+                                                }
+                                                ?>
+                                            </div>
+                                            <div class="bx_filter_select_arrow"></div>
+                                            <div class="bx_filter_select_popup" data-role="dropdownContent" style="display: none;">
+                                                <ul>
+                                                    <?foreach($arItem["VALUES"] as $val => $ar):?>
+                                                        <?$ar["CONTROL_ID"] .= $arParams['AJAX_FILTER_FLAG'];?>
+                                                        <li><?=$ar["CONTROL_HTML"]?></li>
+                                                    <?endforeach;?>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clb"></div>
+                            </div>
+                            </div><?
+                            unset($arResult["ITEMS"][$key]);
+                        }
+                    }
+
+                    //prices
+                    foreach($arResult["ITEMS"] as $key=>$arItem)
+                    {
+                        $key = $arItem["ENCODED_ID"];
+                        if(isset($arItem["PRICE"])):
+                            if ($arItem["VALUES"]["MAX"]["VALUE"] - $arItem["VALUES"]["MIN"]["VALUE"] <= 0)
+                                continue;
+                            ?>
+                            <div class="bx_filter_parameters_box active">
+                                <span data-f="<?=Loc::getMessage('CT_BCSF_SET_FILTER')?>" data-fi="<?=Loc::getMessage('CT_BCSF_SET_FILTER_TI')?>" data-fr="<?=Loc::getMessage('CT_BCSF_SET_FILTER_TR')?>" data-frm="<?=Loc::getMessage('CT_BCSF_SET_FILTER_TRM')?>" class="bx_filter_container_modef"></span>
+                                <div class="bx_filter_parameters_box_title icons_fa" ><?=(count($arParams['PRICE_CODE']) > 1 ? $arItem["NAME"] : Loc::getMessage("PRICE"));?></div>
+                                <div class="bx_filter_block">
+                                    <div class="bx_filter_parameters_box_container numbers">
+                                        <div class="wrapp_all_inputs wrap_md">
+                                            <?
+                                            $isConvert=false;
+                                            if($arParams["CONVERT_CURRENCY"]=="Y"){
+                                                $isConvert=true;
+                                            }
+                                            $price1 = $arItem["VALUES"]["MIN"]["VALUE"];
+                                            $price2 = $arItem["VALUES"]["MIN"]["VALUE"] + round(($arItem["VALUES"]["MAX"]["VALUE"] - $arItem["VALUES"]["MIN"]["VALUE"])/4);
+                                            $price3 = $arItem["VALUES"]["MIN"]["VALUE"] + round(($arItem["VALUES"]["MAX"]["VALUE"] - $arItem["VALUES"]["MIN"]["VALUE"])/2);
+                                            $price4 = $arItem["VALUES"]["MIN"]["VALUE"] + round((($arItem["VALUES"]["MAX"]["VALUE"] - $arItem["VALUES"]["MIN"]["VALUE"])*3)/4);
+                                            $price5 = $arItem["VALUES"]["MAX"]["VALUE"];
+
+                                            if($isConvert){
+                                                $price1 =SaleFormatCurrency($price1, $arParams["CURRENCY_ID"], true);
+                                                $price2 =SaleFormatCurrency($price2, $arParams["CURRENCY_ID"], true);
+                                                $price3 =SaleFormatCurrency($price3, $arParams["CURRENCY_ID"], true);
+                                                $price4 =SaleFormatCurrency($price4, $arParams["CURRENCY_ID"], true);
+                                                $price5 =SaleFormatCurrency($price5, $arParams["CURRENCY_ID"], true);
+                                            }
+                                            ?>
+                                            <div class="wrapp_change_inputs iblock">
+                                                <div class="bx_filter_parameters_box_container_block">
+                                                    <div class="bx_filter_input_container form-control bg">
+                                                        <input
+                                                            class="min-price"
+                                                            type="text"
+                                                            name="<?echo $arItem["VALUES"]["MIN"]["CONTROL_NAME"]?>"
+                                                            id="<?echo $arItem["VALUES"]["MIN"]["CONTROL_ID"]?>"
+                                                            value="<?echo $arItem["VALUES"]["MIN"]["HTML_VALUE"]?>"
+                                                            size="5"
+                                                            placeholder="<?echo $price1;?>"
+                                                            onkeyup="smartFilter.keyup(this)"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div class="bx_filter_parameters_box_container_block">
+                                                    <div class="bx_filter_input_container form-control bg">
+                                                        <input
+                                                            class="max-price"
+                                                            type="text"
+                                                            name="<?echo $arItem["VALUES"]["MAX"]["CONTROL_NAME"]?>"
+                                                            id="<?echo $arItem["VALUES"]["MAX"]["CONTROL_ID"]?>"
+                                                            value="<?echo $arItem["VALUES"]["MAX"]["HTML_VALUE"]?>"
+                                                            size="5"
+                                                            placeholder="<?echo $price5;?>"
+                                                            onkeyup="smartFilter.keyup(this)"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <span class="divider"></span>
+                                                <div style="clear: both;"></div>
+                                            </div>
+                                            <div class="wrapp_slider iblock">
+                                                <div class="bx_ui_slider_track" id="drag_track_<?=$key?>">
+                                                    <div class="bx_ui_slider_part first p1"><span><?=$price1?></span></div>
+                                                    <div class="bx_ui_slider_part p2"><span><?=$price2?></span></div>
+                                                    <div class="bx_ui_slider_part p3"><span><?=$price3?></span></div>
+                                                    <div class="bx_ui_slider_part p4"><span><?=$price4?></span></div>
+                                                    <div class="bx_ui_slider_part last p5"><span><?=$price5?></span></div>
+
+                                                    <div class="bx_ui_slider_pricebar_VD" style="left: 0;right: 0;" id="colorUnavailableActive_<?=$key?>"></div>
+                                                    <div class="bx_ui_slider_pricebar_VN" style="left: 0;right: 0;" id="colorAvailableInactive_<?=$key?>"></div>
+                                                    <div class="bx_ui_slider_pricebar_V"  style="left: 0;right: 0;" id="colorAvailableActive_<?=$key?>"></div>
+                                                    <div class="bx_ui_slider_range" id="drag_tracker_<?=$key?>"  style="left: 0%; right: 0%;">
+                                                        <a class="bx_ui_slider_handle left"  style="left:0;" href="javascript:void(0)" id="left_slider_<?=$key?>"></a>
+                                                        <a class="bx_ui_slider_handle right" style="right:0;" href="javascript:void(0)" id="right_slider_<?=$key?>"></a>
+                                                    </div>
+                                                </div>
+                                                <div style="opacity: 0;height: 1px;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?
+                        $isFilter=true;
+                        $precision = 2;
+                        if (Bitrix\Main\Loader::includeModule("currency"))
+                        {
+                            $res = CCurrencyLang::GetFormatDescription($arItem["VALUES"]["MIN"]["CURRENCY"]);
+                            $precision = $res['DECIMALS'];
+                        }
+                        $arJsParams = array(
+                            "leftSlider" => 'left_slider_'.$key,
+                            "rightSlider" => 'right_slider_'.$key,
+                            "tracker" => "drag_tracker_".$key,
+                            "trackerWrap" => "drag_track_".$key,
+                            "minInputId" => $arItem["VALUES"]["MIN"]["CONTROL_ID"],
+                            "maxInputId" => $arItem["VALUES"]["MAX"]["CONTROL_ID"],
+                            "minPrice" => $arItem["VALUES"]["MIN"]["VALUE"],
+                            "maxPrice" => $arItem["VALUES"]["MAX"]["VALUE"],
+                            "curMinPrice" => $arItem["VALUES"]["MIN"]["HTML_VALUE"],
+                            "curMaxPrice" => $arItem["VALUES"]["MAX"]["HTML_VALUE"],
+                            "fltMinPrice" => intval($arItem["VALUES"]["MIN"]["FILTERED_VALUE"]) ? $arItem["VALUES"]["MIN"]["FILTERED_VALUE"] : $arItem["VALUES"]["MIN"]["VALUE"] ,
+                            "fltMaxPrice" => intval($arItem["VALUES"]["MAX"]["FILTERED_VALUE"]) ? $arItem["VALUES"]["MAX"]["FILTERED_VALUE"] : $arItem["VALUES"]["MAX"]["VALUE"],
+                            "precision" => $precision,
+                            "colorUnavailableActive" => 'colorUnavailableActive_'.$key,
+                            "colorAvailableActive" => 'colorAvailableActive_'.$key,
+                            "colorAvailableInactive" => 'colorAvailableInactive_'.$key,
+                        );
+                        ?>
+                            <script type="text/javascript">
+                                BX.ready(function(){
+                                    if(typeof window['trackBarOptions'] === 'undefined'){
+                                        window['trackBarOptions'] = {}
+                                    }
+                                    window['trackBarOptions']['<?=$key?>'] = <?=CUtil::PhpToJSObject($arJsParams)?>;
+                                    window['trackBar<?=$key?>'] = new BX.Iblock.SmartFilter(window['trackBarOptions']['<?=$key?>']);
+                                });
+                            </script>
+                        <?endif;
+                    }
+                    //not prices
+                    //kk-->
+                    $old_group_filters  = "";
+                    $group_filters      = "";
+                    $open_group_filters = false;
+                    //массивы подгруппировок
+                    $typeVisa = Array(
+                        524 => "HARAKTERISTIKI_VISA_CLASSIC",
+                        529 => "HARAKTERISTIKI_VISA_PLATINUM",
+                        530 => "HARAKTERISTIKI_VISA_SIGNATURE",
+                        531 => "HARAKTERISTIKI_VISA_GOLD",
+                        532 => "HARAKTERISTIKI_VISA_PREPAID",
+                        533 => "HARAKTERISTIKI_VISA_UNEMBOSSED",
+                        534 => "HARAKTERISTIKI_VISA_INSTANT_ISSUE"
+                    );
+                    $typeMastercard  = Array(
+                        525 => "HARAKTERISTIKI_MASTERCARD_STANDARD",
+                        526 => "HARAKTERISTIKI_MASTERCARD_GOLD",
+                        527 => "HARAKTERISTIKI_MASTERCARD_PLATINUM",
+                        528 => "HARAKTERISTIKI_MASTERCARD_WORLD"
+                    );
+                    //////////////////////////////////////////////////////////////////////
+                    $typeNoContact = Array(
+                        538 => "HARAKTERISTIKI_GOOGLE_PAY",
+                        539 => "HARAKTERISTIKI_APPLE_PAY",
+                        540 => "HARAKTERISTIKI_SAMSUNG_PAY"
+                    );
+                    $start_group_visa = false;
+                    $start_group_mastercard = false;
+                    $start_group_nocontact = false;
+                    //<--kk
+                    foreach($arResult["ITEMS"] as $key=>&$arItem)
+                    {
+                    if(
+                        empty($arItem["VALUES"])
+                        || isset($arItem["PRICE"])
+                    )
+                        continue;
+
+                    if (
+                        $arItem["DISPLAY_TYPE"] == "A"
+                        && (
+                            $arItem["VALUES"]["MAX"]["VALUE"] - $arItem["VALUES"]["MIN"]["VALUE"] <= 0
+                        )
+                    )
+                        continue;
+                    $class="";
+                    /*if($arItem["OPENED"]){
+                        if($arItem["OPENED"]=="Y"){
+                            $class="active";
+                        }
+                    }else*/if($arItem["DISPLAY_EXPANDED"]=="Y"){
+                        $class="active";
+                    }
+                    $isFilter=true;
+                    ?>
+                    <?
+                    //kk-->основная группировка
+                    $pos_point_in_name = strpos($arItem["NAME"], ".");
+                    //echo 'point position - ' . $pos_point_in_name;
+                    if($pos_point_in_name>0){
+                        $group_filters  = substr($arItem["NAME"],0,$pos_point_in_name);
+                        $arItem["NAME"] = substr($arItem["NAME"],$pos_point_in_name+1);
+                        //echo 'test - ' . substr($arItem["NAME"],$pos_point_in_name+1);
+                    }else{
+                        if($open_group_filters){
+                            echo '</div></div>';
+                            $open_group_filters = false;
+                        }
+                        $old_group_filters = $group_filters;
+                        $group_filters     = "";
+                    }
+                    if(strlen($group_filters)>0 && $group_filters!=$old_group_filters){
+                        $old_group_filters = $group_filters;
+                        if($open_group_filters){
+                            echo '</div></div>';
+                            $open_group_filters = false;
+                        }
+                        ?>
+                        <div class="bx_filter_parameters_box" data-expanded="N" data-prop_code="" data-property_id="">
+                            <span data-f="Показать" data-fi="товар" data-fr="товара" data-frm="товаров" class="bx_filter_container_modef"></span>
+                            <div class="bx_filter_parameters_box_title icons_fa">
+                                <div>
+                                    <b><?=$group_filters?></b><div class="char_name">
+                                        <div class="props_list">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bx_filter_block limited_block new_groups">
+                            <?
+                            $open_group_filters = true;
+                    }
+                    //<--kk
+
+                    //kk-->подгруппировки
+                    if($open_group_filters){
+                        if(in_array($arItem['CODE'], $typeVisa)){
+                            if(!$start_group_visa){
+                                if($start_group_mastercard){
+                                    echo '</div></div>';
+                                    $start_group_mastercard = false;
+                                }
+                                ?>
+                                        <div class="bx_filter_parameters_box active" data-expanded="N" data-prop_code="" data-property_id="" style="padding-left: 0px;">
+                                            <span data-f="Показать" data-fi="товар" data-fr="товара" data-frm="товаров" class="bx_filter_container_modef"></span>
+                                            <div class="bx_filter_parameters_box_title icons_fa">
+                                                <div>
+                                                    <b>VISA</b><div class="char_name">
+                                                        <div class="props_list">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="bx_filter_block limited_block new_groups_pod">
+                                <?
+                                $start_group_visa = true;
+                            }
+                        }elseif(in_array($arItem['CODE'], $typeMastercard)){
+                                if (!$start_group_mastercard){
+                                    if ($start_group_visa) {
+                                        echo '</div></div>';
+                                        $start_group_visa = false;
+                                    }
+                                    ?>
+                                                <div class="bx_filter_parameters_box active" data-expanded="N" data-prop_code="" data-property_id="" style="padding-left: 0px;">
+                                                    <span data-f="Показать" data-fi="товар" data-fr="товара"
+                                                          data-frm="товаров" class="bx_filter_container_modef"></span>
+                                                    <div class="bx_filter_parameters_box_title icons_fa">
+                                                        <div>
+                                                            <b>MASTERCARD</b>
+                                                            <div class="char_name">
+                                                                <div class="props_list">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bx_filter_block limited_block new_groups_pod">
+                                <?
+                                     $start_group_mastercard = true;
+                                }
+                        }else if(in_array($arItem['CODE'], $typeNoContact)){
+                                if (!$start_group_nocontact){
+                                if ($start_group_visa || $start_group_mastercard) {
+                                    echo '</div></div>';
+                                    $start_group_mastercard = false;
+                                    $start_group_visa = false;
+                                }
+                                ?>
+                                                        <div class="bx_filter_parameters_box active" data-expanded="N"
+                                                             data-prop_code="" data-property_id=""
+                                                             style="padding-left: 0px;">
+                                                    <span data-f="Показать" data-fi="товар" data-fr="товара"
+                                                          data-frm="товаров" class="bx_filter_container_modef"></span>
+                                                            <div class="bx_filter_parameters_box_title icons_fa">
+                                                                <div>
+                                                                    <b>Бесконтактная оплата</b>
+                                                                    <div class="char_name">
+                                                                        <div class="props_list">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="bx_filter_block limited_block new_groups_pod">
+                                <?
+                                    $start_group_nocontact = true;
+                                }
+                        }else{
+                            if($start_group_visa || $start_group_mastercard || $start_group_nocontact){
+                                echo '</div></div>';
+                                $start_group_mastercard = false;
+                                $start_group_visa       = false;
+                                $start_group_nocontact  = false;
+                            }
+                        }
+                    }//if($open_group_filters)
+                    //<--kk
+		            ?>
+                            <?if(!$open_group_filters):?>
+                            <div class="bx_filter_parameters_box <?=$class;?>" data-expanded="<?=($arItem["DISPLAY_EXPANDED"] ? $arItem["DISPLAY_EXPANDED"] : "N");?>" data-prop_code=<?=strtolower($arItem["CODE"]);?> data-property_id="<?=$arItem["ID"]?>">
+                                <span data-f="<?=Loc::getMessage('CT_BCSF_SET_FILTER')?>" data-fi="<?=Loc::getMessage('CT_BCSF_SET_FILTER_TI')?>" data-fr="<?=Loc::getMessage('CT_BCSF_SET_FILTER_TR')?>" data-frm="<?=Loc::getMessage('CT_BCSF_SET_FILTER_TRM')?>" class="bx_filter_container_modef"></span>
+
+                                <?if($arItem["CODE"]!="IN_STOCK"){?>
+                                    <div class="bx_filter_parameters_box_title icons_fa" >
+                                        <div>
+                                            <?=( $arItem["CODE"] == "MINIMUM_PRICE" ? Loc::getMessage("PRICE") : $arItem["NAME"] );?>
+                                            <div class="char_name">
+                                                <div class="props_list">
+                                                    <?if($arParams["SHOW_HINTS"]){
+                                                        if(!$arItem["FILTER_HINT"]){
+                                                            $prop = CIBlockProperty::GetByID($arItem["ID"], $arParams["IBLOCK_ID"])->GetNext();
+                                                            $arItem["FILTER_HINT"]=$prop["HINT"];
+                                                        }?>
+                                                        <?if( $arItem["FILTER_HINT"] && strpos( $arItem["FILTER_HINT"],'line')===false){?>
+                                                            <div class="hint"><span class="icon"><i>?</i></span><div class="tooltip" style="display: none;"><?=$arItem["FILTER_HINT"]?></div></div>
+                                                        <?}?>
+                                                    <?}?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?}?>
+                                <?endif?>
+                                <?$style="";
+                                if($arItem["CODE"]=="IN_STOCK"){
+                                    $style="style='display:block;'";
+                                }elseif($arItem["DISPLAY_EXPANDED"]!= "Y"){
+                                    $style="style='display:none;'";
+                                }?>
+                                <?if(in_array($arItem["CODE"], $arrCheckbox)):?>
+                                <div class="bx_filter_parameters_box" data-expanded="N" data-prop_code="" data-property_id="" style="padding-left: 0px;">
+                                    <span data-f="Показать" data-fi="товар" data-fr="товара" data-frm="товаров" class="bx_filter_container_modef"></span>
+                                <?else:?>
+                                <div class="bx_filter_block <?=($arItem["PROPERTY_TYPE"]!="N" && ($arItem["DISPLAY_TYPE"] != "P" && $arItem["DISPLAY_TYPE"] != "R") ? "limited_block" : "");?>" <?=$style;?>>
+                                <?endif;?>
+                                <?if(!in_array($arItem["CODE"], $arrCheckbox)):?>
+                                <div class="bx_filter_parameters_box_container <?=($arItem["DISPLAY_TYPE"]=="G" ? "pict_block" : "");?> <?if($open_group_filters):?>invise_label_check<?endif;?> <?if($arItem["DISPLAY_TYPE"]=="P"):?>select_abs<?endif;?>">
+                                <?endif;?>
+                                        <?
+                                        $arCur = current($arItem["VALUES"]);
+                                        switch ($arItem["DISPLAY_TYPE"]){
+                                            case "A"://NUMBERS_WITH_SLIDER
+                                                ?>
+                                                <div class="wrapp_all_inputs wrap_md">
+                                                    <?$isConvert=false;
+                                                    if($arItem["CODE"] == "MINIMUM_PRICE" && $arParams["CONVERT_CURRENCY"]=="Y"){
+                                                        $isConvert=true;
+                                                    }
+                                                    $value1 = $arItem["VALUES"]["MIN"]["VALUE"];
+                                                    $value2 = $arItem["VALUES"]["MIN"]["VALUE"] + round(($arItem["VALUES"]["MAX"]["VALUE"] - $arItem["VALUES"]["MIN"]["VALUE"])/4);
+                                                    $value3 = $arItem["VALUES"]["MIN"]["VALUE"] + round(($arItem["VALUES"]["MAX"]["VALUE"] - $arItem["VALUES"]["MIN"]["VALUE"])/2);
+                                                    $value4 = $arItem["VALUES"]["MIN"]["VALUE"] + round((($arItem["VALUES"]["MAX"]["VALUE"] - $arItem["VALUES"]["MIN"]["VALUE"])*3)/4);
+                                                    $value5 = $arItem["VALUES"]["MAX"]["VALUE"];
+                                                    if($isConvert){
+                                                        $value1 =SaleFormatCurrency($value1, $arParams["CURRENCY_ID"], true);
+                                                        $value2 =SaleFormatCurrency($value2, $arParams["CURRENCY_ID"], true);
+                                                        $value3 =SaleFormatCurrency($value3, $arParams["CURRENCY_ID"], true);
+                                                        $value4 =SaleFormatCurrency($value4, $arParams["CURRENCY_ID"], true);
+                                                        $value5 =SaleFormatCurrency($value5, $arParams["CURRENCY_ID"], true);
+                                                    }?>
+                                                    <div class="wrapp_change_inputs iblock">
+                                                        <div class="bx_filter_parameters_box_container_block">
+                                                            <div class="bx_filter_input_container form-control bg">
+                                                                <input
+                                                                        class="min-price"
+                                                                        type="text"
+                                                                        name="<?echo $arItem["VALUES"]["MIN"]["CONTROL_NAME"]?>"
+                                                                        id="<?echo $arItem["VALUES"]["MIN"]["CONTROL_ID"]?>"
+                                                                        value="<?echo $arItem["VALUES"]["MIN"]["HTML_VALUE"]?>"
+                                                                        size="5"
+                                                                        placeholder="<?echo $value1;?>"
+                                                                        onkeyup="smartFilter.keyup(this)"
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                        <div class="bx_filter_parameters_box_container_block">
+                                                            <div class="bx_filter_input_container form-control bg">
+                                                                <input
+                                                                        class="max-price"
+                                                                        type="text"
+                                                                        name="<?echo $arItem["VALUES"]["MAX"]["CONTROL_NAME"]?>"
+                                                                        id="<?echo $arItem["VALUES"]["MAX"]["CONTROL_ID"]?>"
+                                                                        value="<?echo $arItem["VALUES"]["MAX"]["HTML_VALUE"]?>"
+                                                                        size="5"
+                                                                        placeholder="<?echo $value5;?>"
+                                                                        onkeyup="smartFilter.keyup(this)"
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                        <span class="divider"></span>
+                                                        <div style="clear: both;"></div>
+                                                    </div>
+                                                    <div class="wrapp_slider iblock">
+                                                        <div class="bx_ui_slider_track" id="drag_track_<?=$key?>">
+
+                                                            <div class="bx_ui_slider_part first p1"><span><?=$value1?></span></div>
+                                                            <div class="bx_ui_slider_part p2"><span><?=$value2?></span></div>
+                                                            <div class="bx_ui_slider_part p3"><span><?=$value3?></span></div>
+                                                            <div class="bx_ui_slider_part p4"><span><?=$value4?></span></div>
+                                                            <div class="bx_ui_slider_part last p5"><span><?=$value5?></span></div>
+
+                                                            <div class="bx_ui_slider_pricebar_VD" style="left: 0;right: 0;" id="colorUnavailableActive_<?=$key?>"></div>
+                                                            <div class="bx_ui_slider_pricebar_VN" style="left: 0;right: 0;" id="colorAvailableInactive_<?=$key?>"></div>
+                                                            <div class="bx_ui_slider_pricebar_V"  style="left: 0;right: 0;" id="colorAvailableActive_<?=$key?>"></div>
+                                                            <div class="bx_ui_slider_range" 	id="drag_tracker_<?=$key?>"  style="left: 0;right: 0;">
+                                                                <a class="bx_ui_slider_handle left"  style="left:0;" href="javascript:void(0)" id="left_slider_<?=$key?>"></a>
+                                                                <a class="bx_ui_slider_handle right" style="right:0;" href="javascript:void(0)" id="right_slider_<?=$key?>"></a>
+                                                            </div>
+                                                        </div>
+                                                        <?
+                                                        $arJsParams = array(
+                                                            "leftSlider" => 'left_slider_'.$key,
+                                                            "rightSlider" => 'right_slider_'.$key,
+                                                            "tracker" => "drag_tracker_".$key,
+                                                            "trackerWrap" => "drag_track_".$key,
+                                                            "minInputId" => $arItem["VALUES"]["MIN"]["CONTROL_ID"],
+                                                            "maxInputId" => $arItem["VALUES"]["MAX"]["CONTROL_ID"],
+                                                            "minPrice" => $arItem["VALUES"]["MIN"]["VALUE"],
+                                                            "maxPrice" => $arItem["VALUES"]["MAX"]["VALUE"],
+                                                            "curMinPrice" => $arItem["VALUES"]["MIN"]["HTML_VALUE"],
+                                                            "curMaxPrice" => $arItem["VALUES"]["MAX"]["HTML_VALUE"],
+                                                            "fltMinPrice" => intval($arItem["VALUES"]["MIN"]["FILTERED_VALUE"]) ? $arItem["VALUES"]["MIN"]["FILTERED_VALUE"] : $arItem["VALUES"]["MIN"]["VALUE"] ,
+                                                            "fltMaxPrice" => intval($arItem["VALUES"]["MAX"]["FILTERED_VALUE"]) ? $arItem["VALUES"]["MAX"]["FILTERED_VALUE"] : $arItem["VALUES"]["MAX"]["VALUE"],
+                                                            "precision" => $arItem["DECIMALS"]? $arItem["DECIMALS"]: 0,
+                                                            "colorUnavailableActive" => 'colorUnavailableActive_'.$key,
+                                                            "colorAvailableActive" => 'colorAvailableActive_'.$key,
+                                                            "colorAvailableInactive" => 'colorAvailableInactive_'.$key,
+                                                        );
+                                                        ?>
+                                                        <script type="text/javascript">
+                                                            BX.ready(function(){
+                                                                if(typeof window['trackBarOptions'] === 'undefined'){
+                                                                    window['trackBarOptions'] = {}
+                                                                }
+                                                                window['trackBarOptions']['<?=$key?>'] = <?=CUtil::PhpToJSObject($arJsParams)?>;
+                                                                window['trackBar<?=$key?>'] = new BX.Iblock.SmartFilter(window['trackBarOptions']['<?=$key?>']);
+                                                            });
+                                                        </script>
+                                                    </div>
+                                                </div>
+                                                <?
+                                                break;
+                                            case "B"://NUMBERS
+                                                ?>
+                                                <div class="bx_filter_parameters_box_container_block"><div class="bx_filter_input_container form-control bg">
+                                                        <input
+                                                                class="min-price"
+                                                                type="text"
+                                                                name="<?echo $arItem["VALUES"]["MIN"]["CONTROL_NAME"]?>"
+                                                                id="<?echo $arItem["VALUES"]["MIN"]["CONTROL_ID"]?>"
+                                                                value="<?echo $arItem["VALUES"]["MIN"]["HTML_VALUE"]?>"
+                                                                placeholder="<?echo $arItem["VALUES"]["MIN"]["VALUE"];?>"
+                                                                size="5"
+                                                                onkeyup="smartFilter.keyup(this)"
+                                                        />
+                                                    </div></div>
+                                                <div class="bx_filter_parameters_box_container_block"><div class="bx_filter_input_container form-control bg">
+                                                        <input
+                                                                class="max-price"
+                                                                type="text"
+                                                                name="<?echo $arItem["VALUES"]["MAX"]["CONTROL_NAME"]?>"
+                                                                id="<?echo $arItem["VALUES"]["MAX"]["CONTROL_ID"]?>"
+                                                                value="<?echo $arItem["VALUES"]["MAX"]["HTML_VALUE"]?>"
+                                                                placeholder="<?echo $arItem["VALUES"]["MAX"]["VALUE"];?>"
+                                                                size="5"
+                                                                onkeyup="smartFilter.keyup(this)"
+                                                        />
+                                                    </div></div>
+                                                <?
+                                                break;
+                                            case "G"://CHECKBOXES_WITH_PICTURES
+                                                ?>
+                                                <?$j=1;
+                                                $isHidden = false;?>
+                                                <?foreach ($arItem["VALUES"] as $val => $ar):?>
+                                                <?if($ar["VALUE"]){?>
+                                                    <?if($j > $numVisiblePropValues && !$isHidden):
+                                                        $isHidden = true;?>
+                                                        <div class="hidden_values">
+                                                    <?endif;?>
+                                                    <div class="pict">
+                                                        <input
+                                                                style="display: none"
+                                                                type="checkbox"
+                                                                name="<?=$ar["CONTROL_NAME"]?>"
+                                                                id="<?=$ar["CONTROL_ID"]?>"
+                                                                value="<?=$ar["HTML_VALUE"]?>"
+                                                            <? echo $ar["DISABLED"] ? 'disabled class="disabled"': '' ?>
+                                                            <? echo $ar["CHECKED"]? 'checked="checked"': '' ?>
+                                                        />
+                                                        <?
+                                                        $class = "";
+                                                        if ($ar["CHECKED"])
+                                                            $class.= " active";
+                                                        if ($ar["DISABLED"])
+                                                            $class.= " disabled";
+                                                        ?>
+                                                        <label for="<?=$ar["CONTROL_ID"]?>" data-role="label_<?=$ar["CONTROL_ID"]?>" class="bx_filter_param_label nab dib<?=$class?>" onclick="smartFilter.keyup(BX('<?=CUtil::JSEscape($ar["CONTROL_ID"])?>')); BX.toggleClass(this, 'active');">
+                                                            <?/*<span class="bx_filter_param_btn bx_color_sl" title="<?=$ar["VALUE"]?>">*/?>
+                                                            <?if (isset($ar["FILE"]) && !empty($ar["FILE"]["SRC"])):?>
+                                                                <span class="bx_filter_btn_color_icon" title="<?=$ar["VALUE"]?>" style="background-image:url('<?=$ar["FILE"]["SRC"]?>');"></span>
+                                                            <?endif?>
+                                                            <?/*</span>*/?>
+                                                        </label>
+                                                    </div>
+                                                    <?$j++;?>
+                                                <?}?>
+                                            <?endforeach?>
+                                                <?if($isHidden):?>
+                                                </div>
+                                                <div class="inner_expand_text"><span class="expand_block"><?=Loc::getMessage("FILTER_EXPAND_VALUES");?></span></div>
+                                            <?endif;?>
+                                                <?
+                                                break;
+                                            case "H"://CHECKBOXES_WITH_PICTURES_AND_LABELS
+                                                ?>
+                                                <?$j=1;
+                                                $isHidden = false;?>
+                                                <?foreach ($arItem["VALUES"] as $val => $ar):?>
+                                                <?if($ar["VALUE"]){?>
+                                                    <?if($j > $numVisiblePropValues && !$isHidden):
+                                                        $isHidden = true;?>
+                                                        <div class="hidden_values">
+                                                    <?endif;?>
+                                                    <input
+                                                            style="display: none"
+                                                            type="checkbox"
+                                                            name="<?=$ar["CONTROL_NAME"]?>"
+                                                            id="<?=$ar["CONTROL_ID"]?>"
+                                                            value="<?=$ar["HTML_VALUE"]?>"
+                                                        <? echo $ar["DISABLED"] ? 'disabled class="disabled"': '' ?>
+                                                        <? echo $ar["CHECKED"]? 'checked="checked"': '' ?>
+                                                    />
+                                                    <?
+                                                    $class = "";
+                                                    if ($ar["CHECKED"])
+                                                        $class.= " active";
+                                                    if ($ar["DISABLED"])
+                                                        $class.= " disabled";
+                                                    ?>
+                                                    <label for="<?=$ar["CONTROL_ID"]?>" data-role="label_<?=$ar["CONTROL_ID"]?>" class="bx_filter_param_label<?=$class?> pal nab" onclick="smartFilter.keyup(BX('<?=CUtil::JSEscape($ar["CONTROL_ID"])?>')); BX.toggleClass(this, 'active');">
+                                                        <?/*<span class="bx_filter_param_btn bx_color_sl" title="<?=$ar["VALUE"]?>">*/?>
+                                                        <?if (isset($ar["FILE"]) && !empty($ar["FILE"]["SRC"])):?>
+                                                            <span class="bx_filter_btn_color_icon" style="background-image:url('<?=$ar["FILE"]["SRC"]?>');"></span>
+                                                        <?endif?>
+                                                        <?/*</span>*/?>
+                                                        <span class="bx_filter_param_text" title="<?=$ar["VALUE"];?>"><?=$ar["VALUE"];?><?
+                                                            if ($arParams["DISPLAY_ELEMENT_COUNT"] !== "N" && isset($ar["ELEMENT_COUNT"])):
+                                                                ?> (<span data-role="count_<?=$ar["CONTROL_ID"]?>"><? echo $ar["ELEMENT_COUNT"]; ?></span>)<?
+                                                            endif;?></span>
+                                                    </label>
+                                                    <?$j++;?>
+                                                <?}?>
+                                            <?endforeach?>
+                                                <?if($isHidden):?>
+                                                </div>
+                                                <div class="inner_expand_text"><span class="expand_block"><?=Loc::getMessage("FILTER_EXPAND_VALUES");?></span></div>
+                                            <?endif;?>
+                                                <?
+                                                break;
+                                            case "P"://DROPDOWN
+                                                $checkedItemExist = false;
+                                                ?>
+                                                <div class="bx_filter_select_container">
+                                                    <div class="bx_filter_select_block" onclick="smartFilter.showDropDownPopup(this, '<?=CUtil::JSEscape($key)?>')">
+                                                        <div class="bx_filter_select_text" data-role="currentOption">
+                                                            <?
+                                                            foreach ($arItem["VALUES"] as $val => $ar)
+                                                            {
+                                                                if ($ar["CHECKED"])
+                                                                {
+                                                                    echo $ar["VALUE"];
+                                                                    $checkedItemExist = true;
+                                                                }
+                                                            }
+                                                            if (!$checkedItemExist)
+                                                            {
+                                                                echo Loc::getMessage("CT_BCSF_FILTER_ALL");
+                                                            }
+                                                            ?>
+                                                        </div>
+                                                        <div class="bx_filter_select_arrow"></div>
+                                                        <input
+                                                                style="display: none"
+                                                                type="radio"
+                                                                name="<?=$arCur["CONTROL_NAME_ALT"]?>"
+                                                                id="<? echo "all_".$arCur["CONTROL_ID"] ?>"
+                                                                value=""
+                                                        />
+                                                        <?foreach ($arItem["VALUES"] as $val => $ar):?>
+                                                            <input
+                                                                    style="display: none"
+                                                                    type="radio"
+                                                                    name="<?=$ar["CONTROL_NAME_ALT"]?>"
+                                                                    id="<?=$ar["CONTROL_ID"]?>"
+                                                                    value="<? echo $ar["HTML_VALUE_ALT"] ?>"
+                                                                <? echo $ar["DISABLED"] ? 'disabled class="disabled"': '' ?>
+                                                                <? echo $ar["CHECKED"]? 'checked="checked"': '' ?>
+                                                            />
+                                                        <?endforeach?>
+                                                        <div class="bx_filter_select_popup" data-role="dropdownContent" style="display: none;">
+                                                            <ul>
+                                                                <li>
+                                                                    <label for="<?="all_".$arCur["CONTROL_ID"]?>" class="bx_filter_param_label" data-role="all_label_<?=$arCur["CONTROL_ID"]?>" onclick="smartFilter.selectDropDownItem(this, '<?=CUtil::JSEscape("all_".$arCur["CONTROL_ID"])?>')">
+                                                                        <? echo Loc::getMessage("CT_BCSF_FILTER_ALL"); ?>
+                                                                    </label>
+                                                                </li>
+                                                                <?
+                                                                foreach ($arItem["VALUES"] as $val => $ar):
+                                                                    $class = "";
+                                                                    if ($ar["CHECKED"])
+                                                                        $class.= " selected";
+                                                                    if ($ar["DISABLED"])
+                                                                        $class.= " disabled";
+                                                                    ?>
+                                                                    <li>
+                                                                        <label for="<?=$ar["CONTROL_ID"]?>" class="bx_filter_param_label<?=$class?>" data-role="label_<?=$ar["CONTROL_ID"]?>" onclick="smartFilter.selectDropDownItem(this, '<?=CUtil::JSEscape($ar["CONTROL_ID"])?>')"><?=$ar["VALUE"]?></label>
+                                                                    </li>
+                                                                <?endforeach?>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?
+                                                break;
+                                            case "R"://DROPDOWN_WITH_PICTURES_AND_LABELS
+                                                ?>
+                                                <div class="bx_filter_select_container">
+                                                    <div class="bx_filter_select_block" onclick="smartFilter.showDropDownPopup(this, '<?=CUtil::JSEscape($key)?>')">
+                                                        <div class="bx_filter_select_text" data-role="currentOption">
+                                                            <?
+                                                            $checkedItemExist = false;
+                                                            foreach ($arItem["VALUES"] as $val => $ar):
+                                                                if ($ar["CHECKED"])
+                                                                {
+                                                                    ?>
+                                                                    <?if (isset($ar["FILE"]) && !empty($ar["FILE"]["SRC"])):?>
+                                                                    <span class="bx_filter_btn_color_icon" style="background-image:url('<?=$ar["FILE"]["SRC"]?>');"></span>
+                                                                <?endif?>
+                                                                    <span class="bx_filter_param_text">
+																<?=$ar["VALUE"]?>
+															</span>
+                                                                    <?
+                                                                    $checkedItemExist = true;
+                                                                }
+                                                            endforeach;
+                                                            if (!$checkedItemExist){?>
+                                                                <?echo Loc::getMessage("CT_BCSF_FILTER_ALL");
+                                                            }
+                                                            ?>
+                                                        </div>
+                                                        <div class="bx_filter_select_arrow"></div>
+                                                        <input
+                                                                style="display: none"
+                                                                type="radio"
+                                                                name="<?=$arCur["CONTROL_NAME_ALT"]?>"
+                                                                id="<? echo "all_".$arCur["CONTROL_ID"] ?>"
+                                                                value=""
+                                                        />
+                                                        <?foreach ($arItem["VALUES"] as $val => $ar):?>
+                                                            <input
+                                                                    style="display: none"
+                                                                    type="radio"
+                                                                    name="all_<?=$ar["CONTROL_NAME_ALT"]?>"
+                                                                    id="<?=$ar["CONTROL_ID"]?>"
+                                                                    value="<?=$ar["HTML_VALUE_ALT"]?>"
+                                                                <? echo $ar["DISABLED"] ? 'disabled class="disabled"': '' ?>
+                                                                <? echo $ar["CHECKED"]? 'checked="checked"': '' ?>
+                                                            />
+                                                        <?endforeach?>
+                                                        <div class="bx_filter_select_popup" data-role="dropdownContent" style="display: none">
+                                                            <ul>
+                                                                <li style="border-bottom: 1px solid #e5e5e5;padding-bottom: 5px;margin-bottom: 5px;">
+                                                                    <label for="<?="all_".$arCur["CONTROL_ID"]?>" class="bx_filter_param_label" data-role="all_label_<?=$arCur["CONTROL_ID"]?>" onclick="smartFilter.selectDropDownItem(this, '<?=CUtil::JSEscape("all_".$arCur["CONTROL_ID"])?>')">
+                                                                        <? echo Loc::getMessage("CT_BCSF_FILTER_ALL"); ?>
+                                                                    </label>
+                                                                </li>
+                                                                <?
+                                                                foreach ($arItem["VALUES"] as $val => $ar):
+                                                                    $class = "";
+                                                                    if ($ar["CHECKED"])
+                                                                        $class.= " selected";
+                                                                    if ($ar["DISABLED"])
+                                                                        $class.= " disabled";
+                                                                    ?>
+                                                                    <li>
+                                                                        <label for="<?=$ar["CONTROL_ID"]?>" data-role="label_<?=$ar["CONTROL_ID"]?>" class="bx_filter_param_label<?=$class?>" onclick="smartFilter.selectDropDownItem(this, '<?=CUtil::JSEscape($ar["CONTROL_ID"])?>')">
+                                                                            <?if (isset($ar["FILE"]) && !empty($ar["FILE"]["SRC"])):?>
+                                                                                <span class="bx_filter_btn_color_icon" title="<?=$ar["VALUE"]?>" style="background-image:url('<?=$ar["FILE"]["SRC"]?>');"></span>
+                                                                            <?endif?>
+                                                                            <span class="bx_filter_param_text">
+																	<?=$ar["VALUE"]?>
+																</span>
+                                                                        </label>
+                                                                    </li>
+                                                                <?endforeach?>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?
+                                                break;
+                                            case "K"://RADIO_BUTTONS
+                                                ?>
+                                                <div class="filter label_block radio">
+                                                    <input
+                                                            type="radio"
+                                                            value=""
+                                                            name="<? echo $arCur["CONTROL_NAME_ALT"] ?>"
+                                                            id="<? echo "all_".$arCur["CONTROL_ID"] ?>"
+                                                            onclick="smartFilter.click(this)"
+                                                    />
+                                                    <label data-role="all_label_<?=$arCur["CONTROL_ID"]?>" class="bx_filter_param_label" for="<? echo "all_".$arCur["CONTROL_ID"] ?>">
+                                                        <span class="bx_filter_input_checkbox"><span><? echo Loc::getMessage("CT_BCSF_FILTER_ALL"); ?></span></span>
+                                                    </label>
+                                                </div>
+                                                <?$j=1;
+                                                $isHidden = false;?>
+                                                <?foreach($arItem["VALUES"] as $val => $ar):?>
+                                                <?if($j > $numVisiblePropValues && !$isHidden):
+                                                    $isHidden = true;?>
+                                                    <div class="hidden_values">
+                                                <?endif;?>
+                                                <div class="filter label_block radio">
+                                                    <input
+                                                            type="radio"
+                                                            value="<? echo $ar["HTML_VALUE_ALT"] ?>"
+                                                            name="<? echo $ar["CONTROL_NAME_ALT"] ?>"
+                                                            id="<? echo $ar["CONTROL_ID"] ?>"
+                                                        <? echo $ar["DISABLED"] ? 'disabled class="disabled"': '' ?>
+                                                        <? echo $ar["CHECKED"]? 'checked="checked"': '' ?>
+                                                            onclick="smartFilter.click(this)"
+                                                    />
+                                                    <?$class = "";
+                                                    if ($ar["CHECKED"])
+                                                        $class.= " selected";
+                                                    if ($ar["DISABLED"])
+                                                        $class.= " disabled";?>
+                                                    <label data-role="label_<?=$ar["CONTROL_ID"]?>" class="bx_filter_param_label <?=$class;?>" for="<? echo $ar["CONTROL_ID"] ?>">
+													<span class="bx_filter_input_checkbox">
+
+														<span class="bx_filter_param_text1" title="<?=$ar["VALUE"];?>"><?=$ar["VALUE"];?><?
+                                                            if ($arParams["DISPLAY_ELEMENT_COUNT"] !== "N" && isset($ar["ELEMENT_COUNT"])):
+                                                                ?> (<span data-role="count_<?=$ar["CONTROL_ID"]?>"><? echo $ar["ELEMENT_COUNT"]; ?></span>)<?
+                                                            endif;?></span>
+													</span>
+                                                    </label>
+                                                </div>
+                                                <?$j++;?>
+                                            <?endforeach;?>
+                                                <?if($isHidden):?>
+                                                </div>
+                                                <div class="inner_expand_text"><span class="expand_block"><?=Loc::getMessage("FILTER_EXPAND_VALUES");?></span></div>
+                                            <?endif;?>
+                                                <?
+                                                break;
+                                            case "U"://CALENDAR
+                                                ?>
+                                                <div class="bx_filter_parameters_box_container_block">
+                                                    <div class="bx_filter_input_container bx_filter_calendar_container">
+                                                        <?$APPLICATION->IncludeComponent(
+                                                            'bitrix:main.calendar',
+                                                            '',
+                                                            array(
+                                                                'FORM_NAME' => $arResult["FILTER_NAME"]."_form",
+                                                                'SHOW_INPUT' => 'Y',
+                                                                'INPUT_ADDITIONAL_ATTR' => 'class="calendar" placeholder="'.FormatDate("SHORT", $arItem["VALUES"]["MIN"]["VALUE"]).'" onkeyup="smartFilter.keyup(this)" onchange="smartFilter.keyup(this)"',
+                                                                'INPUT_NAME' => $arItem["VALUES"]["MIN"]["CONTROL_NAME"],
+                                                                'INPUT_VALUE' => $arItem["VALUES"]["MIN"]["HTML_VALUE"],
+                                                                'SHOW_TIME' => 'N',
+                                                                'HIDE_TIMEBAR' => 'Y',
+                                                            ),
+                                                            null,
+                                                            array('HIDE_ICONS' => 'Y')
+                                                        );?>
+                                                    </div>
+                                                </div>
+                                                <div class="bx_filter_parameters_box_container_block">
+                                                    <div class="bx_filter_input_container bx_filter_calendar_container">
+                                                        <?$APPLICATION->IncludeComponent(
+                                                            'bitrix:main.calendar',
+                                                            '',
+                                                            array(
+                                                                'FORM_NAME' => $arResult["FILTER_NAME"]."_form",
+                                                                'SHOW_INPUT' => 'Y',
+                                                                'INPUT_ADDITIONAL_ATTR' => 'class="calendar" placeholder="'.FormatDate("SHORT", $arItem["VALUES"]["MAX"]["VALUE"]).'" onkeyup="smartFilter.keyup(this)" onchange="smartFilter.keyup(this)"',
+                                                                'INPUT_NAME' => $arItem["VALUES"]["MAX"]["CONTROL_NAME"],
+                                                                'INPUT_VALUE' => $arItem["VALUES"]["MAX"]["HTML_VALUE"],
+                                                                'SHOW_TIME' => 'N',
+                                                                'HIDE_TIMEBAR' => 'Y',
+                                                            ),
+                                                            null,
+                                                            array('HIDE_ICONS' => 'Y')
+                                                        );?>
+                                                    </div>
+                                                </div>
+                                                <?
+                                                break;
+                                            default://CHECKBOXES
+                                                ?>
+                                                <?if(in_array($arItem["CODE"], $arrCheckbox)):?>
+                                                <div class="bx_filter_parameters_box_title icons_fa">
+                                                    <div>
+                                                        <b><?=$arItem["NAME"]?></b>
+                                                        <div class="char_name">
+                                                            <div class="props_list">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <?endif;?>
+                                                <?
+                                                $count=count($arItem["VALUES"]);
+                                                $i=1;
+                                                if(!$arItem["FILTER_HINT"]){
+                                                    $prop = CIBlockProperty::GetByID($arItem["ID"], $arItem["IBLOCK_ID"])->GetNext();
+                                                    $arItem["FILTER_HINT"]=$prop["HINT"];
+                                                }
+                                                if($arItem["IBLOCK_ID"]!=$arParams["IBLOCK_ID"] && strpos($arItem["FILTER_HINT"],'line')!==false){
+                                                    $isSize=true;
+                                                }else{
+                                                    $isSize=false;
+                                                }?>
+                                                <?$j=1;
+                                                $isHidden = false;?>
+                                                <?if(in_array($arItem["CODE"], $arrCheckbox)):?>
+                                                <div class="bx_filter_block limited_block new_groups_pod" style="display: none;">
+                                            <?endif;?>
+                                                <?foreach($arItem["VALUES"] as $val => $ar):?>
+                                            <?if($j > $numVisiblePropValues && !$isHidden):
+                                            $isHidden = true;?>
+                                                <div class="hidden_values">
+                                                <?endif;?>
+                                                <input
+                                                        type="checkbox"
+                                                        value="<? echo $ar["HTML_VALUE"] ?>"
+                                                        name="<? echo $ar["CONTROL_NAME"] ?>"
+                                                        id="<? echo $ar["CONTROL_ID"] ?>"
+                                                    <? echo $ar["DISABLED"] ? 'disabled class="disabled"': '' ?>
+                                                    <? echo $ar["CHECKED"]? 'checked="checked"': '' ?>
+                                                        onclick="smartFilter.click(this)"
+                                                />
+                                                <label data-role="label_<?=$ar["CONTROL_ID"]?>" <?if(in_array($arItem["CODE"], $arrCheckbox)):?>style="display:block;width: auto;height: auto;"<?endif;?>  class="bx_filter_param_label <?=($isSize ? "nab sku" : "");?> <?=($i==$count ? "last" : "");?> <? echo $ar["DISABLED"] ? 'disabled': '' ?>" for="<? echo $ar["CONTROL_ID"] ?>">
+                                                    <span class="bx_filter_input_checkbox"  <?if(in_array($arItem["CODE"], $arrCheckbox)):?>style="display:block;"<?endif;?>>
+
+                                                        <span class="bx_filter_param_text" <?if(in_array($arItem["CODE"], $arrCheckbox)):?>style="display:block;"<?endif;?> title="<?=$ar["VALUE"];?>"><?=$ar["VALUE"];?><?
+                                                            if ($arParams["DISPLAY_ELEMENT_COUNT"] !== "N" && isset($ar["ELEMENT_COUNT"]) && !$isSize):
+                                                                ?><?
+                                                            endif;?></span>
+                                                    </span>
+                                                </label>
+                                                <?$i++;?>
+                                                <?$j++;?>
+                                            <?endforeach;?>
+                                                <?if(in_array($arItem["CODE"], $arrCheckbox)):?>
+                                                </div>
+                                            <?endif;?>
+                                                <?if($isHidden):?>
+                                                </div>
+                                                <div class="inner_expand_text"><span class="expand_block"><?=Loc::getMessage("FILTER_EXPAND_VALUES");?></span></div>
+                                            <?endif;?>
+                                            <?}?>
+
+                                        <?if($open_group_filters && !in_array($arItem["CODE"], $arrCheckbox)):?>
+                                            <div class="prop_horizont"><?=$arItem["NAME"]?></div>
+                                        <?endif;?>
+                                    <?if(!in_array($arItem["CODE"], $arrCheckbox)):?>
+                                    </div>
+                                    <?endif;?>
+                                <div class="clb"></div>
+                                <?if(!$open_group_filters):?>
+                                </div>
+                                <?endif;?>
+                            </div>
+                            <?}?>
+
+                        </div>
+
+                        <?if($isFilter):?>
+                            <?
+                            if($open_group_filters){
+                                echo '</div></div>';
+                                $open_group_filters = false;
+                            }
+                            ?>
+                            <div class="clb"></div>
+                            <div class="bx_filter_button_box active">
+                                <div class="bx_filter_block">
+                                    <div class="bx_filter_parameters_box_container">
+                                        <div class="bx_filter_popup_result right" id="modef_mobile" <?if(!isset($arResult["ELEMENT_COUNT"])) echo 'style="display:none"';?>>
+                                            <?echo Loc::getMessage("CT_BCSF_FILTER_COUNT", array("#ELEMENT_COUNT#" => '<span data-f="'.Loc::getMessage('CT_BCSF_SET_FILTER').'" data-fi="'.Loc::getMessage('CT_BCSF_SET_FILTER_TI').'" data-fr="'.Loc::getMessage('CT_BCSF_SET_FILTER_TR').'" data-frm="'.Loc::getMessage('CT_BCSF_SET_FILTER_TRM').'" id="modef_num_mobile">'.intval($arResult["ELEMENT_COUNT"]).'</span>'));?>
+                                            <a rel="nofollow" href="<?echo str_replace('/filter/clear/apply/', '/', $arResult["FILTER_URL"]);?>" class="btn btn-default white white-bg"><?echo Loc::getMessage("CT_BCSF_FILTER_SHOW")?></a>
+                                        </div>
+                                        <div class="bx_filter_popup_result right" id="modef" <?if(!isset($arResult["ELEMENT_COUNT"])) echo 'style="display:none"';?>>
+                                            <?echo Loc::getMessage("CT_BCSF_FILTER_COUNT", array("#ELEMENT_COUNT#" => '<span id="modef_num">'.intval($arResult["ELEMENT_COUNT"]).'</span>'));?>
+                                            <a rel="nofollow" href="<?echo str_replace('/filter/clear/apply/', '/', $arResult["FILTER_URL"]);?>" class="btn btn-default white white-bg"><?echo Loc::getMessage("CT_BCSF_FILTER_SHOW")?></a>
+                                        </div>
+                                        <button class="bx_filter_search_button btn btn-default" type="submit" id="set_filter" name="set_filter" data-href="" >
+                                            <?=Loc::getMessage("CT_BCSF_SET_FILTER")?>
+                                        </button>
+                                        <button class="bx_filter_search_reset btn btn-default white grey" type="reset" id="del_filter" name="del_filter" data-href="">
+                                            <?=Loc::getMessage("CT_BCSF_DEL_FILTER")?>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        <?endif;?>
+            </form>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+    <script>
+        var smartFilter = new JCSmartFilter('<?echo CUtil::JSEscape($arResult["FORM_ACTION"])?>', '<?=$arParams["VIEW_MODE"];?>', <?=CUtil::PhpToJSObject($arResult["JS_FILTER_PARAMS"])?>);
+        <?if(!$isFilter){?>
+        $('.bx_filter_vertical').remove();
+        <?}?>
+        $(document).ready(function(){
+            $('#compare-btn').on('click', function(e){
+		e.preventDefault();
+		var str="?select=Y";
+		if($('#compare_filter_OT_DO_PROZ_ST_MAX').is(":checked"))str+='&OT_DO_PROZ_ST_MAX=Y';
+		if($('#compare_filter_OT_DO_GOD_OBSL_MAX').is(":checked"))str+='&OT_DO_GOD_OBSL_MAX=Y';
+		if($('#compare_filter_OT_DO_LGOTNIY_PERIOD_MAX').is(":checked"))str+='&OT_DO_LGOTNIY_PERIOD_MAX=Y';
+		if($('#compare_filter_OT_DO_CREDIT_LIM_MAX').is(":checked"))str+='&OT_DO_CREDIT_LIM_MAX=Y';
+		var sort='&sort=';
+		if($('#compare_filter_r_OT_DO_PROZ_ST_MAX').is(":checked"))sort+='OT_DO_PROZ_ST_MAX';
+		if($('#compare_filter_r_OT_DO_GOD_OBSL_MAX').is(":checked"))sort+='OT_DO_GOD_OBSL_MAX';
+		if($('#compare_filter_r_OT_DO_LGOTNIY_PERIOD_MAX').is(":checked"))sort+='OT_DO_LGOTNIY_PERIOD_MAX';
+		if($('#compare_filter_r_OT_DO_CREDIT_LIM_MAX').is(":checked"))sort+='OT_DO_CREDIT_LIM_MAX';
+		window.location.href = "/catalog/compare.php"+str+sort;
+	    });
+            $('.bx_filter_search_reset').on('click', function(){
+                <?if($arParams["SEF_MODE"]=="Y"){?>
+                location.href=$('form.smartfilter').find('#del_url').val();
+                <?}else{?>
+                location.href=$('form.smartfilter').attr('action');
+                <?}?>
+            })
+        })
+    </script>
+<?}?>

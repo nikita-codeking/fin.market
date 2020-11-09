@@ -1,0 +1,1 @@
+<span class="white_middle_text">Присоединяйтесь к нам в соцсетях:</span>

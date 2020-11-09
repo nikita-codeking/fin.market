@@ -1,0 +1,6 @@
+.tab_slider_wrapp .top_blocks .title_block>a{color: black;}
+body .tabs_slider .catalog_item .inner_wrap{border:none !important;}
+@media screen and (max-width: 500px) {
+    .top_blocks {margin-top: 15px;}
+}
+.best_block.tab_slider_wrapp ul.tabs_content{height:100%;}

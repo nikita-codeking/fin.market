@@ -1,0 +1,4 @@
+<?
+$MESS['VUECATALOG.SECTION.ID_IBLOCK']  = 'Инфоблок';
+$MESS['VUECATALOG.SECTION.ID_SECTION'] = 'Раздел';
+?>

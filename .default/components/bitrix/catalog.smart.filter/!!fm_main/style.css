@@ -1,0 +1,50 @@
+/*BIZ*/
+.bx_filter .bx_filter_parameter_biz{
+	font-size:15px;
+	display:inline-block;
+	margin-right:10px;
+	text-decoration:none;
+	color:#215968;
+	border-bottom:1px dashed;
+}
+.bx_filter .bx_filter_parameter_biz:hover{
+	text-decoration:none;
+	border-bottom:1px solid;
+}
+.bx_filter .bx_filter_parameter_biz.active{
+	position:relative;
+	padding-left:20px;
+	color:#d54a4a;
+	border-bottom:1px solid;
+}
+.bx_filter .bx_filter_parameter_biz.active:hover{
+	border-bottom:1px dashed;
+}
+.bx_filter .bx_filter_parameter_biz.active:before{
+	position:absolute;
+	top:4px;
+	left:1px;
+	display:block;
+	width:13px;
+	height:13px;
+	content:' ';
+	background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAMCAYAAAC5tzfZAAABFElEQVQoz2NgIBJcl+Qzui7J33Vdgo+RWA38NxQknwDp/zekhRoIarghyc94Q15iC5D+f1NJ5v/n7dumE7ZFWqgYbANQ08c1a37+///fAL8GCT7L6zLCf0CaXjbUAdX/j0aWdAJKTACaxookJnJTUeoFyIaHIYH////8ORHZzdw35MTegyRvSAkeAdISYH8oSu4Fid0x0f//5/nzo0BbWOCagBzur0ePvrujp/kf5Aygc54DbZkDYt9UkPj/7czpl0A1ohhuBwra/Lp//809Zwewh8GagfSHpUt+A+VMcXoaKKn45+PHK0/iY8EaX1SUgzyeRDB4gYp4//3+veX9/Hn//379OpPY1ALSyAzEOUDMhksNAKf2po+AEPuKAAAAAElFTkSuQmCC') no-repeat center left;
+}
+
+@media (min-width: 550px){
+	.view_mobile{display:none !important;}
+}
+@media (max-width: 550px){
+	.view_mobile .bx_filter_parameters_box_title>div{/*font-weight: bold;*/}
+	.view_mobile{display:block;/* height: 130px;*/  padding: 5px 19px 14px;  border-bottom: 1px solid #f2f2f2;  z-index: 100; }
+	.view_mobile .mobile_filter_compact{display: block !important;}
+	.view_mobile .sort_filter a>.icon{display: none !important;}
+	.view_mobile .sort_filter a .arr.icons_fa{position: relative;display: inline-block !important; width: 30%;}
+	.view_mobile .sort_filter a .arr.icons_fa:after{content: "\f106";position: absolute;top: -10px;right: 0px;font-size: 12px;font-weight: bold;}
+	.view_mobile .sort_filter a.desc .arr.icons_fa:after{content: "\f107";}
+	.view_mobile .sort_filter a.current span{font-weight: bold;}
+	.view_mobile .sort_filter a span{display: inline-block !important; width: 70%; font-size: 13px !important; line-height: 15px !important;}
+	.bx_filter_vertical input[type="checkbox"] + label{float: none !important;}
+}
+
+#mobilefilter .bx_filter .bx_filter_parameters_box.bx_sort_filter{display: none;}

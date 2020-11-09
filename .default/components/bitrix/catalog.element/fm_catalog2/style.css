@@ -1,0 +1,404 @@
+.middle_info .bx_catalog_item_scu ul li .cnt1 {
+	padding-top: 0 !important;
+}
+
+.middle_info .bx_catalog_item_scu .bx_scu ul li {
+	width: 190px !important;
+	max-width: 190px !important;
+	display: inline-block
+}
+
+.middle_info .bx_catalog_item_scu .bx_item_detail_scu ul li .cnt_item {
+	position: relative !important;
+	width: 190px !important;
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 60px !important;
+}
+
+.catalog_detail .info_item .middle_info .cost.prices {
+	display: none !important;
+}
+
+.catalog_detail .info_item .middle_info .buy_block .buys_wrapp.offer_buy_block {
+	display: none !important;
+}
+
+.catalog_detail .item_slider .slides_block>li:nth-child(1) {
+	display: none !important;
+}
+
+.info_item .top_info {
+	display: none !important;
+}
+
+.catalog_detail .element_detail_text .price_txt .sharing {
+	display: none !important;
+}
+
+.catalog_detail .element_detail_text .price_txt>.sharing+.text {
+	display: none !important;
+}
+
+.catalog_detail .item_slider .flex-control-nav li {
+	display: none !important;
+}
+
+.wrapper_inner .info_item .middle_info .buy_block {
+	padding: 0px !important;
+}
+
+.wrapper_inner .info_item .middle_info .prices_block {
+	display: none;
+}
+
+.container .catalog_detail .item_slider .slides {
+	margin-bottom: 0px !important;
+	transform: none !important;
+}
+
+.container .catalog_detail .item_slider {
+	padding-top: 0px !important;
+}
+
+.item_slider .slides {
+	height: auto !important;
+	line-height: normal !important;
+	margin-top: 30px !important;
+}
+
+/**убери функцию увеличения фотки - тут неактуально**/
+
+a .zoom {
+	display: none !important;
+}
+
+.fancybox-lock .fancybox-overlay {
+	display: none !important;
+}
+
+.tabs_section .nav:after {
+	margin-bottom: -212px;
+}
+
+.catalog_detail .tab-pane.active .title-tab-heading+div {
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 43px;
+	font-size: 15px
+}
+
+.bottom_slider.specials.tab_slider_wrapp .top_blocks {
+	display: none;
+}
+
+.catalog_detail+.clearfix+.tab_slider_wrapp {
+	border-top: none !important;
+}
+
+.catalog_detail .detail_text {
+	margin-top: 40px;
+	line-height: 16px
+}
+
+.img_wrapper .wrapp_thumbs {
+	display: none !important;
+}
+
+/*перенос блока scu вниз под фотку*/
+
+.bx_scu ul li, .bx_scu ul>div>a {
+	width: 100%;
+}
+
+.sku_props .bx_catalog_item_scu .bx_item_detail_scu ul li .cnt_item {
+	width: 100%;
+	height: 60px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+@media (min-width: 500px) {
+	.catalog_detail .tabs_section {
+		margin-top: 0px !important;
+		padding-top: 30px;
+	}
+	.catalog_detail .item_main_info .right_info {
+		min-height: 350px;
+	}
+	.item_main_info .img_wrapper {
+		position: absolute;
+		/*height: 100%;*/
+		padding: 29px 30px 45px;
+		width: 50%;
+		max-width: 600px;
+	}
+	.container .catalog_detail .item_main_info .item_slider {
+		width: 100%;
+		padding: 0;
+		float: none;
+	}
+	.sku_props {
+		top: 270px;
+		position: absolute;
+		width: calc(100% - 40px);
+	}
+	.bx_catalog_item_scu, .bx_item_detail_scu, .bx_scu_scroller_container, .bx_scu, .bx_scu ul {
+		height: 100%;
+	}
+	.bx_scu ul>div {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: calc(100% - 60px);
+	}
+}
+
+@media (min-width: 1024px) {
+	.item_main_info .img_wrapper {
+		padding: 29px 56px 45px;
+	}
+	.catalog_detail .item_main_info .right_info {
+		/* min-height: 350px; */
+		min-height: calc(100vh - 300px);
+	}
+}
+
+@media (max-width: 768px) {
+	.sku_props {
+		height: calc(100% - 240px);
+	}
+}
+
+@media (max-width: 600px) {
+	.item_main_info .img_wrapper {
+		position: inherit;
+		/*height: 100%;*/
+		padding: 29px 30px 45px;
+		width: 100%;
+		max-width: 600px;
+	}
+}
+
+@media (max-width: 500px) {
+	.catalog_detail .right_info .tabs_section {
+		margin-top: 0;
+	}
+	.bx_catalog_item_scu ul li {
+		width: 100%;
+	}
+	.sku_props {
+		/* padding: 0 10px 30px; */
+		padding: 0 0 15px;
+	}
+	.tabs_section .tabs .tab-content {
+		padding: 0;
+	}
+}
+
+.item_main_info .img_wrapper {
+	padding-top: 0px !important;
+}
+
+.catalog_detail .item_main_info .right_info .info_item {
+	padding-top: 0px !important;
+	height: 0px !important;
+}
+
+.sku_props .bx_catalog_item_scu .bx_item_detail_scu ul li .cnt_item {
+	display: none;
+}
+
+.tabs .nav.nav-tabs a {
+	padding: 10px !important;
+}
+
+@media (max-width: 600px) {
+	.item_slider.flex .slides>li>a {
+		height: auto !important;
+	}
+	.container .catalog_detail .item_slider .slides {
+		padding-top: 0px !important;
+		margin-top: 0px !important;
+	}
+	body .catalog_detail .item_main_info {
+		margin-bottom: 0px !important;
+	}
+	body .container .bottom_slider.tab_slider_wrapp {
+		padding-top: 10px !important;
+	}
+	.recomendation.wrapper_block .top_block {
+		padding-top: 10px !important;
+	}
+	.catalog_detail .tab-pane.active .title-tab-heading+div {
+		padding-top: 0px !important;
+		margin-top: 10px !important;
+	}
+	.flexslider.shadow .flex-viewport {
+		height: 200px !important;
+	}
+}
+
+@media (max-width: 550px) {
+	.catalog_detail .props_list td:nth-child(1) {
+		width: 60% !important;
+	}
+	.catalog_detail .props_list td:nth-child(2) {
+		width: 40%;
+	}
+	.title-v3 .page-top.maxwidth-theme h1 {
+		padding-left: 10px !important;
+		padding-right: 10px !important;
+	}
+	body .breadcrumbs {
+		padding-left: 10px !important;
+		padding-right: 10px !important;
+	}
+	/*.btn.btn-default.ofo{position: absolute; left: calc(100% - 70px);margin-left: 0px !important;}*/
+}
+
+.catalog_detail .item_main_info {
+	border: none !important;
+}
+
+.catalog_detail .bx_catalog_item_scu {
+	width: 50%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.catalog_detail .like_icons.btn.btn-default {
+	width: 40%;
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+	margin-top: 16px;
+	height: 36px;
+	left: 0;
+	padding-left: 0px;
+	padding-right: 0px;
+	float: right;
+}
+
+.catalog_detail .like_icons.btn.btn-default .compare_item {
+	width: 100% !important;
+	height: 100% !important;
+	background: none !important;
+	opacity: 1 !important;
+}
+
+/*.catalog_detail .like_icons.btn.btn-default .compare_item i{width: 100% !important; height: 100% !important; background: none !important;color: #1976d2;font-style: normal;}*/
+
+.catalog_detail .like_icons span i {
+	display: inline-block !important;
+	margin-top: -5px;
+	position: absolute;
+	background-color: transparent !important;
+	background-position: -18px -17px !important;
+}
+
+.catalog_detail .like_icons.btn.btn-default {
+	width: auto !important;
+	width: 48% !important;
+}
+
+.catalog_detail .compare_item_button .compare_item span {
+	overflow: visible;
+	display: inline-block;
+	visibility: visible;
+	width: 100% !important;
+	height: 17px !important;
+	background: none !important;
+	color: #006e3a;
+	font-style: normal;
+	opacity: 1;
+	text-align: center;
+	border-radius: unset;
+	padding-left: 10px;
+}
+
+.catalog_detail .detail_text {
+	overflow-y: auto;
+	overflow-x: hidden;
+	max-height: 400px;
+}
+
+/**стикеры-начало**/
+
+.catalog_detail .item_main_info .stickers {
+	top: 0px !important;
+	width: 100%;
+}
+
+.catalog_detail .item_main_info .stickers>div>div {
+	text-align: center;
+}
+
+@media (max-width: 550px) {
+	.catalog_detail .item_main_info .stickers>div>div {
+		min-height: 36px;
+	}
+	.item_main_info .img_wrapper {
+		padding-top: 36px !important;
+	}
+	.sku_props {
+		text-align: center;
+	}
+	.btn.btn-default.basket.read_more.ofo {
+		margin: 0px !important;
+	}
+	.catalog_detail .like_icons.btn.btn-default {
+		margin-top: 6px !important;
+	}
+}
+
+/**стикеры-конец**/
+
+.item_main_info .compare_item_button .compare_item span:hover {
+	color: #fff;
+}
+
+.catalog_detail .stickers {
+	left: auto !important;
+	top: auto !important;
+	text-align: left !important;
+	position: relative !important;
+	padding-right: 0px;
+	margin-top: 20px;
+}
+
+.catalog_detail .stickers>div {
+	width: 50%;
+}
+
+.catalog_detail .item_slider .slides li img {
+	bottom: unset;
+}
+
+/**тултип - начало**/
+
+.props_item span.kk-tooltip {
+	cursor: pointer;
+}
+
+.props_item span.kk-tooltip span {
+	display: none;
+	padding: 2px 3px;
+	margin-right: 8px;
+	width: 400px;
+	font-size: 12px;
+}
+
+.props_item span.kk-tooltip:hover span {
+	display: inline;
+	position: absolute;
+	background: #ffffff;
+	border: 1px solid #cccccc;
+	color: #6c6c6c;
+	left: 0px;
+	top: 22px;
+	z-index: 111;
+}
+
+/**тултип - конец**/

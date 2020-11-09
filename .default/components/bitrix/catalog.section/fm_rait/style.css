@@ -1,0 +1,10 @@
+.sku_props .bx_item_section_name{display:none;}
+.bx_catalog_item_scu .bx_item_detail_scu ul li .cnt_item{width:100px !important; height:40px !important;}
+.catalog.item-views.list .item{border: none !important;}
+.with_fast_view .catalog_item .fast_view_block{visibility: hidden !important;}
+.catalog_item .item-title a, .catalog_item .item-title a span, .view-item .item-title a span{
+    margin-top: -8px;
+}
+.owl-carousel .owl-stage-outer{
+    margin-top: -15px;
+}

@@ -1,0 +1,14 @@
+.sections_wrapper .list .item:not(.section_item) .img { width: 100% !important; height: 120px !important;}
+.sections_wrapper .list .item{border: none !important;}
+.bx-ios .sections_wrapper .list .row>div{border: none !important;}
+@media (max-width: 768px){
+    .section_block .sections_wrapper .list .row .col-xs-6 {width: 50%;}
+    .section_block .sections_wrapper .list .item:not(.section_item) .img {width: 100%; height: auto; }
+	.section_block .sections_wrapper .list .item .img.shine {margin-bottom: 5px;}
+	.section_block .sections_wrapper .list.items .item {margin-bottom: 20px;}
+}
+
+/*.header_sections_wrapper{position: absolute; left: 300px; top: -52px;}*/
+.header_sections_wrapper .sections_wrapper .list .item:not(.section_item) .img {margin-bottom: -15px;}
+.header_sections_wrapper .sections_wrapper .list .item .name a {font-size: 12px; line-height: 12px; }
+.header_sections_wrapper .sections_wrapper .list .row > div {width: 120px;}

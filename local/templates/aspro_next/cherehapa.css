@@ -1,0 +1,5429 @@
+.right_block.wide_
+{
+  float: none!important;
+  width: 100%!important;
+}
+.Select {
+	position: relative;
+}
+
+.Select input::-webkit-contacts-auto-fill-button,.Select input::-webkit-credentials-auto-fill-button {
+	display: none!important;
+}
+
+.Select input::-ms-clear,.Select input::-ms-reveal {
+	display: none!important;
+}
+
+.Select,.Select div,.Select input,.Select span {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.Select.is-disabled .Select-arrow-zone {
+	cursor: default;
+	pointer-events: none;
+	opacity: .35;
+}
+
+.Select.is-disabled>.Select-control {
+	background-color: #f9f9f9;
+}
+
+.Select.is-disabled>.Select-control:hover {
+	box-shadow: none;
+}
+
+.Select.is-open>.Select-control {
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+	background: #fff;
+	border-color: #b3b3b3 #ccc #d9d9d9;
+}
+
+.Select.is-open>.Select-control .Select-arrow {
+	top: -2px;
+	border-color: transparent transparent #999;
+	border-width: 0 5px 5px;
+}
+
+.Select.is-searchable.is-focused:not(.is-open)>.Select-control,.Select.is-searchable.is-open>.Select-control {
+	cursor: text;
+}
+
+.Select.is-focused>.Select-control {
+	background: #fff;
+}
+
+.Select.is-focused:not(.is-open)>.Select-control {
+	border-color: #007eff;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 0 3px rgba(0,126,255,.1);
+	background: #fff;
+}
+
+.Select.has-value.is-clearable.Select--single>.Select-control .Select-value {
+	padding-right: 42px;
+}
+
+.Select.has-value.is-pseudo-focused.Select--single>.Select-control .Select-value .Select-value-label,.Select.has-value.Select--single>.Select-control .Select-value .Select-value-label {
+	color: #333;
+}
+
+.Select.has-value.is-pseudo-focused.Select--single>.Select-control .Select-value a.Select-value-label,.Select.has-value.Select--single>.Select-control .Select-value a.Select-value-label {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.Select.has-value.is-pseudo-focused.Select--single>.Select-control .Select-value a.Select-value-label:focus,.Select.has-value.is-pseudo-focused.Select--single>.Select-control .Select-value a.Select-value-label:hover,.Select.has-value.Select--single>.Select-control .Select-value a.Select-value-label:focus,.Select.has-value.Select--single>.Select-control .Select-value a.Select-value-label:hover {
+	color: #007eff;
+	outline: none;
+	text-decoration: underline;
+}
+
+.Select.has-value.is-pseudo-focused.Select--single>.Select-control .Select-value a.Select-value-label:focus,.Select.has-value.Select--single>.Select-control .Select-value a.Select-value-label:focus {
+	background: #fff;
+}
+
+.Select.has-value.is-pseudo-focused .Select-input {
+	opacity: 0;
+}
+
+.Select.is-open .Select-arrow,.Select .Select-arrow-zone:hover>.Select-arrow {
+	border-top-color: #666;
+}
+
+.Select.Select--rtl {
+	direction: rtl;
+	text-align: right;
+}
+
+.Select-control {
+	background-color: #fff;
+	border-color: #d9d9d9 #ccc #b3b3b3;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	color: #333;
+	cursor: default;
+	display: table;
+	border-spacing: 0;
+	border-collapse: separate;
+	height: 36px;
+	outline: none;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.Select-control:hover {
+	box-shadow: 0 1px 0 rgba(0,0,0,.06);
+}
+
+.Select-control .Select-input:focus {
+	outline: none;
+	background: #fff;
+}
+
+.Select--single>.Select-control .Select-value,.Select-placeholder {
+	bottom: 0;
+	color: #aaa;
+	left: 0;
+	line-height: 34px;
+	padding-left: 10px;
+	padding-right: 10px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.Select-input {
+	height: 34px;
+	padding-left: 10px;
+	padding-right: 10px;
+	vertical-align: middle;
+}
+
+.Select-input>input {
+	width: 100%;
+	background: none transparent;
+	border: 0 none;
+	box-shadow: none;
+	cursor: default;
+	display: inline-block;
+	font-family: inherit;
+	font-size: inherit;
+	margin: 0;
+	outline: none;
+	line-height: 17px;
+	padding: 8px 0 12px;
+	-webkit-appearance: none;
+}
+
+.is-focused .Select-input>input {
+	cursor: text;
+}
+
+.has-value.is-pseudo-focused .Select-input {
+	opacity: 0;
+}
+
+.Select-control:not(.is-searchable)>.Select-input {
+	outline: none;
+}
+
+.Select-loading-zone {
+	cursor: pointer;
+	display: table-cell;
+	text-align: center;
+}
+
+.Select-loading,.Select-loading-zone {
+	position: relative;
+	vertical-align: middle;
+	width: 16px;
+}
+
+.Select-loading {
+	-webkit-animation: Select-animation-spin .4s infinite linear;
+	-o-animation: Select-animation-spin .4s infinite linear;
+	animation: Select-animation-spin .4s infinite linear;
+	height: 16px;
+	box-sizing: border-box;
+	border-radius: 50%;
+	border: 2px solid #ccc;
+	border-right-color: #333;
+	display: inline-block;
+}
+
+.Select-clear-zone {
+	-webkit-animation: Select-animation-fadeIn .2s;
+	-o-animation: Select-animation-fadeIn .2s;
+	animation: Select-animation-fadeIn .2s;
+	color: #999;
+	cursor: pointer;
+	display: table-cell;
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	width: 17px;
+}
+
+.Select-clear-zone:hover {
+	color: #d0021b;
+}
+
+.Select-clear {
+	display: inline-block;
+	font-size: 18px;
+	line-height: 1;
+}
+
+.Select--multi .Select-clear-zone {
+	width: 17px;
+}
+
+.Select-arrow-zone {
+	cursor: pointer;
+	display: table-cell;
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	width: 25px;
+	padding-right: 5px;
+}
+
+.Select--rtl .Select-arrow-zone {
+	padding-right: 0;
+	padding-left: 5px;
+}
+
+.Select-arrow {
+	border-color: #999 transparent transparent;
+	border-style: solid;
+	border-width: 5px 5px 2.5px;
+	display: inline-block;
+	height: 0;
+	width: 0;
+	position: relative;
+}
+
+.Select-control>:last-child {
+	padding-right: 5px;
+}
+
+.Select--multi .Select-multi-value-wrapper {
+	display: inline-block;
+}
+
+.Select .Select-aria-only {
+	position: absolute;
+	display: inline-block;
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	clip: rect(0,0,0,0);
+	overflow: hidden;
+	float: left;
+}
+
+@-webkit-keyframes Select-animation-fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes Select-animation-fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.Select-menu-outer {
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-top-color: #e6e6e6;
+	box-shadow: 0 1px 0 rgba(0,0,0,.06);
+	box-sizing: border-box;
+	margin-top: -1px;
+	max-height: 200px;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	width: 100%;
+	z-index: 1;
+	-webkit-overflow-scrolling: touch;
+}
+
+.Select-menu {
+	max-height: 198px;
+	overflow-y: auto;
+}
+
+.Select-option {
+	box-sizing: border-box;
+	background-color: #fff;
+	color: #666;
+	cursor: pointer;
+	display: block;
+	padding: 8px 10px;
+}
+
+.Select-option:last-child {
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+.Select-option.is-selected {
+	background-color: #f5faff;
+	background-color: rgba(0,126,255,.04);
+	color: #333;
+}
+
+.Select-option.is-focused {
+	background-color: #ebf5ff;
+	background-color: rgba(0,126,255,.08);
+	color: #333;
+}
+
+.Select-option.is-disabled {
+	color: #ccc;
+	cursor: default;
+}
+
+.Select-noresults {
+	box-sizing: border-box;
+	color: #999;
+	cursor: default;
+	display: block;
+	padding: 8px 10px;
+}
+
+.Select--multi .Select-input {
+	vertical-align: middle;
+	margin-left: 10px;
+	padding: 0;
+}
+
+.Select--multi.Select--rtl .Select-input {
+	margin-left: 0;
+	margin-right: 10px;
+}
+
+.Select--multi.has-value .Select-input {
+	margin-left: 5px;
+}
+
+.Select--multi .Select-value {
+	background-color: #ebf5ff;
+	background-color: rgba(0,126,255,.08);
+	border-radius: 2px;
+	border: 1px solid #c2e0ff;
+	border: 1px solid rgba(0,126,255,.24);
+	color: #007eff;
+	display: inline-block;
+	font-size: .9em;
+	line-height: 1.4;
+	margin-left: 5px;
+	margin-top: 5px;
+	vertical-align: top;
+}
+
+.Select--multi .Select-value-icon,.Select--multi .Select-value-label {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.Select--multi .Select-value-label {
+	border-bottom-right-radius: 2px;
+	border-top-right-radius: 2px;
+	cursor: default;
+	padding: 2px 5px;
+}
+
+.Select--multi a.Select-value-label {
+	color: #007eff;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.Select--multi a.Select-value-label:hover {
+	text-decoration: underline;
+}
+
+.Select--multi .Select-value-icon {
+	cursor: pointer;
+	border-bottom-left-radius: 2px;
+	border-top-left-radius: 2px;
+	border-right: 1px solid #c2e0ff;
+	border-right: 1px solid rgba(0,126,255,.24);
+	padding: 1px 5px 3px;
+}
+
+.Select--multi .Select-value-icon:focus,.Select--multi .Select-value-icon:hover {
+	background-color: #d8eafd;
+	background-color: rgba(0,113,230,.08);
+	color: #0071e6;
+}
+
+.Select--multi .Select-value-icon:active {
+	background-color: #c2e0ff;
+	background-color: rgba(0,126,255,.24);
+}
+
+.Select--multi.Select--rtl .Select-value {
+	margin-left: 0;
+	margin-right: 5px;
+}
+
+.Select--multi.Select--rtl .Select-value-icon {
+	border-right: none;
+	border-left: 1px solid #c2e0ff;
+	border-left: 1px solid rgba(0,126,255,.24);
+}
+
+.Select--multi.is-disabled .Select-value {
+	background-color: #fcfcfc;
+	border: 1px solid #e3e3e3;
+	color: #333;
+}
+
+.Select--multi.is-disabled .Select-value-icon {
+	cursor: not-allowed;
+	border-right: 1px solid #e3e3e3;
+}
+
+.Select--multi.is-disabled .Select-value-icon:active,.Select--multi.is-disabled .Select-value-icon:focus,.Select--multi.is-disabled .Select-value-icon:hover {
+	background-color: #fcfcfc;
+}
+
+@keyframes Select-animation-spin {
+	to {
+		transform: rotate(1turn);
+	}
+}
+
+@-webkit-keyframes Select-animation-spin {
+	to {
+		-webkit-transform: rotate(1turn);
+	}
+}
+
+.PresetDateRangePicker_panel {
+	padding: 0 22px 11px;
+}
+
+.PresetDateRangePicker_button {
+	position: relative;
+	height: 100%;
+	text-align: center;
+	background: 0 0;
+	border: 2px solid #00a699;
+	color: #00a699;
+	padding: 4px 12px;
+	margin-right: 8px;
+	font: inherit;
+	font-weight: 700;
+	line-height: normal;
+	overflow: visible;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+.PresetDateRangePicker_button:active {
+	outline: 0;
+}
+
+.PresetDateRangePicker_button__selected {
+	color: #fff;
+	background: #00a699;
+}
+
+.SingleDatePickerInput {
+	display: inline-block;
+	background-color: #fff;
+}
+
+.SingleDatePickerInput__withBorder {
+	border-radius: 2px;
+	border: 1px solid #dbdbdb;
+}
+
+.SingleDatePickerInput__rtl {
+	direction: rtl;
+}
+
+.SingleDatePickerInput__disabled {
+	background-color: #f2f2f2;
+}
+
+.SingleDatePickerInput__block {
+	display: block;
+}
+
+.SingleDatePickerInput__showClearDate {
+	padding-right: 30px;
+}
+
+.SingleDatePickerInput_clearDate {
+	background: 0 0;
+	border: 0;
+	color: inherit;
+	font: inherit;
+	line-height: normal;
+	overflow: visible;
+	cursor: pointer;
+	padding: 10px;
+	margin: 0 10px 0 5px;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.SingleDatePickerInput_clearDate__default:focus,.SingleDatePickerInput_clearDate__default:hover {
+	background: #dbdbdb;
+	border-radius: 50%;
+}
+
+.SingleDatePickerInput_clearDate__small {
+	padding: 6px;
+}
+
+.SingleDatePickerInput_clearDate__hide {
+	visibility: hidden;
+}
+
+.SingleDatePickerInput_clearDate_svg {
+	fill: #82888a;
+	height: 12px;
+	width: 15px;
+	vertical-align: middle;
+}
+
+.SingleDatePickerInput_clearDate_svg__small {
+	height: 9px;
+}
+
+.SingleDatePickerInput_calendarIcon {
+	background: 0 0;
+	border: 0;
+	color: inherit;
+	font: inherit;
+	line-height: normal;
+	overflow: visible;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 10px;
+	margin: 0 5px 0 10px;
+}
+
+.SingleDatePickerInput_calendarIcon_svg {
+	fill: #82888a;
+	height: 15px;
+	width: 14px;
+	vertical-align: middle;
+}
+
+.SingleDatePicker {
+	position: relative;
+	display: inline-block;
+}
+
+.SingleDatePicker__block {
+	display: block;
+}
+
+.SingleDatePicker_picker {
+	z-index: 1;
+	background-color: #fff;
+	position: absolute;
+}
+
+.SingleDatePicker_picker__rtl {
+	direction: rtl;
+}
+
+.SingleDatePicker_picker__directionLeft {
+	left: 0;
+}
+
+.SingleDatePicker_picker__directionRight {
+	right: 0;
+}
+
+.SingleDatePicker_picker__portal {
+	background-color: rgba(0,0,0,.3);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.SingleDatePicker_picker__fullScreenPortal {
+	background-color: #fff;
+}
+
+.SingleDatePicker_closeButton {
+	background: 0 0;
+	border: 0;
+	color: inherit;
+	font: inherit;
+	line-height: normal;
+	overflow: visible;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 15px;
+	z-index: 2;
+}
+
+.SingleDatePicker_closeButton:focus,.SingleDatePicker_closeButton:hover {
+	color: #b0b3b4;
+	text-decoration: none;
+}
+
+.SingleDatePicker_closeButton_svg {
+	height: 15px;
+	width: 15px;
+	fill: #cacccd;
+}
+
+.DayPickerKeyboardShortcuts_buttonReset {
+	background: 0 0;
+	border: 0;
+	border-radius: 0;
+	color: inherit;
+	font: inherit;
+	line-height: normal;
+	overflow: visible;
+	padding: 0;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.DayPickerKeyboardShortcuts_buttonReset:active {
+	outline: 0;
+}
+
+.DayPickerKeyboardShortcuts_show {
+	width: 22px;
+	position: absolute;
+	z-index: 2;
+}
+
+.DayPickerKeyboardShortcuts_show__bottomRight {
+	border-top: 26px solid transparent;
+	border-right: 33px solid #00a699;
+	bottom: 0;
+	right: 0;
+}
+
+.DayPickerKeyboardShortcuts_show__bottomRight:hover {
+	border-right: 33px solid #008489;
+}
+
+.DayPickerKeyboardShortcuts_show__topRight {
+	border-bottom: 26px solid transparent;
+	border-right: 33px solid #00a699;
+	top: 0;
+	right: 0;
+}
+
+.DayPickerKeyboardShortcuts_show__topRight:hover {
+	border-right: 33px solid #008489;
+}
+
+.DayPickerKeyboardShortcuts_show__topLeft {
+	border-bottom: 26px solid transparent;
+	border-left: 33px solid #00a699;
+	top: 0;
+	left: 0;
+}
+
+.DayPickerKeyboardShortcuts_show__topLeft:hover {
+	border-left: 33px solid #008489;
+}
+
+.DayPickerKeyboardShortcuts_showSpan {
+	color: #fff;
+	position: absolute;
+}
+
+.DayPickerKeyboardShortcuts_showSpan__bottomRight {
+	bottom: 0;
+	right: -28px;
+}
+
+.DayPickerKeyboardShortcuts_showSpan__topRight {
+	top: 1px;
+	right: -28px;
+}
+
+.DayPickerKeyboardShortcuts_showSpan__topLeft {
+	top: 1px;
+	left: -28px;
+}
+
+.DayPickerKeyboardShortcuts_panel {
+	overflow: auto;
+	background: #fff;
+	border: 1px solid #dbdbdb;
+	border-radius: 2px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 2;
+	padding: 22px;
+	margin: 33px;
+}
+
+.DayPickerKeyboardShortcuts_title {
+	font-size: 16px;
+	font-weight: 700;
+	margin: 0;
+}
+
+.DayPickerKeyboardShortcuts_list {
+	list-style: none;
+	padding: 0;
+	font-size: 14px;
+}
+
+.DayPickerKeyboardShortcuts_close {
+	position: absolute;
+	right: 22px;
+	top: 22px;
+	z-index: 2;
+}
+
+.DayPickerKeyboardShortcuts_close:active {
+	outline: 0;
+}
+
+.DayPickerKeyboardShortcuts_closeSvg {
+	height: 15px;
+	width: 15px;
+	fill: #cacccd;
+}
+
+.DayPickerKeyboardShortcuts_closeSvg:focus,.DayPickerKeyboardShortcuts_closeSvg:hover {
+	fill: #82888a;
+}
+
+.CalendarDay {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	cursor: pointer;
+	font-size: 14px;
+	text-align: center;
+}
+
+.CalendarDay:active {
+	outline: 0;
+}
+
+.CalendarDay__defaultCursor {
+	cursor: default;
+}
+
+.CalendarDay__default {
+	border: 1px solid #e4e7e7;
+	color: #484848;
+	background: #fff;
+}
+
+.CalendarDay__default:hover {
+	background: #e4e7e7;
+	border: 1px double #e4e7e7;
+	color: inherit;
+}
+
+.CalendarDay__hovered_offset {
+	background: #f4f5f5;
+	border: 1px double #e4e7e7;
+	color: inherit;
+}
+
+.CalendarDay__outside {
+	border: 0;
+	background: #fff;
+	color: #484848;
+}
+
+.CalendarDay__outside:hover {
+	border: 0;
+}
+
+.CalendarDay__blocked_minimum_nights {
+	background: #fff;
+	border: 1px solid #eceeee;
+	color: #cacccd;
+}
+
+.CalendarDay__blocked_minimum_nights:active,.CalendarDay__blocked_minimum_nights:hover {
+	background: #fff;
+	color: #cacccd;
+}
+
+.CalendarDay__highlighted_calendar {
+	background: #ffe8bc;
+	color: #484848;
+}
+
+.CalendarDay__highlighted_calendar:active,.CalendarDay__highlighted_calendar:hover {
+	background: #ffce71;
+	color: #484848;
+}
+
+.CalendarDay__selected_span {
+	background: #66e2da;
+	border: 1px solid #33dacd;
+	color: #fff;
+}
+
+.CalendarDay__selected_span:active,.CalendarDay__selected_span:hover {
+	background: #33dacd;
+	border: 1px solid #33dacd;
+	color: #fff;
+}
+
+.CalendarDay__last_in_range {
+	border-right: #00a699;
+}
+
+.CalendarDay__selected,.CalendarDay__selected:active,.CalendarDay__selected:hover {
+	background: #00a699;
+	border: 1px solid #00a699;
+	color: #fff;
+}
+
+.CalendarDay__hovered_span,.CalendarDay__hovered_span:hover {
+	background: #b2f1ec;
+	border: 1px solid #80e8e0;
+	color: #007a87;
+}
+
+.CalendarDay__hovered_span:active {
+	background: #80e8e0;
+	border: 1px solid #80e8e0;
+	color: #007a87;
+}
+
+.CalendarDay__blocked_calendar,.CalendarDay__blocked_calendar:active,.CalendarDay__blocked_calendar:hover {
+	background: #cacccd;
+	border: 1px solid #cacccd;
+	color: #82888a;
+}
+
+.CalendarDay__blocked_out_of_range,.CalendarDay__blocked_out_of_range:active,.CalendarDay__blocked_out_of_range:hover {
+	background: #fff;
+	border: 1px solid #e4e7e7;
+	color: #cacccd;
+}
+
+.CalendarMonth {
+	background: #fff;
+	text-align: center;
+	vertical-align: top;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.CalendarMonth_table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.CalendarMonth_verticalSpacing {
+	border-collapse: separate;
+}
+
+.CalendarMonth_caption {
+	color: #484848;
+	font-size: 18px;
+	text-align: center;
+	padding-top: 22px;
+	padding-bottom: 37px;
+	caption-side: top;
+}
+
+.CalendarMonth_caption__verticalScrollable {
+	padding-top: 12px;
+	padding-bottom: 7px;
+}
+
+.CalendarMonthGrid {
+	background: #fff;
+	text-align: left;
+	z-index: 0;
+}
+
+.CalendarMonthGrid__animating {
+	z-index: 1;
+}
+
+.CalendarMonthGrid__horizontal {
+	position: absolute;
+	left: 9px;
+}
+
+.CalendarMonthGrid__vertical {
+	margin: 0 auto;
+}
+
+.CalendarMonthGrid__vertical_scrollable {
+	margin: 0 auto;
+	overflow-y: scroll;
+}
+
+.CalendarMonthGrid_month__horizontal {
+	display: inline-block;
+	vertical-align: top;
+	min-height: 100%;
+}
+
+.CalendarMonthGrid_month__hideForAnimation {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.CalendarMonthGrid_month__hidden {
+	visibility: hidden;
+}
+
+.DayPickerNavigation {
+	position: relative;
+	z-index: 2;
+}
+
+.DayPickerNavigation__horizontal {
+	height: 0;
+}
+
+.DayPickerNavigation__verticalDefault {
+	position: absolute;
+	width: 100%;
+	height: 52px;
+	bottom: 0;
+	left: 0;
+}
+
+.DayPickerNavigation__verticalScrollableDefault {
+	position: relative;
+}
+
+.DayPickerNavigation_button {
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+.DayPickerNavigation_button__default {
+	border: 1px solid #e4e7e7;
+	background-color: #fff;
+	color: #757575;
+}
+
+.DayPickerNavigation_button__default:focus,.DayPickerNavigation_button__default:hover {
+	border: 1px solid #c4c4c4;
+}
+
+.DayPickerNavigation_button__default:active {
+	background: #f2f2f2;
+}
+
+.DayPickerNavigation_button__horizontalDefault {
+	position: absolute;
+	top: 18px;
+	line-height: .78;
+	border-radius: 3px;
+	padding: 6px 9px;
+}
+
+.DayPickerNavigation_leftButton__horizontalDefault {
+	left: 22px;
+}
+
+.DayPickerNavigation_rightButton__horizontalDefault {
+	right: 22px;
+}
+
+.DayPickerNavigation_button__verticalDefault {
+	padding: 5px;
+	background: #fff;
+	box-shadow: 0 0 5px 2px rgba(0,0,0,.1);
+	position: relative;
+	display: inline-block;
+	height: 100%;
+	width: 50%;
+}
+
+.DayPickerNavigation_nextButton__verticalDefault {
+	border-left: 0;
+}
+
+.DayPickerNavigation_nextButton__verticalScrollableDefault {
+	width: 100%;
+}
+
+.DayPickerNavigation_svg__horizontal {
+	height: 19px;
+	width: 19px;
+	fill: #82888a;
+	display: block;
+}
+
+.DayPickerNavigation_svg__vertical {
+	height: 42px;
+	width: 42px;
+	fill: #484848;
+	display: block;
+}
+
+.DayPicker {
+	position: relative;
+	text-align: left;
+}
+
+.DayPicker,.DayPicker__horizontal {
+	background: #fff;
+}
+
+.DayPicker__verticalScrollable {
+	height: 100%;
+}
+
+.DayPicker__hidden {
+	visibility: hidden;
+}
+
+.DayPicker__withBorder {
+	box-shadow: 0 2px 6px rgba(0,0,0,.05),0 0 0 1px rgba(0,0,0,.07);
+	border-radius: 3px;
+}
+
+.DayPicker_portal__horizontal {
+	box-shadow: none;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
+
+.DayPicker_portal__vertical {
+	position: static;
+}
+
+.DayPicker_focusRegion {
+	outline: 0;
+}
+
+.DayPicker_calendarInfo__horizontal,.DayPicker_wrapper__horizontal {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.DayPicker_weekHeaders {
+	position: relative;
+}
+
+.DayPicker_weekHeaders__horizontal {
+	margin-left: 9px;
+}
+
+.DayPicker_weekHeader {
+	color: #757575;
+	position: absolute;
+	top: 62px;
+	z-index: 2;
+	text-align: left;
+}
+
+.DayPicker_weekHeader__vertical {
+	left: 50%;
+}
+
+.DayPicker_weekHeader__verticalScrollable {
+	top: 0;
+	display: table-row;
+	border-bottom: 1px solid #dbdbdb;
+	background: #fff;
+	margin-left: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.DayPicker_weekHeader_ul {
+	list-style: none;
+	margin: 1px 0;
+	padding-left: 0;
+	padding-right: 0;
+	font-size: 14px;
+}
+
+.DayPicker_weekHeader_li {
+	display: inline-block;
+	text-align: center;
+}
+
+.DayPicker_transitionContainer {
+	position: relative;
+	overflow: hidden;
+	border-radius: 3px;
+}
+
+.DayPicker_transitionContainer__horizontal {
+	-webkit-transition: height .2s ease-in-out;
+	-moz-transition: height .2s ease-in-out;
+	transition: height .2s ease-in-out;
+}
+
+.DayPicker_transitionContainer__vertical {
+	width: 100%;
+}
+
+.DayPicker_transitionContainer__verticalScrollable {
+	padding-top: 20px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	overflow-y: scroll;
+}
+
+.DateInput {
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	position: relative;
+	display: inline-block;
+	width: 130px;
+	vertical-align: middle;
+}
+
+.DateInput__small {
+	width: 97px;
+}
+
+.DateInput__block {
+	width: 100%;
+}
+
+.DateInput__disabled {
+	background: #f2f2f2;
+	color: #dbdbdb;
+}
+
+.DateInput_input {
+	font-weight: 200;
+	font-size: 19px;
+	line-height: 24px;
+	color: #484848;
+	background-color: #fff;
+	width: 100%;
+	padding: 11px 11px 9px;
+	border: 0;
+	border-top: 0;
+	border-right: 0;
+	border-bottom: 2px solid transparent;
+	border-left: 0;
+	border-radius: 0;
+}
+
+.DateInput_input__small {
+	font-size: 15px;
+	line-height: 18px;
+	letter-spacing: .2px;
+	padding: 7px 7px 5px;
+}
+
+.DateInput_input__regular {
+	font-weight: auto;
+}
+
+.DateInput_input__readOnly {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.DateInput_input__focused {
+	outline: 0;
+	background: #fff;
+	border: 0;
+	border-top: 0;
+	border-right: 0;
+	border-bottom: 2px solid #008489;
+	border-left: 0;
+}
+
+.DateInput_input__disabled {
+	background: #f2f2f2;
+	font-style: italic;
+}
+
+.DateInput_screenReaderMessage {
+	border: 0;
+	clip: rect(0,0,0,0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.DateInput_fang {
+	position: absolute;
+	width: 20px;
+	height: 10px;
+	left: 22px;
+	z-index: 2;
+}
+
+.DateInput_fangShape {
+	fill: #fff;
+}
+
+.DateInput_fangStroke {
+	stroke: #dbdbdb;
+	fill: transparent;
+}
+
+.DateRangePickerInput {
+	background-color: #fff;
+	display: inline-block;
+}
+
+.DateRangePickerInput__disabled {
+	background: #f2f2f2;
+}
+
+.DateRangePickerInput__withBorder {
+	border-radius: 2px;
+	border: 1px solid #dbdbdb;
+}
+
+.DateRangePickerInput__rtl {
+	direction: rtl;
+}
+
+.DateRangePickerInput__block {
+	display: block;
+}
+
+.DateRangePickerInput__showClearDates {
+	padding-right: 30px;
+}
+
+.DateRangePickerInput_arrow {
+	display: inline-block;
+	vertical-align: middle;
+	color: #484848;
+}
+
+.DateRangePickerInput_arrow_svg {
+	vertical-align: middle;
+	fill: #484848;
+	height: 24px;
+	width: 24px;
+}
+
+.DateRangePickerInput_clearDates {
+	background: 0 0;
+	border: 0;
+	color: inherit;
+	font: inherit;
+	line-height: normal;
+	overflow: visible;
+	cursor: pointer;
+	padding: 10px;
+	margin: 0 10px 0 5px;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.DateRangePickerInput_clearDates__small {
+	padding: 6px;
+}
+
+.DateRangePickerInput_clearDates_default:focus,.DateRangePickerInput_clearDates_default:hover {
+	background: #dbdbdb;
+	border-radius: 50%;
+}
+
+.DateRangePickerInput_clearDates__hide {
+	visibility: hidden;
+}
+
+.DateRangePickerInput_clearDates_svg {
+	fill: #82888a;
+	height: 12px;
+	width: 15px;
+	vertical-align: middle;
+}
+
+.DateRangePickerInput_clearDates_svg__small {
+	height: 9px;
+}
+
+.DateRangePickerInput_calendarIcon {
+	background: 0 0;
+	border: 0;
+	color: inherit;
+	font: inherit;
+	line-height: normal;
+	overflow: visible;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 10px;
+	margin: 0 5px 0 10px;
+}
+
+.DateRangePickerInput_calendarIcon_svg {
+	fill: #82888a;
+	height: 15px;
+	width: 14px;
+	vertical-align: middle;
+}
+
+.DateRangePicker {
+	position: relative;
+	display: inline-block;
+}
+
+.DateRangePicker__block {
+	display: block;
+}
+
+.DateRangePicker_picker {
+	z-index: 1;
+	background-color: #fff;
+	position: absolute;
+}
+
+.DateRangePicker_picker__rtl {
+	direction: rtl;
+}
+
+.DateRangePicker_picker__directionLeft {
+	left: 0;
+}
+
+.DateRangePicker_picker__directionRight {
+	right: 0;
+}
+
+.DateRangePicker_picker__portal {
+	background-color: rgba(0,0,0,.3);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.DateRangePicker_picker__fullScreenPortal {
+	background-color: #fff;
+}
+
+.DateRangePicker_closeButton {
+	background: 0 0;
+	border: 0;
+	color: inherit;
+	font: inherit;
+	line-height: normal;
+	overflow: visible;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 15px;
+	z-index: 2;
+}
+
+.DateRangePicker_closeButton:focus,.DateRangePicker_closeButton:hover {
+	color: #b0b3b4;
+	text-decoration: none;
+}
+
+.DateRangePicker_closeButton_svg {
+	height: 15px;
+	width: 15px;
+	fill: #cacccd;
+}
+
+.save-polis-block {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #d9d9d9;
+	margin-bottom: 20px;
+}
+
+
+::-webkit-input-placeholder {
+	color: #a3a3a3;
+}
+
+:-moz-placeholder,::-moz-placeholder {
+	color: #a3a3a3;
+}
+
+:-ms-input-placeholder {
+	color: #a3a3a3;
+}
+
+.clearfix:after,.clearfix:before {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.pull-left {
+	float: left;
+}
+
+.pull-right {
+	float: right;
+}
+
+
+body.modal-background-blur>#cherehapa-mobile-container,html.modal-background-blur>#cherehapa-mobile-container {
+	filter: blur(8px);
+}
+
+body.modal-body-height>#cherehapa-mobile-container,html.modal-body-height>#cherehapa-mobile-container {
+	min-height: 100vh;
+	overflow: hidden;
+}
+
+#cherehapa-mobile-container {
+	min-width: 320px;
+	position: relative;
+}
+
+.modal-overlay {
+	background: rgba(0,163,187,.2);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.inner {
+	background: #fff;
+	position: relative;
+	min-width: 320px;
+	padding: 0 10px;
+	margin: 0 auto;
+}
+
+.inner>h1 {
+	padding-left: 10px;
+}
+
+.content {
+	padding-top: 10px;
+}
+
+.content .cherehapa-osago-widget {
+	width: calc(100% - 20px)!important;
+	max-width: 300px;
+	margin: 0 auto 10px;
+	padding: 5px 10px;
+	border-radius: 20px;
+	box-shadow: 0 0 9px #1976d2;
+	position: relative;
+}
+
+.content .cherehapa-osago-widget>h2 {
+	margin: 10px 0;
+	font-size: 22px;
+}
+
+.content .cherehapa-osago-widget>div:first-of-type {
+	flex-flow: column wrap;
+}
+
+.content .cherehapa-osago-widget>div:first-of-type>* {
+	margin-bottom: 10px;
+}
+
+.content .cherehapa-osago-widget>div:first-of-type>.osago-widget-license-plate {
+	margin-bottom: 30px;
+}
+
+.content .cherehapa-osago-widget>div:first-of-type>.osago-widget-license-plate input {
+	max-width: 100%;
+	width: 100%;
+}
+
+.content .cherehapa-osago-widget>div:first-of-type>.osago-widget-vehicle-type>.osago-widget-select {
+	width: 100%;
+}
+
+.content .cherehapa-osago-widget>div:first-of-type>.osago-widget-policy-start {
+	max-width: 100%;
+	width: 100%;
+}
+
+.content .cherehapa-osago-widget>div:first-of-type>.osago-widget-link {
+	text-align: center;
+}
+
+.content .cherehapa-osago-widget>div:last-of-type {
+	position: absolute;
+	top: 128px;
+	left: 12px;
+}
+
+.content .cherehapa-osago-widget>div:last-of-type>label {
+	position: relative;
+}
+
+.content .cherehapa-osago-widget>div:last-of-type>label>input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+.menu-active {
+	padding-top: 57px;
+}
+
+.black-background {
+	width: 100%;
+	background: #000;
+	opacity: .3;
+	height: calc(100vh - 52px);
+	height: -webkit-calc(100% - 52px);
+	display: block;
+	position: fixed;
+	z-index: 9998;
+	top: 52px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.black-background.full {
+	top: 0;
+	height: 100%;
+}
+
+.back {
+	position: absolute;
+	right: 10px;
+	top: 0;
+}
+
+.back a {
+	text-decoration: none;
+	color: #1976d2;
+	font: .875em/100% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.che-button {
+	width: 250px;
+	text-align: center;
+	background: #ffe100;
+	color: #333;
+	display: inline-block;
+	padding: 10px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	border-radius: 5px;
+	font: 1.375em/120% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.che-button:hover {
+	background: #ffd500;
+	border: none;
+	outline: none;
+}
+
+.che-button.disabled {
+	background: #d9d9d9;
+	color: #a3a3a3;
+}
+
+.additional-button {
+	background: #2baac2;
+	border: none;
+	outline: none;
+	display: inline-block;
+	border-radius: 20px;
+	min-width: 40px;
+	min-height: 40px;
+	color: #fff;
+	cursor: pointer;
+	font: 1.125em/120% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+	box-shadow: 0 4px 10px rgba(0,17,74,.75);
+	position: fixed;
+	bottom: 20px;
+	left: 15px;
+	z-index: 100;
+}
+
+.additional-button.services {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background: #2baac2 url("https://static.cherehapa.ru/i/latest/mobile/advanced.svg") no-repeat 50% 50%;
+	background-size: 30px 40px;
+	text-indent: -10000px;
+}
+
+.additional-button.clear {
+	background: #2baac2 url("https://static.cherehapa.ru/i/latest/mobile/x_big.svg") no-repeat 50% 50%;
+	background-size: 20px 20px;
+	text-indent: -10000px;
+}
+
+.additional-button.apply {
+	padding: 0 40px;
+	left: 100px;
+}
+
+@media screen and (max-width:380px) {
+	.additional-button.apply {
+		padding: 0;
+		width: 40%;
+		left: 50%;
+		margin-left: -25%;
+	}
+}
+
+@media (min-width:600px) {
+	.additional-button.services {
+		left: 50%;
+		margin-left: -280px;
+	}
+
+	.additional-button.clear {
+		left: 50%;
+		margin-left: -285px;
+	}
+
+	.additional-button.apply {
+		left: 50%;
+		margin-left: -197px;
+	}
+}
+
+.page-button-wrap {
+	margin: 40px 0;
+	text-align: center;
+}
+
+.wrap {
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+	-webkit-flex-direction: column;
+	height: auto;
+	padding-bottom:20px;
+}
+
+
+.content {
+	-webkit-flex: 1 0 auto;
+	flex: 1 0 auto;
+}
+
+label.checkbox input[type=checkbox] {
+	display: none;
+}
+
+label.checkbox input[type=checkbox]~span {
+	position: relative;
+	display: inline-block;
+	font: 1em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	color: #333;
+	padding: 3px 0 3px 25px;
+}
+
+label.checkbox input[type=checkbox]~span:before {
+	content: "\2713";
+	width: 20px;
+	height: 20px;
+	line-height: 100%;
+	text-align: center;
+	position: absolute;
+	display: block;
+	background: #fff;
+	color: #fff;
+	border: 2px solid #2baac2;
+	border-radius: 2px;
+	left: 0;
+	top: 50%;
+	margin: -10px 5px 0 0;
+	box-sizing: border-box;
+	transition: all .1s ease-in-out;
+}
+
+label.checkbox input[type=checkbox]:checked~span:before {
+	background: #2baac2;
+}
+
+label.checkbox.right input[type=checkbox]~span:before {
+	left: auto;
+	right: 0;
+	margin-right: 0;
+	margin-left: 5px;
+}
+
+label.checkbox.right input[type=checkbox]~span {
+	width: 100%;
+	padding-left: 0;
+	padding-right: 25px;
+}
+
+.Select .Select-control {
+	border: none;
+	border-radius: 0;
+	padding: 0;
+	height: 33px;
+}
+
+.Select .Select-control:hover {
+	box-shadow: none;
+}
+
+.Select.Select--multi .Select-input {
+	margin-left: 5px;
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.Select.is-focused:not(.is-open)>.Select-control {
+	border: none;
+	box-shadow: none;
+}
+
+.Select .Select-value {
+	border: none;
+	color: #333;
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.Select .Select-value-icon:focus,.Select .Select-value-icon:hover {
+	border: none;
+	background: none;
+	outline: none;
+	color: #2baac2;
+}
+
+.Select .Select-value-icon {
+	border: none;
+	float: right;
+	padding-top: 3px;
+	padding-left: 0;
+}
+
+.Select .Select-value-label {
+	display: inline-block;
+	max-width: 140px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.Select .Select-arrow {
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/down.svg") no-repeat 1% 0;
+	background-size: 10px 6px;
+	border: none;
+	width: 10px;
+	height: 6px;
+}
+
+.Select.is-open .Select-arrow {
+	top: 0;
+	background-image: url("https://static.cherehapa.ru/i/latest/mobile/up.svg");
+}
+
+.Select .Select-option {
+	color: #333;
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.Select .Select-option.is-selected {
+	background-color: #2baac2;
+	color: #fff;
+}
+
+.Select .Select-option.is-focused {
+	background-color: #bceff5;
+	color: #333;
+}
+
+.Select .Select-menu-outer {
+	margin-top: 0;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	background-color: #fff;
+	border: none;
+	box-shadow: 0 0 21px rgba(24,172,190,.3);
+}
+
+.Select .Select-placeholder {
+	color: #a3a3a3;
+	padding-top: 8px;
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.Select.has-value.is-pseudo-focused.Select--single>.Select-control .Select-value .Select-value-label,.Select.has-value.Select--single>.Select-control .Select-value .Select-value-label {
+	color: #2baac2;
+}
+
+.che-switch {
+	cursor: pointer;
+	border: 1px solid #2baac2;
+	background: #fff;
+	border-radius: 20px;
+	margin: 10px 0 0;
+}
+
+.che-switch:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+.che-switch button {
+	display: block;
+	width: 50%;
+	background: transparent;
+	border: none;
+	outline: none;
+	border-radius: 20px;
+	padding: 6px 0 5px;
+	font: 1.286em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	color: #2baac2;
+	text-align: center;
+	float: left;
+}
+
+.che-switch button~button {
+	float: right;
+}
+
+.che-switch button.active {
+	background: #2baac2;
+	color: #fff;
+}
+
+.input-validate {
+	position: relative;
+}
+
+.input-validate .SingleDatePicker .DateInput,.input-validate.with-bottom-border {
+	border-color: red;
+}
+
+.input-validate:after {
+	content: "\437\430\43F\43E\43B\43D\438\442\435   \43F\43E\43B\435";
+	margin-top: 5px;
+	display: block;
+	width: 100%;
+	height: auto;
+	padding: 2px 0 0;
+	color: red;
+	text-align: center;
+	font: 14px/100% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	position: absolute;
+	bottom: -15px;
+}
+
+.input_with_validation_wrap {
+	position: relative;
+	min-height: 80px;
+}
+
+.input_with_validation_wrap.error label {
+	color: red;
+}
+
+.input_with_validation_wrap.error input {
+	border-color: red;
+}
+
+.input_with_validation_wrap label {
+	color: #1976d2;
+	font: .875em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	display: inline-block;
+	padding: 0 0 5px 8px;
+}
+
+.input_with_validation_wrap input {
+	border: 1px solid #1976d2;
+	border-radius: 15px;
+	padding: .3rem 1rem;
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	color: #333;
+	width: 100%;
+}
+
+.input_with_validation_wrap input:active,.input_with_validation_wrap input:focus {
+	outline: none;
+}
+
+.input_with_validation_wrap:after {
+	content: attr(data-error);
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: auto;
+	padding: 2px 0 0;
+	color: #333;
+	text-align: center;
+	font: .875em/110% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.che-check {
+	display: inline-block;
+	width: 16px;
+	height: 10px;
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/check.svg") no-repeat 6px 0;
+	background-size: 10px 10px;
+}
+
+.withHiddenContent {
+	color: #2baac2;
+	cursor: pointer;
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	padding: 0 0 0 27px;
+	margin: 0 0 7px;
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/down.svg") no-repeat 0 8px;
+	background-size: 10px 6px;
+}
+
+.withHiddenContent.isDisplay {
+	background-image: url("https://static.cherehapa.ru/i/latest/mobile/up.svg");
+}
+
+.hidden-content {
+	border: 4px solid #ffe100;
+	border-radius: 20px;
+	padding: 20px 10px;
+	margin: 0 -7px 14px;
+}
+
+.finish-content-bold-text small {
+	display: block;
+	font: .818em/130% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.save-polis-block {
+	text-align: center;
+	padding-bottom: 0;
+	color: #1976d2;
+	overflow: hidden;
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.save-polis-block .save-polis {
+	display: inline-block;
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	background: #f0f9fb url("https://static.cherehapa.ru/i/latest/mobile/save.svg") no-repeat 50% 12px;
+	background-size: 40px 37px;
+	margin-bottom: 20px;
+}
+
+.save-polis-block a {
+	margin-top: 55px;
+	display: block;
+	color: #1976d2;
+	text-decoration: none;
+}
+
+.save-polis-block .save-polis-link {
+	text-decoration: underline;
+	display: block;
+}
+
+.save-polis-block .policy-wait-text {
+	margin-top: 50px;
+}
+
+.download-pdf-files {
+	clear: both;
+	text-align: left;
+	color: #333;
+}
+
+.download-pdf-files a {
+	margin: 20px 0;
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	text-decoration: underline;
+	padding-left: 30px;
+	background: url("https://static.cherehapa.ru/i/latest/icons/download-file-color.svg") no-repeat 0 3px;
+}
+
+.download-pdf-files a:hover {
+	text-decoration: none;
+}
+
+.footer {
+	display: block;
+}
+
+.footer_image {
+	width: 100%;
+	height: 80px;
+	background: #fff no-repeat 70% 100%;
+	background-image: url("https://static.cherehapa.ru/i/latest/mobile/footer.gif");
+}
+
+@media only screen and (-o-min-device-pixel-ratio:2/1),only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min--moz-device-pixel-ratio:2),only screen and (min-device-pixel-ratio:2),only screen and (min-resolution:2dppx),only screen and (min-resolution:192dpi) {
+	.footer_image {
+		background-image: url("https://static.cherehapa.ru/i/latest/mobile/footer@2x.gif");
+		background-size: 1250px 76px;
+	}
+}
+
+.footer_full_version {
+	width: 100%;
+	text-align: center;
+	background: #ffe04a;
+	padding-bottom: 15px;
+}
+
+.footer_link {
+	display: inline-block;
+	color: #333;
+	text-decoration: none;
+}
+
+.footer_icon {
+	display: inline-block;
+	margin: 0 10px;
+	position: relative;
+	top: 2px;
+}
+
+.footer_icon svg {
+	width: 15px;
+	height: 15px;
+}
+
+.contact-us {
+	width: 94%;
+	height: 260px;
+	max-width: 600px;
+	margin: auto;
+	background: #fff;
+	padding: 20px 5px;
+	border-radius: 10px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	box-shadow: 0 5px 15px rgba(0,0,0,.5);
+}
+
+.contact-us>div:first-of-type {
+	font: 24px/120% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+	color: #1976d2;
+	text-align: center;
+	margin-top: -10px;
+	margin-bottom: 20px;
+}
+
+.contact-us .contact-close {
+	display: inline-block;
+	width: 21px;
+	height: 21px;
+	position: absolute;
+	top: 12px;
+	right: 15px;
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/x.svg") no-repeat 50%;
+	background-size: 100%;
+	-webkit-appearance: none;
+	border: none;
+	cursor: pointer;
+}
+
+.contact-us .mango-call-site>button {
+	display: block;
+	margin: 0 auto;
+	width: 96%;
+	background: #1976d2;
+	border-top-left-radius: 35px;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 35px;
+	border-bottom-right-radius: 70px;
+	padding: 12px 0;
+	outline: none;
+	-webkit-appearance: none;
+	cursor: pointer;
+	font: 18px/120% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+	color: #fff;
+	border: none;
+	text-align: center;
+}
+
+.contact-us .mango-call-site>button>span {
+	position: relative;
+}
+
+.contact-us .mango-call-site>button>span:before {
+	content: "";
+	display: inline-block;
+	width: 32px;
+	height: 28px;
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/call_white.svg") no-repeat 50%;
+	background-size: 100%;
+	position: absolute;
+	top: -5px;
+	left: -40px;
+}
+
+.contact-us>a {
+	display: block;
+	margin: 20px auto;
+	width: 96%;
+	background: #1976d2;
+	border-top-left-radius: 35px;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 35px;
+	border-bottom-right-radius: 70px;
+	padding: 12px 0;
+	text-decoration: none;
+	font: 18px/120% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+	color: #fff;
+	text-align: center;
+}
+
+.contact-us>a>span {
+	position: relative;
+}
+
+.contact-us>a>span:before {
+	content: "";
+	display: inline-block;
+	width: 23px;
+	height: 28px;
+	color: #fff;
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/phone_white.svg") no-repeat 50%;
+	background-size: 100%;
+	position: absolute;
+	top: -2px;
+	left: -30px;
+}
+
+.contact-us .jivosite-chat-button {
+	display: block;
+	margin: 0 auto;
+	width: 96%;
+	background: #1976d2;
+	border-top-left-radius: 35px;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 35px;
+	border-bottom-right-radius: 70px;
+	padding: 12px 0;
+	outline: none;
+	-webkit-appearance: none;
+	cursor: pointer;
+	font: 18px/120% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+	color: #fff;
+	border: none;
+	text-align: center;
+}
+
+.contact-us .jivosite-chat-button>span {
+	position: relative;
+}
+
+.contact-us .jivosite-chat-button>span:before {
+	content: "";
+	display: inline-block;
+	width: 32px;
+	height: 26px;
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/chat_white.svg") no-repeat 50%;
+	background-size: 100%;
+	position: absolute;
+	top: -2px;
+	left: -40px;
+}
+
+jdiv.button_1O {
+	display: none;
+}
+
+.main-form-switch {
+	max-width: 320px;
+	min-height: 100px;
+	width: calc(100% - 20px);
+	margin: -35px auto 10px;
+	position: relative;
+}
+
+.main-form-switch .switch-vzr {
+	display: inline-block;
+	position: absolute;
+	width: 160px;
+	height: 72px;
+	background: transparent url("https://static.cherehapa.ru/i/latest/main/vzr/page_off.png") 50%/100% no-repeat;
+	left: 20px;
+	bottom: 0;
+	border: none;
+	outline: none;
+}
+
+.main-form-switch .switch-vzr.active {
+	background-image: url("https://static.cherehapa.ru/i/latest/main/vzr/page_on.png");
+}
+
+.main-form-switch .switch-vzr>span {
+	display: block;
+	margin: 0 auto;
+	position: absolute;
+	top: 38px;
+	left: 0;
+	right: 0;
+	font: 15px/120% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+	color: #1976d2;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.main-form-switch .switch-osago {
+	display: inline-block;
+	position: absolute;
+	width: 100px;
+	height: 56px;
+	background: transparent url("https://static.cherehapa.ru/i/latest/main/osago/page_off.png") 50%/100% no-repeat;
+	right: 10px;
+	bottom: 0;
+	border: none;
+	outline: none;
+}
+
+.main-form-switch .switch-osago.active {
+	background-image: url("https://static.cherehapa.ru/i/latest/main/osago/page_on.png");
+}
+
+.main-form-switch .switch-osago>span {
+	display: block;
+	margin: 0 auto;
+	position: absolute;
+	top: 22px;
+	left: 0;
+	right: 0;
+	font: 15px/120% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+	color: #1976d2;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.menu-modal-overlay {
+	z-index: 2;
+}
+
+.menu-container {
+	width: 100%;
+	min-width: 320px;
+	min-height: 100vh;
+	margin: 0 auto;
+	border: 10px solid #1976d2;
+	border-radius: 30px;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 4;
+	overflow: hidden;
+}
+
+.menu-container .menu-title {
+	display: block;
+	width: calc(100% - 2em);
+	margin: 60px auto 0;
+	font: 20px/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.menu-container .main-form-switch {
+	width: 100%;
+	margin: 0 0 20px;
+}
+
+.menu-container .navigation-container {
+	background: #fcfcfc;
+	border: 1px solid #ddd;
+	border-right: none;
+	border-left: none;
+	padding: 15px 0 25px;
+}
+
+.menu-container .navigation-container>h2 {
+	display: block;
+	width: calc(100% - 2em);
+	margin: 0 auto 30px;
+	font: 20px/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.menu-container .navigation-container>a {
+	width: calc(100% - 4em);
+	display: block;
+	margin: 0 auto 5%;
+	font: 16px/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	color: #1976d2;
+	text-decoration: none;
+	position: relative;
+}
+
+.menu-container .navigation-container>a:after {
+	content: "";
+	display: inline-block;
+	width: 20px;
+	height: 2px;
+	background: #1976d2;
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+}
+
+.scroll_top_icon {
+	display: none;
+	opacity: 0;
+	width: 64px;
+	height: 64px;
+	position: fixed;
+	top: 10px;
+	left: 50%;
+	margin-left: -32px;
+	background: rgba(43,170,192,.07) url("https://static.cherehapa.ru/i/latest/mobile/rocket.svg") no-repeat 50% 50%;
+	background-size: 28px 48px;
+	cursor: pointer;
+	border-radius: 50%;
+}
+.scroll_top_icon.isDisplay {
+	display: block;
+	opacity: 1;
+	z-index: 20;
+}
+
+@font-face {
+	font-family:PFSquareSansPro-Regular;src:url("//cdn.cherehapa.ru/f/latest/PFSquareSansPro-Regular.eot");src:url("//cdn.cherehapa.ru/f/latest/PFSquareSansPro-Regular.eot?#iefix") format("embedded-opentype"),url("//cdn.cherehapa.ru/f/latest/PFSquareSansPro-Regular.woff") format("woff"),url("//cdn.cherehapa.ru/f/latest/PFSquareSansPro-Regular.ttf") format("truetype"),url("//cdn.cherehapa.ru/f/latest/PFSquareSansPro-Regular.svg#PFSquareSansPro-Regular") format("svg");font-weight:400;font-style:normal;
+}
+
+@font-face {
+	font-family:PFSquareSansProBold;src:url("//cdn.cherehapa.ru/f/latest/pfsquaresanspro-boldwebfont.eot");src:url("//cdn.cherehapa.ru/f/latest/pfsquaresanspro-boldwebfont.eot?#iefix") format("embedded-opentype"),url("//cdn.cherehapa.ru/f/latest/pfsquaresanspro-boldwebfont.woff") format("woff"),url("//cdn.cherehapa.ru/f/latest/pfsquaresanspro-boldwebfont.ttf") format("truetype"),url("//cdn.cherehapa.ru/f/latest/pfsquaresanspro-boldwebfont.svg#PFSquareSansProBold") format("svg");font-weight:400;font-style:normal;
+}
+
+@font-face {
+	font-family:PFSquareSansProMediumRegular;src:url("//cdn.cherehapa.ru/f/latest/pfsquaresanspro-mediumwebfont.eot");src:url("//cdn.cherehapa.ru/f/latest/pfsquaresanspro-mediumwebfont.eot?#iefix") format("embedded-opentype"),url("//cdn.cherehapa.ru/f/latest/pfsquaresanspro-mediumwebfont.woff") format("woff"),url("//cdn.cherehapa.ru/f/latest/pfsquaresanspro-mediumwebfont.ttf") format("truetype"),url("//cdn.cherehapa.ru/f/latest/pfsquaresanspro-mediumwebfont.svg#PFSquareSansProMediumRegular") format("svg");font-weight:400;font-style:normal;
+}
+
+.element:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+label.checkbox input[type=checkbox] {
+	display: inline;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+label.checkbox input[type=checkbox]~.checkbox-visual {
+	position: relative;
+}
+
+label.checkbox input[type=checkbox]~.checkbox-visual .checkbox-label {
+	font: 14px/120% PFSquareSansPro-Regular,Tahoma,Verdana,Segoe,sans-serif;
+	padding-left: 22px;
+	text-transform: lowercase;
+	color: #333;
+	display: inline-block;
+	vertical-align: top;
+	cursor: pointer;
+	user-select: none;
+}
+
+label.checkbox input[type=checkbox]~.checkbox-visual .checkbox-box {
+	width: 14px;
+	height: 14px;
+	line-height: 100%;
+	text-align: center;
+	position: absolute;
+	font-size: 12px;
+	display: block;
+	background: #fff;
+	border: 2px solid #1976d2;
+	border-radius: 4px;
+	left: 0;
+	top: 0;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+label.checkbox input[type=checkbox]~.checkbox-visual .checkbox-box:after {
+	content: "";
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	background: transparent url("https://static.cherehapa.ru/i/latest/main/checkmark_bondi.svg") 50%/100% no-repeat;
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	opacity: 0;
+	transition: .5s ease;
+}
+
+label.checkbox input[type=checkbox]:checked~.checkbox-visual .checkbox-box:after {
+	opacity: 1;
+}
+
+.currency-wrap {
+	margin-top: 20px;
+}
+
+.currency-wrap:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+.currency-wrap .currency-text {
+	display: inline-block;
+	margin: 6px 0;
+	font: 1em/100% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.currency-wrap .currency-switch {
+	float: right;
+	width: 72px;
+	margin: 0;
+}
+
+.currency-wrap .currency-switch button {
+	font: 1.125em/100% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	padding: 5px 0 3px;
+}
+
+.medicine-wrap,.multipolicy-select-container {
+	margin-top: 20px;
+	font: 1em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.medicine-wrap:after,.multipolicy-select-container:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+.medicine-wrap .medicine-text,.medicine-wrap .multipolicy-text,.multipolicy-select-container .medicine-text,.multipolicy-select-container .multipolicy-text {
+	display: inline-block;
+	margin-top: 7px;
+}
+
+.medicine-wrap .medicine,.medicine-wrap .multipolicy-select,.multipolicy-select-container .medicine,.multipolicy-select-container .multipolicy-select {
+	float: right;
+	width: 150px;
+}
+
+.medicine-wrap .medicine .Select-arrow-zone,.medicine-wrap .multipolicy-select .Select-arrow-zone,.multipolicy-select-container .medicine .Select-arrow-zone,.multipolicy-select-container .multipolicy-select .Select-arrow-zone {
+	vert-align: middle;
+}
+
+.medicine-wrap .medicine .Select-value-label,.medicine-wrap .multipolicy-select .Select-value-label,.multipolicy-select-container .medicine .Select-value-label,.multipolicy-select-container .multipolicy-select .Select-value-label {
+	display: inline-block;
+	margin-right: 30px;
+}
+
+.medicine-wrap .medicine>.Select-control .Select-value,.medicine-wrap .multipolicy-select>.Select-control .Select-value,.multipolicy-select-container .medicine>.Select-control .Select-value,.multipolicy-select-container .multipolicy-select>.Select-control .Select-value {
+	text-align: right;
+}
+
+.medicine-wrap .has-value.is-pseudo-focused.Select--single>.Select-control .Select-value .Select-value-label,.medicine-wrap .has-value.Select--single>.Select-control .Select-value .Select-value-label,.multipolicy-select-container .has-value.is-pseudo-focused.Select--single>.Select-control .Select-value .Select-value-label,.multipolicy-select-container .has-value.Select--single>.Select-control .Select-value .Select-value-label {
+	color: #333;
+	text-align: right;
+}
+
+.included-options-wrap {
+	margin-top: 8px;
+}
+
+.included-options-wrap .included-options-item {
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/check.svg") no-repeat 6px 0;
+	background-size: 10px 10px;
+	padding: 0 0 0 38px;
+	margin: 8px 0 12px;
+	font: .875em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.included-options-wrap .included-options-item:last-child {
+	margin-bottom: 9px;
+}
+
+.additional-options-wrap {
+	margin-top: 17px;
+}
+
+.additional-options-wrap label.checkbox {
+	display: inline-block;
+	margin-bottom: 15px;
+}
+
+.additional-options-wrap label.checkbox input[type=checkbox]~span {
+	padding-left: 40px;
+	font: .875em/150% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.additional-options-wrap label.checkbox input[type=checkbox]~span:before {
+	top: 0;
+	margin-top: 2px;
+}
+
+.services-list {
+	margin: 20px 0 0;
+	border-top: 1px solid #d9d9d9;
+	padding: 15px 0 8px;
+}
+
+.services-list .services-item {
+	margin: 0 0 13px 6px;
+}
+
+.services-list h3 {
+	margin: 0 0 33px;
+	font: 1em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.services-list .checkbox .label-text {
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.services-list .Select {
+	margin: 8px 0;
+}
+
+.services-list .Select .Select-arrow-zone {
+	padding-right: 0;
+	width: 20px;
+}
+
+.services-list .has-value.is-pseudo-focused.Select--single>.Select-control .Select-value .Select-value-label,.services-list .has-value.Select--single>.Select-control .Select-value .Select-value-label {
+	color: #333;
+}
+
+.services-list .services-hint {
+	margin: 33px 0 0 6px;
+}
+
+.services-list .services-hint .services-hint-link {
+	color: #333;
+	font: 1.125em/100% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	display: block;
+	position: relative;
+}
+
+.services-list .services-hint .services-hint-link .services-hint-icon {
+	line-height: 100%;
+	text-align: center;
+	position: absolute;
+	display: block;
+	left: auto;
+	right: 0;
+	top: 0;
+}
+
+.services-list .services-hint .services-hint-link .services-hint-icon svg {
+	width: 20px;
+	height: 20px;
+}
+
+.service-checkbox-wrap {
+	clear: both;
+	margin: 0 0 20px 6px;
+}
+
+.service-checkbox-wrap label.checkbox input[type=checkbox]~span {
+	font-size: 1.125em;
+	padding-left: 33px;
+	color: #a3a3a3;
+	cursor: pointer;
+}
+::-webkit-input-placeholder {
+	color: #a3a3a3;
+}
+
+:-moz-placeholder,::-moz-placeholder {
+	color: #a3a3a3;
+}
+
+:-ms-input-placeholder {
+	color: #a3a3a3;
+}
+
+.clearfix:after,.clearfix:before {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.pull-left {
+	float: left;
+}
+
+.pull-right {
+	float: right;
+}
+
+
+body.modal-background-blur>#cherehapa-mobile-container,html.modal-background-blur>#cherehapa-mobile-container {
+	filter: blur(8px);
+}
+
+body.modal-body-height>#cherehapa-mobile-container,html.modal-body-height>#cherehapa-mobile-container {
+	min-height: 100vh;
+	overflow: hidden;
+}
+
+#cherehapa-mobile-container {
+	min-width: 320px;
+	position: relative;
+}
+
+.modal-overlay {
+	background: rgba(0,163,187,.2);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.inner {
+	background: #fff;
+	position: relative;
+	min-width: 320px;
+	padding: 0 10px;
+	margin: 0 auto;
+}
+
+.inner>h1 {
+	padding-left: 10px;
+}
+
+.content {
+	padding-top: 10px;
+}
+
+.content .cherehapa-osago-widget {
+	width: calc(100% - 20px)!important;
+	max-width: 300px;
+	margin: 0 auto 10px;
+	padding: 5px 10px;
+	border-radius: 20px;
+	box-shadow: 0 0 9px #1976d2;
+	position: relative;
+}
+
+.content .cherehapa-osago-widget>h2 {
+	margin: 10px 0;
+	font-size: 22px;
+}
+
+.content .cherehapa-osago-widget>div:first-of-type {
+	flex-flow: column wrap;
+}
+
+.content .cherehapa-osago-widget>div:first-of-type>* {
+	margin-bottom: 10px;
+}
+
+.content .cherehapa-osago-widget>div:first-of-type>.osago-widget-license-plate {
+	margin-bottom: 30px;
+}
+
+.content .cherehapa-osago-widget>div:first-of-type>.osago-widget-license-plate input {
+	max-width: 100%;
+	width: 100%;
+}
+
+.content .cherehapa-osago-widget>div:first-of-type>.osago-widget-vehicle-type>.osago-widget-select {
+	width: 100%;
+}
+
+.content .cherehapa-osago-widget>div:first-of-type>.osago-widget-policy-start {
+	max-width: 100%;
+	width: 100%;
+}
+
+.content .cherehapa-osago-widget>div:first-of-type>.osago-widget-link {
+	text-align: center;
+}
+
+.content .cherehapa-osago-widget>div:last-of-type {
+	position: absolute;
+	top: 128px;
+	left: 12px;
+}
+
+.content .cherehapa-osago-widget>div:last-of-type>label {
+	position: relative;
+}
+
+.content .cherehapa-osago-widget>div:last-of-type>label>input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+.menu-active {
+	padding-top: 57px;
+}
+
+.black-background {
+	width: 100%;
+	background: #000;
+	opacity: .3;
+	height: calc(100vh - 52px);
+	height: -webkit-calc(100% - 52px);
+	display: block;
+	position: fixed;
+	z-index: 9998;
+	top: 52px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.black-background.full {
+	top: 0;
+	height: 100%;
+}
+
+.back {
+	position: absolute;
+	right: 10px;
+	top: 0;
+}
+
+.back a {
+	text-decoration: none;
+	color: #1976d2;
+	font: .875em/100% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.che-button {
+	width: 250px;
+	text-align: center;
+	background: #ffe100;
+	color: #333;
+	display: inline-block;
+	padding: 10px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	border-radius: 5px;
+	font: 1.375em/120% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.che-button:hover {
+	background: #ffd500;
+	border: none;
+	outline: none;
+}
+
+.che-button.disabled {
+	background: #d9d9d9;
+	color: #a3a3a3;
+}
+
+.additional-button {
+	background: #2baac2;
+	border: none;
+	outline: none;
+	display: inline-block;
+	border-radius: 20px;
+	min-width: 40px;
+	min-height: 40px;
+	color: #fff;
+	cursor: pointer;
+	font: 1.125em/120% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+	box-shadow: 0 4px 10px rgba(0,17,74,.75);
+	position: fixed;
+	bottom: 20px;
+	left: 15px;
+	z-index: 100;
+}
+
+.additional-button.services {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background: #2baac2 url("https://static.cherehapa.ru/i/latest/mobile/advanced.svg") no-repeat 50% 50%;
+	background-size: 30px 40px;
+	text-indent: -10000px;
+}
+
+.additional-button.clear {
+	background: #2baac2 url("https://static.cherehapa.ru/i/latest/mobile/x_big.svg") no-repeat 50% 50%;
+	background-size: 20px 20px;
+	text-indent: -10000px;
+}
+
+.additional-button.apply {
+	padding: 0 40px;
+	left: 100px;
+}
+
+@media screen and (max-width:380px) {
+	.additional-button.apply {
+		padding: 0;
+		width: 40%;
+		left: 50%;
+		margin-left: -25%;
+	}
+}
+
+@media (min-width:600px) {
+	.additional-button.services {
+		left: 50%;
+		margin-left: -280px;
+	}
+
+	.additional-button.clear {
+		left: 50%;
+		margin-left: -285px;
+	}
+
+	.additional-button.apply {
+		left: 50%;
+		margin-left: -197px;
+	}
+}
+
+.page-button-wrap {
+	margin: 40px 0;
+	text-align: center;
+}
+
+.wrap {
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+	-webkit-flex-direction: column;
+	height: auto;
+}
+
+
+
+.content {
+	-webkit-flex: 1 0 auto;
+	flex: 1 0 auto;
+}
+
+label.checkbox input[type=checkbox] {
+	display: none;
+}
+
+label.checkbox input[type=checkbox]~span {
+	position: relative;
+	display: inline-block;
+	font: 1em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	color: #333;
+	padding: 3px 0 3px 25px;
+}
+
+label.checkbox input[type=checkbox]~span:before {
+	content: "\2713";
+	width: 20px;
+	height: 20px;
+	line-height: 100%;
+	text-align: center;
+	position: absolute;
+	display: block;
+	background: #fff;
+	color: #fff;
+	border: 2px solid #2baac2;
+	border-radius: 2px;
+	left: 0;
+	top: 50%;
+	margin: -10px 5px 0 0;
+	box-sizing: border-box;
+	transition: all .1s ease-in-out;
+}
+
+label.checkbox input[type=checkbox]:checked~span:before {
+	background: #2baac2;
+}
+
+label.checkbox.right input[type=checkbox]~span:before {
+	left: auto;
+	right: 0;
+	margin-right: 0;
+	margin-left: 5px;
+}
+
+label.checkbox.right input[type=checkbox]~span {
+	width: 100%;
+	padding-left: 0;
+	padding-right: 25px;
+}
+
+.Select .Select-control {
+	border: none;
+	border-radius: 0;
+	padding: 0;
+	height: 33px;
+}
+
+.Select .Select-control:hover {
+	box-shadow: none;
+}
+
+.Select.Select--multi .Select-input {
+	margin-left: 5px;
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.Select.is-focused:not(.is-open)>.Select-control {
+	border: none;
+	box-shadow: none;
+}
+
+.Select .Select-value {
+	border: none;
+	color: #333;
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.Select .Select-value-icon:focus,.Select .Select-value-icon:hover {
+	border: none;
+	background: none;
+	outline: none;
+	color: #2baac2;
+}
+
+.Select .Select-value-icon {
+	border: none;
+	float: right;
+	padding-top: 3px;
+	padding-left: 0;
+}
+
+.Select .Select-value-label {
+	display: inline-block;
+	max-width: 140px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.Select .Select-arrow {
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/down.svg") no-repeat 1% 0;
+	background-size: 10px 6px;
+	border: none;
+	width: 10px;
+	height: 6px;
+}
+
+.Select.is-open .Select-arrow {
+	top: 0;
+	background-image: url("https://static.cherehapa.ru/i/latest/mobile/up.svg");
+}
+
+.Select .Select-option {
+	color: #333;
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.Select .Select-option.is-selected {
+	background-color: #2baac2;
+	color: #fff;
+}
+
+.Select .Select-option.is-focused {
+	background-color: #bceff5;
+	color: #333;
+}
+
+.Select .Select-menu-outer {
+	margin-top: 0;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	background-color: #fff;
+	border: none;
+	box-shadow: 0 0 21px rgba(24,172,190,.3);
+}
+
+.Select .Select-placeholder {
+	color: #a3a3a3;
+	padding-top: 8px;
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.Select.has-value.is-pseudo-focused.Select--single>.Select-control .Select-value .Select-value-label,.Select.has-value.Select--single>.Select-control .Select-value .Select-value-label {
+	color: #2baac2;
+}
+
+.che-switch {
+	cursor: pointer;
+	border: 1px solid #2baac2;
+	background: #fff;
+	border-radius: 20px;
+	margin: 10px 0 0;
+}
+
+.che-switch:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+.che-switch button {
+	display: block;
+	width: 50%;
+	background: transparent;
+	border: none;
+	outline: none;
+	border-radius: 20px;
+	padding: 6px 0 5px;
+	font: 1.286em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	color: #2baac2;
+	text-align: center;
+	float: left;
+}
+
+.che-switch button~button {
+	float: right;
+}
+
+.che-switch button.active {
+	background: #2baac2;
+	color: #fff;
+}
+
+.date-end-invalid .date-picker-wrap:nth-child(2),.date-start-invalid .date-picker-wrap:first-child,.input-validate {
+	position: relative;
+}
+
+.date-end-invalid .date-picker-wrap:nth-child(2) .SingleDatePicker .DateInput,.date-end-invalid .with-bottom-border.date-picker-wrap:nth-child(2),.date-start-invalid .date-picker-wrap:first-child .SingleDatePicker .DateInput,.date-start-invalid .with-bottom-border.date-picker-wrap:first-child,.input-validate .SingleDatePicker .DateInput,.input-validate.with-bottom-border {
+	border-color: red;
+}
+
+.date-end-invalid .date-picker-wrap:nth-child(2):after,.date-start-invalid .date-picker-wrap:first-child:after,.input-validate:after {
+	content: "\437\430\43F\43E\43B\43D\438\442\435   \43F\43E\43B\435";
+	margin-top: 5px;
+	display: block;
+	width: 100%;
+	height: auto;
+	padding: 2px 0 0;
+	color: red;
+	text-align: center;
+	font: 14px/100% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	position: absolute;
+	bottom: -15px;
+}
+
+.input_with_validation_wrap {
+	position: relative;
+	min-height: 80px;
+}
+
+.input_with_validation_wrap.error label {
+	color: red;
+}
+
+.input_with_validation_wrap.error input {
+	border-color: red;
+}
+
+.input_with_validation_wrap label {
+	color: #1976d2;
+	font: .875em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	display: inline-block;
+	padding: 0 0 5px 8px;
+}
+
+.input_with_validation_wrap input {
+	border: 1px solid #1976d2;
+	border-radius: 15px;
+	padding: .3rem 1rem;
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	color: #333;
+	width: 100%;
+}
+
+.input_with_validation_wrap input:active,.input_with_validation_wrap input:focus {
+	outline: none;
+}
+
+.input_with_validation_wrap:after {
+	content: attr(data-error);
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: auto;
+	padding: 2px 0 0;
+	color: #333;
+	text-align: center;
+	font: .875em/110% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.che-check {
+	display: inline-block;
+	width: 16px;
+	height: 10px;
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/check.svg") no-repeat 6px 0;
+	background-size: 10px 10px;
+}
+
+.withHiddenContent {
+	color: #2baac2;
+	cursor: pointer;
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	padding: 0 0 0 27px;
+	margin: 0 0 7px;
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/down.svg") no-repeat 0 8px;
+	background-size: 10px 6px;
+}
+
+.withHiddenContent.isDisplay {
+	background-image: url("https://static.cherehapa.ru/i/latest/mobile/up.svg");
+}
+
+.hidden-content {
+	border: 4px solid #ffe100;
+	border-radius: 20px;
+	padding: 20px 10px;
+	margin: 0 -7px 14px;
+}
+
+.finish-content-bold-text small {
+	display: block;
+	font: .818em/130% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.save-polis-block {
+	text-align: center;
+	padding-bottom: 0;
+	color: #1976d2;
+	overflow: hidden;
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.save-polis-block .save-polis {
+	display: inline-block;
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	background: #f0f9fb url("https://static.cherehapa.ru/i/latest/mobile/save.svg") no-repeat 50% 12px;
+	background-size: 40px 37px;
+	margin-bottom: 20px;
+}
+
+.save-polis-block a {
+	margin-top: 55px;
+	display: block;
+	color: #1976d2;
+	text-decoration: none;
+}
+
+.save-polis-block .save-polis-link {
+	text-decoration: underline;
+	display: block;
+}
+
+.save-polis-block .policy-wait-text {
+	margin-top: 50px;
+}
+
+.download-pdf-files {
+	clear: both;
+	text-align: left;
+	color: #333;
+}
+
+.download-pdf-files a {
+	margin: 20px 0;
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	text-decoration: underline;
+	padding-left: 30px;
+	background: url("https://static.cherehapa.ru/i/latest/icons/download-file-color.svg") no-repeat 0 3px;
+}
+
+.download-pdf-files a:hover {
+	text-decoration: none;
+}
+
+.cherehapa-dates {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.cherehapa-dates .date-picker-wrap {
+	width: 100%;
+	height: 45px;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.cherehapa-dates .date-picker-wrap:nth-child(2) {
+	margin-bottom: 5px;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker {
+	width: 100%;
+	border: none;
+	height: 33px;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .SingleDatePicker__picker,.cherehapa-dates .date-picker-wrap .SingleDatePicker .SingleDatePicker_picker {
+	z-index: 10;
+	top: 55px;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .SingleDatePickerInput {
+	width: 100%;
+	border: none;
+	background-color: #fff;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .SingleDatePickerInput__clear_date {
+	padding: 0;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .SingleDatePickerInput .DateInput {
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	width: 100%;
+	color: #333;
+	padding: 0;
+	position: relative;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .SingleDatePickerInput .DateInput:before {
+	content: "";
+	display: inline-block;
+	width: 30px;
+	height: 26px;
+	background: url("https://static.cherehapa.ru/i/latest/mobile/date.svg") 50%/100% no-repeat;
+	position: absolute;
+	top: 9px;
+	left: 15px;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .SingleDatePickerInput .DateInput::placeholder {
+	color: #999;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .SingleDatePickerInput .DateInput_input {
+	height: 45px;
+	border: 2px solid #1976d2;
+	border-radius: 15px;
+	font: 18px/120% PFSquareSansPro-Regular,Tahoma,Verdana,Segoe,sans-serif;
+	color: #333;
+	padding: 3px 15px 0 55px;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .SingleDatePickerInput .DateInput__with_caret:after,.cherehapa-dates .date-picker-wrap .SingleDatePicker .SingleDatePickerInput .DateInput__with_caret:before {
+	display: none;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .SingleDatePickerInput .DateInput__disabled {
+	opacity: .5;
+	background: transparent;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .SingleDatePickerInput .DateInput__display_text {
+	padding: 6px 5px 6px 40px;
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/date.svg") no-repeat 1% 0;
+	background-size: 35px 26px;
+	color: #a3a3a3;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .SingleDatePickerInput .DateInput__display_text.DateInput__display-text__has_input {
+	color: #2baac2;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .SingleDatePickerInput .DateInput__display_text.DateInput__display-text__has_input.DateInput__display-text__focused {
+	color: #333;
+	border: none;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .CalendarDay {
+	border: none;
+	position: relative;
+	height: 32px;
+	color: #333;
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	outline: none;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .CalendarDay.CalendarDay__blocked_out_of_range {
+	color: #8c8c8c;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .CalendarDay__selected,.cherehapa-dates .date-picker-wrap .SingleDatePicker .CalendarDay__selected_end,.cherehapa-dates .date-picker-wrap .SingleDatePicker .CalendarDay__selected_start {
+	background: #fff;
+	border: none;
+	z-index: 1;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .CalendarDay__selected:after,.cherehapa-dates .date-picker-wrap .SingleDatePicker .CalendarDay__selected_end:after,.cherehapa-dates .date-picker-wrap .SingleDatePicker .CalendarDay__selected_start:after {
+	content: "";
+	display: block;
+	position: absolute;
+	z-index: -1;
+	top: 50%;
+	left: 50%;
+	margin-top: -12px;
+	margin-left: -18px;
+	width: 36px;
+	height: 24px;
+	background: #ffd500;
+	border-radius: 15px;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .CalendarDay__default:hover,.cherehapa-dates .date-picker-wrap .SingleDatePicker .CalendarDay__hovered {
+	background: transparent;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .DayPickerNavigation__next__default,.cherehapa-dates .date-picker-wrap .SingleDatePicker .DayPickerNavigation__prev__default,.cherehapa-dates .date-picker-wrap .SingleDatePicker .DayPickerNavigation_button__default {
+	border: none;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .DayPickerNavigation__next__default:focus,.cherehapa-dates .date-picker-wrap .SingleDatePicker .DayPickerNavigation__prev__default:focus,.cherehapa-dates .date-picker-wrap .SingleDatePicker .DayPickerNavigation_button__default:focus {
+	outline: none;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .DayPickerNavigation__next__default:active,.cherehapa-dates .date-picker-wrap .SingleDatePicker .DayPickerNavigation__prev__default:active,.cherehapa-dates .date-picker-wrap .SingleDatePicker .DayPickerNavigation_button__default:active {
+	background: #bceff5;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .DayPickerNavigation__horizontal .DayPickerNavigation__next__default svg,.cherehapa-dates .date-picker-wrap .SingleDatePicker .DayPickerNavigation__horizontal .DayPickerNavigation__prev__default svg,.cherehapa-dates .date-picker-wrap .SingleDatePicker .DayPickerNavigation_button svg {
+	fill: #333;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .DayPicker__week_header,.cherehapa-dates .date-picker-wrap .SingleDatePicker .DayPicker_weekHeader {
+	font: 1em/120% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+	top: 55px;
+	color: #1976d2;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .DayPicker__week_header small,.cherehapa-dates .date-picker-wrap .SingleDatePicker .DayPicker_weekHeader small {
+	font-size: 18px;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .DayPicker__horizontal {
+	box-shadow: 0 0 21px rgba(24,172,190,.3);
+	border-radius: 0 0 5px 5px;
+}
+
+.cherehapa-dates .date-picker-wrap .SingleDatePicker .CalendarMonth__caption,.cherehapa-dates .date-picker-wrap .SingleDatePicker .CalendarMonth_caption {
+	color: #333;
+	font: 18px/120% PFSquareSansPro-Regular,Tahoma,Verdana,Segoe,sans-serif;
+	margin-bottom: 10px;
+}
+
+.cherehapa-dates .date-picker-wrap .insured-days-info {
+	font: 14px/120% PFSquareSansPro-Regular,Tahoma,Verdana,Segoe,sans-serif;
+	color: #999;
+}
+
+.cherehapa-dates .multipolicy-block {
+	width: 100%;
+	height: 15px;
+}
+
+.multipolicy-checkbox-wrap {
+	width: 100%;
+	display: inline-block;
+	clear: both;
+	margin: -5px 0 20px 6px;
+}
+
+.multipolicy-checkbox-wrap label.checkbox input[type=checkbox]~span {
+	font-size: 1.125em;
+	padding-left: 33px;
+	color: #a3a3a3;
+}
+
+.multipolicy-select-wrap {
+	margin: 0 0 15px;
+}
+
+.Select.multipolicy.is-focused .Select-control,.Select.multipolicy.is-pseudo-focused .Select-control,.Select.multipolicy .Select-control {
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/date.svg") no-repeat 1% 0;
+	background-size: 35px 26px;
+}
+
+.Select.multipolicy.is-focused .Select-arrow-zone,.Select.multipolicy.is-pseudo-focused .Select-arrow-zone,.Select.multipolicy .Select-arrow-zone {
+	display: none;
+}
+
+.Select.multipolicy.is-focused .Select-input,.Select.multipolicy.is-focused .Select-placeholder,.Select.multipolicy.is-focused>.Select-control .Select-value,.Select.multipolicy.is-pseudo-focused .Select-input,.Select.multipolicy.is-pseudo-focused .Select-placeholder,.Select.multipolicy.is-pseudo-focused>.Select-control .Select-value,.Select.multipolicy .Select-input,.Select.multipolicy .Select-placeholder,.Select.multipolicy>.Select-control .Select-value {
+	padding-left: 40px;
+}
+
+.insured-days-info {
+	color: #a3a3a3;
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	position: absolute;
+	top: -17px;
+	right: 8px;
+	text-align: right;
+}
+
+.save-polis-block {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #d9d9d9;
+	margin-bottom: 20px;
+}
+
+.country-block {
+	margin-bottom: 5px;
+	position: relative;
+}
+
+.country-block.with-bottom-border {
+	border: none;
+}
+
+.country-block .magicCountry.is-focused:not(.is-open)>.Select-control {
+	border: 2px solid #1976d2;
+}
+
+.country-block .magicCountry .Select-control {
+	height: 45px;
+	background: #fff;
+	padding: 0 40px 0 0;
+	border: 2px solid #1976d2;
+	border-radius: 15px;
+	position: relative;
+	z-index: 2;
+}
+
+.country-block .magicCountry .Select-control:before {
+	content: "";
+	display: inline-block;
+	width: 13px;
+	height: 8px;
+	background: url("https://static.cherehapa.ru/i/latest/mobile/down.svg") 50%/100% no-repeat;
+	position: absolute;
+	top: calc(50% - 4px);
+	right: 15px;
+}
+
+.country-block .magicCountry .Select-control .Select-multi-value-wrapper {
+	margin-top: 3px;
+}
+
+.country-block .magicCountry .Select-control .Select-multi-value-wrapper .Select-placeholder {
+	padding: 12px 15px 0;
+	font: 18px/120% PFSquareSansPro-Regular,Tahoma,Verdana,Segoe,sans-serif;
+	color: #999;
+}
+
+.country-block .magicCountry .Select-control .Select-multi-value-wrapper .Select-placeholder+.Select-input {
+	margin-left: 15px;
+}
+
+.country-block .magicCountry .Select-control .Select-multi-value-wrapper .Select-value {
+	background: #bceff5;
+	border-radius: 15px;
+}
+
+.country-block .magicCountry .Select-control .Select-multi-value-wrapper .Select-value .Select-value-label {
+	max-width: 100%;
+}
+
+.country-block .magicCountry .Select-control .Select-arrow-zone {
+	display: none;
+}
+
+.country-block .magicCountry .Select-menu-outer {
+	width: calc(100% - 4px);
+	max-height: 225px;
+	margin: 0 auto;
+	padding-top: 20px;
+	top: 65%;
+	left: 0;
+	right: 0;
+}
+
+.date-picker-wrap,.main-tourists-wrap .tourist-wrap,.multipolicy-select-wrap {
+	width: 48%;
+}
+
+.main-button-wrap {
+	margin: 50px 0 0;
+	text-align: center;
+}
+
+.with-bottom-border {
+	border-bottom: 1px solid #2baac2;
+}
+
+.blocking {
+	text-align: center;
+}
+
+.SingleDatePickerInput__disabled {
+	background: #fff;
+}
+
+#cherehapa-mobile-container .content {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+#cherehapa-mobile-container .content .inner {
+	border-radius: 20px;
+	box-shadow: 0 0 9px #1976d2;
+	padding: 30px 0 40px;
+	margin: 0 10px;
+}
+
+#cherehapa-mobile-container .content .inner>div {
+	padding: 0 10px;
+}
+
+#cherehapa-mobile-container .content .inner>div .che-title {
+	display: block;
+	margin-bottom: 35px;
+	font: 24px/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	text-align: center;
+}
+
+#cherehapa-mobile-container .content .inner>div .service-checkbox-wrap {
+	margin-bottom: 20px;
+}
+
+#cherehapa-mobile-container .content .inner>div .main-tourists-wrap>div {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+#cherehapa-mobile-container .content .inner>div .main-tourists-wrap>div>button,#cherehapa-mobile-container .content .inner>div .main-tourists-wrap>div>div {
+	width: calc(50% - 4px);
+}
+
+#cherehapa-mobile-container .content .inner>div .main-tourists-wrap>div .tourist-wrap {
+	border: none;
+	margin-bottom: 10px;
+}
+
+#cherehapa-mobile-container .content .inner>div .main-tourists-wrap>div .tourist-wrap .Select.is-open>.Select-control {
+	z-index: 5;
+}
+
+#cherehapa-mobile-container .content .inner>div .main-tourists-wrap>div .tourist-wrap .Select.is-open>.Select-menu-outer {
+	z-index: 4;
+}
+
+#cherehapa-mobile-container .content .inner>div .main-tourists-wrap>div .tourist-wrap .Select.is-open~.tourist-delete,#cherehapa-mobile-container .content .inner>div .main-tourists-wrap>div .tourist-wrap .Select.is-open~sub {
+	z-index: 6;
+}
+
+#cherehapa-mobile-container .content .inner>div .main-tourists-wrap>div .tourist-wrap .Select.is-open .Select-control {
+	box-shadow: 0 10px 20px 0 #fff;
+}
+
+#cherehapa-mobile-container .content .inner>div .main-tourists-wrap>div .tourist-wrap .Select .Select-control {
+	height: 45px;
+	background: #fff;
+	border: 2px solid #1976d2;
+	border-radius: 15px;
+	z-index: 2;
+}
+
+#cherehapa-mobile-container .content .inner>div .main-tourists-wrap>div .tourist-wrap .Select .Select-control .Select-multi-value-wrapper .Select-value {
+	padding: 11px 20px 0 30px;
+}
+
+#cherehapa-mobile-container .content .inner>div .main-tourists-wrap>div .tourist-wrap .Select .Select-control .Select-multi-value-wrapper .Select-value .Select-value-label {
+	display: block;
+	margin: 0 auto;
+	font: 18px/120% PFSquareSansPro-Regular,Tahoma,Verdana,Segoe,sans-serif;
+	color: #333;
+	text-align: center;
+}
+
+#cherehapa-mobile-container .content .inner>div .main-tourists-wrap>div .tourist-wrap .Select .Select-menu-outer {
+	width: calc(100% - 4px);
+	max-height: 225px;
+	margin: 0 auto;
+	padding-top: 20px;
+	top: 65%;
+	left: 0;
+	right: 0;
+}
+
+#cherehapa-mobile-container .content .inner>div .main-tourists-wrap>div .tourist-wrap>sub {
+	top: 23px;
+	left: 40px;
+	z-index: 3;
+}
+
+#cherehapa-mobile-container .content .inner>div .main-tourists-wrap>div .tourist-wrap>sub:before {
+	content: "";
+	display: inline-block;
+	width: 20px;
+	height: 26px;
+	background: url("https://static.cherehapa.ru/i/latest/mobile/passenger.svg") 50%/100% no-repeat;
+	position: absolute;
+	top: -14px;
+	left: -24px;
+}
+
+#cherehapa-mobile-container .content .inner>div .main-tourists-wrap>div .tourist-wrap .tourist-delete {
+	top: 14px;
+	right: 14px;
+	background-size: 10px 10px;
+	z-index: 3;
+}
+
+#cherehapa-mobile-container .content .inner>div .main-tourists-wrap>div .increase-tourists {
+	height: 45px;
+	margin: 0;
+	background: none;
+	border: 2px solid #fff;
+	color: #1976d2;
+	position: relative;
+	outline: none;
+}
+
+#cherehapa-mobile-container .content .inner>div .main-tourists-wrap>div .increase-tourists:nth-child(11) {
+	display: none!important;
+}
+
+#cherehapa-mobile-container .content .inner>div .main-tourists-wrap>div .increase-tourists:before {
+	content: "";
+	display: inline-block;
+	width: 20px;
+	height: 26px;
+	background: url("https://static.cherehapa.ru/i/latest/mobile/passenger.svg") 50%/100% no-repeat;
+	position: absolute;
+	top: 7px;
+	left: 14px;
+}
+
+#cherehapa-mobile-container .content .inner>div .main-tourists-wrap>div .increase-tourists>span {
+	font: 18px/120% PFSquareSansPro-Regular,Tahoma,Verdana,Segoe,sans-serif;
+	position: absolute;
+	top: 20px;
+	left: 37px;
+}
+
+#cherehapa-mobile-container .content .inner>div .main-button-wrap {
+	margin-top: 30px;
+}
+
+#cherehapa-mobile-container .content .inner>div .main-button-wrap .che-button {
+	width: 100%;
+	font-size: 30px;
+	color: #fff;
+	background: #1976d2;
+}
+
+.request-info-block .short-info {
+	position: relative;
+	z-index: 1;
+	display: block;
+	background: #fff;
+	width: 100%;
+	padding: 10px;
+	box-shadow: 0 1px 3px 0 rgba(0,17,74,.2);
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+.request-info-block .short-info:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+.request-info-block .detailed-info {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	width: 98.5%;
+	margin: -3px auto 0;
+	border-radius: 5px;
+	box-shadow: 0 1px 3px rgba(0,17,74,.2);
+}
+
+.request-info-block .short-info .show-detailed-info {
+	display: inline-block;
+	border: none;
+	outline: none;
+	background: transparent;
+	color: #1976d2;
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	cursor: pointer;
+}
+
+.request-info-block .short-info .show-detailed-info .fa {
+	margin-right: 15px;
+	position: relative;
+	top: 2px;
+}
+
+.request-info-block .short-info .insurance-price {
+	font: 1.375em/120% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.request-info-block .short-info .insurance-price .kopecks,.request-info-block .short-info .insurance-price .price-currency {
+	font-size: .818em;
+}
+
+.request-info-block .short-info .company-logo {
+	width: 45%;
+	min-width: 120px;
+	max-width: 155px;
+}
+
+.request-info-block .short-info .company-logo img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.calculation-info {
+	display: block;
+	padding: 2px 0 5px;
+	text-align: center;
+}
+
+.calculation-info a {
+	text-decoration: none;
+	color: #1976d2;
+	font: .875em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.request-info-block {
+	margin-bottom: 20px;
+}
+
+.request-info-block .short-info .show-detailed-info {
+	margin-top: 15px;
+	padding: 0 8px;
+}
+
+.request-info-block .detailed-info {
+	padding: 10px 8px 15px;
+	font: .875em/100% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.request-info-block .detailed-info .detailed-info-dates,.request-info-block .detailed-info .detailed-info-destination {
+	padding-top: 26px;
+	margin-bottom: 17px;
+	text-align: center;
+}
+
+.request-info-block .detailed-info .detailed-info-destination {
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/place_dark_gray.svg") no-repeat 50% 0;
+	background-size: 16px 22px;
+	padding-top: 26px;
+}
+
+.request-info-block .detailed-info .detailed-info-dates {
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/date_dark_gray.svg") no-repeat 50% 0;
+	background-size: 25px 22px;
+}
+
+.request-info-block .detailed-info .request-services-sport {
+	line-height: 100%;
+}
+
+.request-info-block .detailed-info .request-services-sport td {
+	vertical-align: middle;
+	padding: 0 0 3px;
+	margin: 0;
+}
+
+.request-info-block .detailed-info .request-services-sport td+td {
+	font: 1.143em/100% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+	text-align: right;
+	min-width: 5em;
+}
+
+.request-info-block .detailed-info .request-services-sport .request-sport td {
+	vertical-align: top;
+}
+
+.request-info-block .detailed-info .request-services-sport .request-sport td+td {
+	line-height: 130%;
+}
+
+.request-info-block .detailed-info .request-insurer-tourists-info,.request-info-block .detailed-info .request-insurer-tourists-info h4 {
+	font: 1em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.request-info-block .detailed-info .request-insurer-tourists-info h4 {
+	margin: 0 0 14px;
+}
+
+.request-info-block .detailed-info .request-insurer-tourists-info strong {
+	font: 1.143em/120% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.request-info-block .detailed-info .request-insurer-tourists-info .request-insurer-info,.request-info-block .detailed-info .request-insurer-tourists-info .request-tourists-info {
+	text-align: center;
+	margin: 0 0 20px;
+	padding: 0;
+}
+
+.request-info-block .detailed-info .request-insurer-tourists-info .request-insurer-info li,.request-info-block .detailed-info .request-insurer-tourists-info .request-tourists-info li {
+	display: block;
+	line-height: 155%;
+}
+
+.request-info-block .detailed-info .request-insurer-tourists-info .request-tourists-info li {
+	margin-bottom: 8px;
+}
+
+.product-card {
+	position: relative;
+	z-index: 1;
+	display: block;
+	background: #fff;
+	width: 100%;
+	padding: 10px;
+	box-shadow: 0 1px 3px 0 rgba(0,17,74,.2);
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+.product-card:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+.product-info {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	width: 98.5%;
+	margin: -3px auto 0;
+	border-radius: 5px;
+	box-shadow: 0 1px 3px rgba(0,17,74,.2);
+}
+
+.product-card-show-info {
+	display: inline-block;
+	border: none;
+	outline: none;
+	background: transparent;
+	color: #1976d2;
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	cursor: pointer;
+}
+
+.product-card-show-info .fa {
+	margin-right: 15px;
+	position: relative;
+	top: 2px;
+}
+
+.product-card-price {
+	font: 1.375em/120% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.product-card-price .kopecks,.product-card-price .price-currency {
+	font-size: .818em;
+}
+
+.product-card-company-logo {
+	width: 45%;
+	min-width: 120px;
+	max-width: 155px;
+}
+
+.product-card-company-logo img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+@-webkit-keyframes rotate {
+	0% {
+		-webkit-transform: rotate(0deg) scale(0);
+	}
+
+	to {
+		-webkit-transform: rotate(2turn) scale(1);
+	}
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg) scale(0);
+	}
+
+	to {
+		transform: rotate(2turn) scale(1);
+	}
+}
+
+.product {
+	position: relative;
+	margin: 0 0 10px;
+}
+
+.product-card-left-part {
+	width: 40%;
+	position: relative;
+	float: left;
+}
+
+.product-card-right-part {
+	float: right;
+	text-align: right;
+}
+
+.product-card-button {
+	background: #ffe100;
+	padding: 10px 25px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	border-radius: 5px;
+	font: 1.375em/120% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.product-card-button:hover {
+	background: #ffd500;
+	border: none;
+	outline: none;
+}
+
+.product-card-company-logo {
+	width: 100%;
+}
+
+.product-card-price {
+	margin: 0 0 8px;
+}
+
+.product-card-show-info {
+	padding: 5px;
+	position: absolute;
+	bottom: 9px;
+	left: 13px;
+}
+
+.product-info {
+	line-height: 150%;
+}
+
+.product-info-content {
+	padding: 15px 8px 10px;
+	font: .875em/150% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.product-info-switch {
+	margin: 10px 0 0;
+}
+
+.loading-text-container {
+	text-align: center;
+	margin-top: 50px;
+	color: #2baac2;
+}
+
+.loading-text-container .loading-text-wait {
+	font: 1.486em/120% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+	margin-bottom: 20px;
+}
+
+.loading-text-container .loading-text-choose {
+	font: 1.086em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.loading-text-container .loading-text-choose .loading-text-choose-first {
+	margin-bottom: 5px;
+}
+
+.loading-container {
+	display: table;
+	width: 100%;
+}
+
+.loading-container:nth-of-type(0n+1) {
+	background: #fff;
+}
+
+.loader {
+	margin: 50% auto;
+	margin-top: 150px;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+	opacity: 1;
+}
+
+.loading-spinning-bubbles {
+	position: relative;
+	margin: auto;
+}
+
+.loading-spinning-bubbles .bubble-container {
+	position: absolute;
+	top: -webkit-calc(50% - 40px/2);
+	top: calc(50% - 40px/2);
+	left: -webkit-calc(50% - 40px/2);
+	left: calc(50% - 40px/2);
+	-webkit-transform-origin: -150% 50%;
+	transform-origin: -150% 50%;
+}
+
+.loading-spinning-bubbles .bubble-container .bubble {
+	background: #2baac2;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	-webkit-animation-name: bubble;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: infinite;
+	animation: bubble 1s infinite;
+	-webkit-animation-delay: inherit;
+	animation-delay: inherit;
+}
+
+.loading-spinning-bubbles .bubble-container:nth-of-type(0n+1) {
+	-webkit-transform: translateX(200%) rotate(-90deg);
+	transform: translateX(200%) rotate(-90deg);
+	-webkit-animation-delay: -1.5s;
+	animation-delay: -1.5s;
+}
+
+.loading-spinning-bubbles .bubble-container:nth-of-type(0n+2) {
+	-webkit-transform: translateX(200%) rotate(-45deg);
+	transform: translateX(200%) rotate(-45deg);
+	-webkit-animation-delay: -1.375s;
+	animation-delay: -1.375s;
+}
+
+.loading-spinning-bubbles .bubble-container:nth-of-type(0n+3) {
+	-webkit-transform: translateX(200%);
+	transform: translateX(200%);
+	-webkit-animation-delay: -1.25s;
+	animation-delay: -1.25s;
+}
+
+.loading-spinning-bubbles .bubble-container:nth-of-type(0n+4) {
+	-webkit-transform: translateX(200%) rotate(45deg);
+	transform: translateX(200%) rotate(45deg);
+	-webkit-animation-delay: -1.125s;
+	animation-delay: -1.125s;
+}
+
+.loading-spinning-bubbles .bubble-container:nth-of-type(0n+5) {
+	-webkit-transform: translateX(200%) rotate(90deg);
+	transform: translateX(200%) rotate(90deg);
+	-webkit-animation-delay: -1s;
+	animation-delay: -1s;
+}
+
+.loading-spinning-bubbles .bubble-container:nth-of-type(0n+6) {
+	-webkit-transform: translateX(200%) rotate(135deg);
+	transform: translateX(200%) rotate(135deg);
+	-webkit-animation-delay: -.875s;
+	animation-delay: -.875s;
+}
+
+.loading-spinning-bubbles .bubble-container:nth-of-type(0n+7) {
+	-webkit-transform: translateX(200%) rotate(180deg);
+	transform: translateX(200%) rotate(180deg);
+	-webkit-animation-delay: -.75s;
+	animation-delay: -.75s;
+}
+
+.loading-spinning-bubbles .bubble-container:nth-of-type(0n+8) {
+	-webkit-transform: translateX(200%) rotate(225deg);
+	transform: translateX(200%) rotate(225deg);
+	-webkit-animation-delay: -.625s;
+	animation-delay: -.625s;
+}
+
+@-webkit-keyframes bubble {
+	0% {
+		-webkit-transform: scale(0);
+	}
+
+	50% {
+		-webkit-transform: scale(1);
+	}
+
+	to {
+		-webkit-transform: scale(0);
+	}
+}
+
+@keyframes bubble {
+	0%,to {
+		transform: scale(0);
+	}
+
+	50% {
+		transform: scale(1);
+	}
+}
+
+.empty-calculation-container {
+	text-align: center;
+	margin-top: 50px;
+	font: 1.286em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.empty-calculation-container div {
+	margin-bottom: 10px;
+}
+
+.empty-calculation-container a {
+	color: #2baac2;
+}
+
+.main-tourists-wrap .increase-tourists,.tourist-wrap {
+	cursor: pointer;
+	position: relative;
+}
+
+.main-tourists-wrap .increase-tourists .Select-control .Select-input:focus,.tourist-wrap .Select-control .Select-input:focus {
+	background: transparent;
+}
+
+.main-tourists-wrap .increase-tourists,.main-tourists-wrap .tourist-wrap {
+	margin-bottom: 15px;
+	float: left;
+}
+
+.main-tourists-wrap .increase-tourists:nth-child(2n),.main-tourists-wrap .tourist-wrap:nth-child(2n) {
+	float: right;
+}
+
+.main-tourists-wrap .increase-tourists sub,.main-tourists-wrap .tourist-wrap sub {
+	position: absolute;
+	color: #2baac2;
+	top: 11px;
+	left: 25px;
+}
+
+.main-tourists-wrap .increase-tourists .tourist-delete,.main-tourists-wrap .tourist-wrap .tourist-delete {
+	position: absolute;
+	color: #2baac2;
+	top: 10px;
+	right: 2px;
+	width: 16px;
+	height: 16px;
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/x.svg") no-repeat 50% 50%;
+	background-size: 8px 8px;
+	color: transparent;
+}
+
+.main-tourists-wrap .tourist-add-main-form.increase-tourists,.main-tourists-wrap .tourist-wrap.tourist-add-main-form {
+	height: 34px;
+	padding: 0 0 0 22px;
+}
+
+.main-tourists-wrap .tourist-add-main-form.increase-tourists sub,.main-tourists-wrap .tourist-wrap.tourist-add-main-form sub {
+	font-size: 20px;
+	line-height: 100%;
+}
+
+.main-tourists-wrap .increase-tourists .tourists .Select-arrow-zone,.main-tourists-wrap .tourist-wrap .tourists .Select-arrow-zone {
+	display: none;
+}
+
+.main-tourists-wrap .increase-tourists .tourists .Select-input,.main-tourists-wrap .increase-tourists .tourists .Select-placeholder,.main-tourists-wrap .increase-tourists .tourists>.Select-control .Select-value,.main-tourists-wrap .tourist-wrap .tourists .Select-input,.main-tourists-wrap .tourist-wrap .tourists .Select-placeholder,.main-tourists-wrap .tourist-wrap .tourists>.Select-control .Select-value {
+	padding-left: 40px;
+}
+
+.main-tourists-wrap .increase-tourists,.main-tourists-wrap .increase-tourists .tourists .Select-control,.main-tourists-wrap .tourist-add-main-form.increase-tourists,.main-tourists-wrap .tourist-wrap.tourist-add-main-form,.main-tourists-wrap .tourist-wrap .tourists .Select-control {
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/passenger.svg") no-repeat 1% 0;
+	background-size: 20px 26px;
+}
+
+.main-tourists-wrap .increase-tourists {
+	height: 34px;
+	padding: 0 0 0 22px;
+	margin-left: 3px;
+	border: none;
+}
+
+.main-tourists-wrap .increase-tourists:nth-child(2n) {
+	float: left;
+	margin-left: 27px;
+}
+
+.main-tourists-wrap .increase-tourists sub {
+	font-size: 20px;
+	line-height: 100%;
+}
+
+.tourist-info-block:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+.main-tourists-wrap .tourist-info-block .increase-tourists,.tourist-info-block .main-tourists-wrap .increase-tourists,.tourist-info-block .tourist-wrap {
+	margin: 27px 0 0;
+}
+
+.tourist-add,.tourist-info-icon {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50px;
+	height: 27px;
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/passenger_dark_gray.svg") no-repeat 50% 50%;
+	background-size: 20px 26px;
+}
+
+.tourist-add sub,.tourist-info-icon sub {
+	position: absolute;
+	top: 15px;
+	right: 3px;
+	color: #333;
+	font-size: 14px;
+	line-height: 100%;
+}
+
+.tourist-info-icon {
+	top: -20px;
+}
+
+.tourist-info-icon .tourist-delete {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 14px;
+	height: 14px;
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/x_dark_gray.svg") no-repeat 50% 50%;
+	background-size: 8px 8px;
+}
+
+.tourist-add {
+	position: relative;
+	float: right;
+}
+
+.tourist-add sub {
+	font-size: 25px;
+	top: 9px;
+	right: 0;
+}
+
+.tourist-as-insurer {
+	position: relative;
+	top: -13px;
+	left: 8px;
+}
+
+.tourist-as-insurer input[type=checkbox]~span:before {
+	font-size: 1.3em;
+	line-height: 100%;
+}
+
+.coupon-area {
+	overflow: hidden;
+	text-align: center;
+}
+
+.coupon-area>div {
+	padding-top: 8px;
+}
+
+.coupon-area .coupon-area-toggle {
+	margin-left: 5px;
+	font: .875em/100% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	border-bottom-style: dashed;
+	border-width: 1px;
+	color: #a3a3a3;
+	cursor: pointer;
+}
+
+.coupon-area .coupon-input-group {
+	display: flex;
+	min-height: 0;
+}
+
+.coupon-area .coupon-input-group .coupon-input {
+	flex: 2 1 auto;
+}
+
+.coupon-area .coupon-input-group .coupon-input input {
+	text-align: center;
+	-webkit-box-shadow: 0 0 0 1000px #fff inset;
+}
+
+.coupon-area .coupon-input-group .coupon-button {
+	flex: 1 1 auto;
+	padding-top: 8px;
+	min-width: 30%;
+}
+
+.coupon-area .coupon-input-group .coupon-button a {
+	min-width: 70px;
+	text-decoration: none;
+	color: #1976d2;
+	font: .875em/100% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	cursor: pointer;
+}
+
+.coupon-area .coupon-message {
+	display: flex;
+	min-height: 27px;
+}
+
+.coupon-area .coupon-message span {
+	flex: 0.66 1 auto;
+}
+
+.coupon-area-block,.tourist-info-block {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #d9d9d9;
+	margin-bottom: 20px;
+}
+
+.user-accept {
+	margin: 0 0 13px 6px;
+}
+
+.user-accept .checkbox input[type=checkbox]~span:before {
+	font-size: 1.4em;
+	line-height: 100%;
+}
+
+.user-accept .checkbox .user-accept-text {
+	padding-left: 30px;
+	color: #a3a3a3;
+	font: .875em/150% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.user-accept .checkbox .user-accept-text a {
+	color: #a3a3a3;
+}
+
+.payment-additional-info ul li {
+	position: relative;
+	padding-left: 20px;
+}
+
+.payment-additional-info ul li:before {
+	content: "\2022";
+	color: #1976d2;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: .8em;
+}
+
+.card-wrap {
+	margin: 30px 0 20px;
+}
+
+.card-wrap .card-error-text {
+	color: red;
+	text-align: center;
+	padding: 0 20px;
+	font: .875em/100% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.card {
+	width: 370px;
+	box-sizing: border-box;
+	padding: 20px 20px 12px;
+	margin: 0 auto 15px;
+	border-radius: 20px;
+	background-image: -moz-linear-gradient(-50deg,#c0c6d9 0,#cbd7ea 19%,#d5e7fa 41%,#cbd7ea 76%,#c0c6d9 100%);
+	background-image: -webkit-linear-gradient(-50deg,#c0c6d9,#cbd7ea 19%,#d5e7fa 41%,#cbd7ea 76%,#c0c6d9);
+	background-image: -ms-linear-gradient(-50deg,#c0c6d9 0,#cbd7ea 19%,#d5e7fa 41%,#cbd7ea 76%,#c0c6d9 100%);
+	box-shadow: 0 0 10px 0 rgba(0,17,74,.75);
+}
+
+.card label {
+	font: .875em/130% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	background: linear-gradient(90deg,#505050 25%,#334548);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: #334548;
+}
+
+.card .card-input {
+	border: 2px solid transparent;
+	background-color: hsla(0,0%,100%,.2);
+	box-shadow: none;
+	outline: none;
+	padding: 2px 10px 0;
+	border-radius: 20px;
+	font: 1em/100% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	text-align: center;
+	color: #334548;
+	margin-bottom: 10px;
+}
+
+.card .card-input.error {
+	border-color: red;
+}
+
+.card .card-number {
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	padding: 5px 10px 4px;
+	width: 100%;
+}
+
+.card .card-expirationDate {
+	width: 90px;
+}
+
+.card .card-holder {
+	text-align: left;
+}
+
+.card .card-cvv {
+	width: 60px;
+}
+
+.card .card_type {
+	height: 36px;
+	text-align: right;
+	margin-bottom: 15px;
+}
+
+.card .card_type li {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+@media screen and (max-width:380px) {
+	.card {
+		border-radius: 40px;
+		width: calc(100% + 4*10px);
+		margin: 0 -20px 15px;
+		padding: 20px 25px 12px;
+	}
+}
+
+.security-info {
+	color: #a3a3a3;
+	font: .875em/150% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	margin: 0 0 28px;
+}
+
+.payment-additional-info-block {
+	border-bottom: 1px solid #d9d9d9;
+	padding-bottom: 10px;
+}
+
+.payment-additional-info ul {
+	margin: 20px 0 15px;
+}
+
+.payment-additional-info ul li {
+	font: .875em/100% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	margin-bottom: 14px;
+}
+
+.coupon-payment {
+	color: #a3a3a3;
+	font: .875em/150% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	padding: 20px 0;
+	border-top: 1px solid #d9d9d9;
+}
+
+.insurable-header {
+	margin-top: 10px;
+}
+
+.insurable-header h1 {
+	font: 22px/150% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+	margin: 13px 0 17px;
+}
+
+.insurable-header .insurable-header-add {
+	width: calc(100% - 120px);
+	margin-top: 20px;
+	font: 18px/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	float: left;
+}
+
+.insurable-header .insurable-header-image {
+	float: right;
+}
+
+.insurable-header .insurable-header-image.map-img {
+	padding-right: 30px;
+}
+
+.insurable-base-options {
+	margin-top: 10px;
+}
+
+.insurable-base-options ul>li {
+	list-style-type: none;
+	margin: 0 0 20px;
+	font: 1em/132% PFSquareSansPro-Regular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.insurable-base-options ul>li:last-child {
+	margin: 0;
+}
+
+.insurable-base-options ul>li span {
+	font: .875em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.insurable-company-info {
+	margin: 42px 0 23px;
+	color: #a3a3a3;
+}
+
+.insurable-companies,.insurable-company-info {
+	font: .875em/150% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.insurable-companies {
+	margin-bottom: 30px;
+	padding-left: 10px;
+}
+
+.insurable-companies a {
+	color: #1976d2;
+}
+
+.company-page {
+	font: 1em/130% PFSquareSansPro-Regular,Tahoma,Verdana,Segoe,sans-serif;
+	margin-bottom: 30px;
+}
+
+.company-page h1 {
+	font: 22px/120% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+	margin: 13px 0 17px;
+}
+
+.company-page .big-img .company-info-blocks-header {
+	width: calc(100% - 174px);
+}
+
+.company-page .big-img .company-info-blocks-img {
+	margin: -60px 0 0;
+}
+
+.company-info-blocks {
+	margin: 20px 0;
+}
+
+.company-info-blocks:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+.company-info-blocks .company-info-blocks-header {
+	float: left;
+	margin-bottom: 10px;
+	font: 18px/130% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.company-info-blocks .company-info-blocks-img {
+	float: right;
+	margin: -17px 0 0 10px;
+}
+
+.company-info-blocks .company-info-blocks-text {
+	clear: left;
+}
+
+.company-info-blocks a {
+	color: #1976d2;
+	text-decoration: none;
+}
+
+.company-info-blocks .company-info-blocks-text-name {
+	margin-bottom: 20px;
+}
+
+.company-info-blocks .company-info-blocks-text-data {
+	margin-bottom: 5px;
+}
+
+.contact-page {
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 30px;
+	background-image: url("https://static.cherehapa.ru/i/latest/mobile/run.png");
+	background-repeat: no-repeat;
+	background-position: 230px 0;
+}
+
+@media only screen and (-o-min-device-pixel-ratio:2/1),only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min--moz-device-pixel-ratio:2),only screen and (min-device-pixel-ratio:2),only screen and (min-resolution:2dppx),only screen and (min-resolution:192dpi) {
+	.contact-page {
+		background-image: url("https://static.cherehapa.ru/i/latest/mobile/run@2x.png");
+		background-size: 200px 216px;
+	}
+}
+
+.contact-page h1 {
+	font: 22px/150% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+	margin: 13px 0 17px;
+}
+
+.contact-page a {
+	color: #1976d2;
+	text-decoration: none;
+}
+
+.contact-page .contact-tel {
+	color: #333;
+}
+
+.contact-page .contact-bolder,.contact-page a {
+	font: 18px/150% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.contact-page .contact-title {
+	margin: 0 0 7px;
+}
+
+.contact-page .contact-body {
+	margin: 0 0 18px;
+}
+
+.faq-box {
+	font: 1em/120% PFSquareSansPro-Regular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.faq-box a {
+	color: #1976d2;
+	text-decoration: none;
+}
+
+.faq-box h1 {
+	font: 22px/120% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+	margin: 13px 0 17px;
+	color: #333;
+}
+
+.faq-box .faq-header-box .faq-img {
+	float: right;
+	margin-top: -30px;
+}
+
+.faq-box .faq-header-box .faq-info {
+	width: calc(100% - 160px);
+	float: left;
+	color: #a3a3a3;
+	font: 14px/150% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.faq-box .faq-header-box .faq-info p {
+	color: #a3a3a3;
+}
+
+.faq-box .faq-header-body {
+	margin-bottom: 30px;
+}
+
+.faq-box .faq-header-body .info {
+	margin: 20px 0;
+}
+
+.faq-box .faq-header-body .info .faq-questions {
+	margin: 20px 0 10px;
+	font: 18px/130% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	padding-left: 25px;
+	color: #1976d2;
+	text-decoration: none;
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/down.svg") no-repeat 0 7px;
+	background-size: 10px 6px;
+}
+
+.faq-box .faq-header-body .info .faq-questions.open {
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/up.svg") no-repeat 0 7px;
+	background-size: 10px 6px;
+}
+
+.faq-box .faq-header-body .info .faq-answers {
+	padding: 20px;
+	border: 4px solid #ffe100;
+	border-radius: 20px;
+	line-height: 21px;
+}
+
+.faq-box .faq-header-body .info .faq-answers span {
+	font: 1.075em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.policy-page {
+	padding: 20px;
+	margin: 25px auto;
+	width: 54%;
+	max-width: 264px;
+	height: 41%;
+	min-height: 258px;
+	border-radius: 5px;
+	background-color: #fff;
+	box-shadow: 0 0 11px .1px rgba(0,0,0,.75);
+}
+
+.policy-page .company-logo {
+	text-align: center;
+}
+
+.policy-page .company-logo img {
+	width: auto;
+	height: 25px;
+}
+
+.policy-page .bar {
+	margin-top: 9px;
+	height: 7px;
+	background-color: #aaa;
+	border-radius: 3.5px;
+}
+
+.policy-page .bar.bar-first {
+	margin-top: 20px;
+}
+
+.policy-page .bar.bar-short:not(.animated) {
+	width: 40%;
+}
+
+.policy-page .signature {
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/signature.svg") no-repeat;
+	height: 20px;
+	width: 70px;
+	float: left;
+	margin-top: 30%;
+}
+
+.policy-page .stamp {
+	height: 26px;
+	width: 26px;
+	position: relative;
+	border-radius: 13px;
+	border: 3px solid #003797;
+	float: right;
+	margin-top: 30%;
+	margin-right: 5%;
+}
+
+.policy-page .stamp:before {
+	margin: 2px;
+	display: inline-block;
+	content: "";
+	height: 16px;
+	width: 16px;
+	border-radius: 8px;
+	background-color: #003797;
+}
+
+.policy-page.mini {
+	float: left;
+	margin: 0;
+	transform: scale(.7);
+	-webkit-transform: scale(.7);
+}
+
+.policy-page.mini .bar.bar-short {
+	width: 40%;
+}
+
+@keyframes company-logo-animation {
+	0%,10% {
+		visibility: hidden;
+	}
+
+	10.1%,to {
+		visibility: visible;
+	}
+}
+
+@keyframes stretch-out-first {
+	0%,12.5% {
+		width: 0;
+	}
+
+	25%,to {
+		width: 100%;
+	}
+}
+
+@keyframes stretch-out-second {
+	0%,25% {
+		width: 0;
+	}
+
+	37.5%,to {
+		width: 100%;
+	}
+}
+
+@keyframes stretch-out-third {
+	0%,37.5% {
+		width: 0;
+	}
+
+	50%,to {
+		width: 100%;
+	}
+}
+
+@keyframes stretch-out-fourth {
+	0%,50% {
+		width: 0;
+	}
+
+	62.5%,to {
+		width: 100%;
+	}
+}
+
+@keyframes stretch-out-short {
+	0%,62.5% {
+		width: 0;
+	}
+
+	69.75%,to {
+		width: 40%;
+	}
+}
+
+@keyframes signature-animation {
+	0%,75% {
+		visibility: hidden;
+	}
+
+	75.1%,to {
+		visibility: visible;
+	}
+}
+
+@keyframes stamp-animation {
+	0%,87.5% {
+		visibility: hidden;
+	}
+
+	87.6%,to {
+		visibility: visible;
+	}
+}
+
+@-webkit-keyframes company-logo-animation {
+	0%,10% {
+		visibility: hidden;
+	}
+
+	10.1%,to {
+		visibility: visible;
+	}
+}
+
+@-webkit-keyframes stretch-out-first {
+	0%,12.5% {
+		width: 0;
+	}
+
+	25%,to {
+		width: 100%;
+	}
+}
+
+@-webkit-keyframes stretch-out-second {
+	0%,25% {
+		width: 0;
+	}
+
+	37.5%,to {
+		width: 100%;
+	}
+}
+
+@-webkit-keyframes stretch-out-third {
+	0%,37.5% {
+		width: 0;
+	}
+
+	50%,to {
+		width: 100%;
+	}
+}
+
+@-webkit-keyframes stretch-out-fourth {
+	0%,50% {
+		width: 0;
+	}
+
+	62.5%,to {
+		width: 100%;
+	}
+}
+
+@-webkit-keyframes stretch-out-short {
+	0%,62.5% {
+		width: 0;
+	}
+
+	69.75%,to {
+		width: 40%;
+	}
+}
+
+@-webkit-keyframes signature-animation {
+	0%,75% {
+		visibility: hidden;
+	}
+
+	75.1%,to {
+		visibility: visible;
+	}
+}
+
+@-webkit-keyframes stamp-animation {
+	0%,87.5% {
+		visibility: hidden;
+	}
+
+	87.6%,to {
+		visibility: visible;
+	}
+}
+
+.policy-page.animated .company-logo {
+	visibility: hidden;
+	animation: company-logo-animation 8s linear infinite;
+	-webkit-animation: company-logo-animation 8s linear infinite;
+}
+
+.policy-page.animated .bar.bar-first {
+	animation: stretch-out-first 8s linear infinite;
+	-webkit-animation: stretch-out-first 8s linear infinite;
+}
+
+.policy-page.animated .bar.bar-second {
+	animation: stretch-out-second 8s linear infinite;
+	-webkit-animation: stretch-out-second 8s linear infinite;
+}
+
+.policy-page.animated .bar.bar-third {
+	animation: stretch-out-third 8s linear infinite;
+	-webkit-animation: stretch-out-third 8s linear infinite;
+}
+
+.policy-page.animated .bar.bar-fourth {
+	animation: stretch-out-fourth 8s linear infinite;
+	-webkit-animation: stretch-out-fourth 8s linear infinite;
+}
+
+.policy-page.animated .bar.bar-short {
+	animation: stretch-out-short 8s linear infinite;
+	-webkit-animation: stretch-out-short 8s linear infinite;
+}
+
+.policy-page.animated .signature {
+	visibility: hidden;
+	animation: signature-animation 8s linear infinite;
+	-webkit-animation: signature-animation 8s linear infinite;
+}
+
+.policy-page.animated .stamp {
+	visibility: hidden;
+	animation: stamp-animation 8s linear infinite;
+	-webkit-animation: stamp-animation 8s linear infinite;
+}
+
+.content.loading {
+	background-color: #ffe100;
+}
+
+.inner.loading {
+	vertical-align: middle;
+}
+
+.policy-processing-label {
+	text-align: center;
+	font: 1.3em/150% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+	letter-spacing: 1px;
+	margin-top: 25px;
+}
+
+.policy-processing-message {
+	text-align: center;
+	font: 1em/150% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	margin-top: 25px;
+}
+
+.redirect-button {
+	text-align: center;
+}
+
+.redirect-button .additional-button {
+	position: inherit;
+}
+
+.redirect-button .additional-button.apply {
+	left: 0;
+	margin-left: 0;
+}
+
+.policy-processing-percent {
+	text-align: center;
+	font: 1.2em/150% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.finish-content-important {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #d9d9d9;
+	margin-bottom: 20px;
+}
+
+.finish-content-additional-info ul li {
+	position: relative;
+	padding-left: 20px;
+}
+
+.finish-content-additional-info ul li:before {
+	content: "\2022";
+	color: #1976d2;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: .8em;
+}
+
+.finish-content-bold-text {
+	font: 1.375em/120% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+	margin: 10px 0 0;
+}
+
+.finish-content-action-list {
+	margin: 0 0 30px;
+	line-height: 130%;
+}
+
+.finish-content-action-list li {
+	margin-bottom: 24px;
+}
+
+.finish-content-additional-info {
+	margin: 0 0 20px;
+}
+
+.finish-content-additional-info .hidden-content {
+	padding: 20px 15px;
+}
+
+.finish-content-additional-info ul li {
+	font: 1em/130% PFSquareSansPro-Regular,Tahoma,Verdana,Segoe,sans-serif;
+	margin-bottom: 20px;
+}
+
+.finish-content-additional-info ul li:before {
+	font-size: 1.3em;
+}
+
+.finish-content-important {
+	padding-bottom: 0;
+	margin-bottom: 30px;
+}
+
+.finish-content-important a {
+	color: #1976d2;
+	text-decoration: underline;
+}
+
+.finish-content-important a:hover {
+	text-decoration: none;
+}
+
+.finish-content-important .hidden-content {
+	padding: 20px 15px;
+	line-height: 130%;
+}
+
+.finish-content-important-title {
+	color: #1976d2;
+	font: 1.125em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	padding-left: 25px;
+	position: relative;
+	margin: 0 0 10px;
+}
+
+.finish-content-important-title:before {
+	content: "!";
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.finish-content-final-text {
+	text-align: center;
+}
+
+@-webkit-keyframes direction-right {
+	0% {
+		-webkit-transform: translateX(-100%);
+	}
+
+	to {
+		-webkit-transform: translateX(0);
+	}
+}
+
+@-moz-keyframes direction-right {
+	0% {
+		transform: translateX(-100%);
+	}
+
+	to {
+		transform: translateX(0);
+	}
+}
+
+@-o-keyframes direction-right {
+	0% {
+		transform: translateX(-100%);
+	}
+
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes direction-right {
+	0% {
+		transform: translateX(-100%);
+	}
+
+	to {
+		transform: translateX(0);
+	}
+}
+
+@-webkit-keyframes direction-left {
+	0% {
+		-webkit-transform: translateX(0);
+	}
+
+	to {
+		-webkit-transform: translateX(-100%);
+	}
+}
+
+@-moz-keyframes direction-left {
+	0% {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+@-o-keyframes direction-left {
+	0% {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes direction-left {
+	0% {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+.popup-box {
+	width: 100%;
+	position: fixed;
+	height: calc(100vh - 52px);
+	height: -webkit-calc(100% - 52px);
+	z-index: 9999;
+	top: 52px;
+	overflow: auto;
+}
+
+.not-visible {
+	display: none;
+}
+
+.menu-right>.menu-fields {
+	-webkit-animation-name: direction-right;
+	-webkit-animation-duration: .5s;
+	-webkit-animation-timing-function: linear;
+	-moz-animation: direction-right .5s linear;
+	-o-animation: direction-right .5s linear;
+	animation: direction-right .5s linear;
+}
+
+.menu-left>.menu-fields {
+	-webkit-animation-name: direction-left;
+	-webkit-animation-duration: .5s;
+	-webkit-animation-timing-function: linear;
+	-moz-animation: direction-left .5s linear;
+	-o-animation: direction-left .5s linear;
+	animation: direction-left .5s linear;
+}
+
+.menu-fields {
+	width: 80%;
+	height: 100%;
+	background-color: #fff;
+	position: absolute;
+	z-index: 9999;
+	padding-top: 21px;
+}
+
+@media screen and (min-width:420px) {
+	.menu-fields {
+		width: 60%;
+	}
+}
+
+.menu-button-box {
+	margin: 0 4%;
+	cursor: pointer;
+	height: 15%;
+}
+
+.menu-button-box a {
+	text-decoration: none;
+}
+
+.menu-button-box .menu-button-text {
+	color: #1976d2;
+	padding: 0 5px;
+	border-bottom: 1px solid #d9d9d9;
+}
+
+.menu-button-box .menu-button-text .menu-button {
+	background: #fff;
+	border: none;
+	outline: none;
+	font: 20px/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	color: #2baac2;
+}
+
+.menu-button-box .menu-button-text .menu-arrow-right {
+	text-align: right;
+	float: right;
+	margin-top: 4px;
+}
+
+@font-face {
+	font-family:PFSquareSansPro-Regular;src:url("https://static.cherehapa.ru/f/latest/PFSquareSansPro-Regular.eot");src:url("https://static.cherehapa.ru/f/latest/PFSquareSansPro-Regular.eot?#iefix") format("embedded-opentype"),url("https://static.cherehapa.ru/f/latest/PFSquareSansPro-Regular.woff") format("woff"),url("https://static.cherehapa.ru/f/latest/PFSquareSansPro-Regular.ttf") format("truetype"),url("https://static.cherehapa.ru/f/latest/PFSquareSansPro-Regular.svg#PFSquareSansPro-Regular") format("svg");font-weight:400;font-style:normal;
+}
+
+@font-face {
+	font-family:PFSquareSansProBold;src:url("https://static.cherehapa.ru/f/latest/pfsquaresanspro-boldwebfont.eot");src:url("https://static.cherehapa.ru/f/latest/pfsquaresanspro-boldwebfont.eot?#iefix") format("embedded-opentype"),url("https://static.cherehapa.ru/f/latest/pfsquaresanspro-boldwebfont.woff") format("woff"),url("https://static.cherehapa.ru/f/latest/pfsquaresanspro-boldwebfont.ttf") format("truetype"),url("https://static.cherehapa.ru/f/latest/pfsquaresanspro-boldwebfont.svg#PFSquareSansProBold") format("svg");font-weight:400;font-style:normal;
+}
+
+@font-face {
+	font-family:PFSquareSansProMediumRegular;src:url("https://static.cherehapa.ru/f/latest/pfsquaresanspro-mediumwebfont.eot");src:url("https://static.cherehapa.ru/f/latest/pfsquaresanspro-mediumwebfont.eot?#iefix") format("embedded-opentype"),url("https://static.cherehapa.ru/f/latest/pfsquaresanspro-mediumwebfont.woff") format("woff"),url("https://static.cherehapa.ru/f/latest/pfsquaresanspro-mediumwebfont.ttf") format("truetype"),url("https://static.cherehapa.ru/f/latest/pfsquaresanspro-mediumwebfont.svg#PFSquareSansProMediumRegular") format("svg");font-weight:400;font-style:normal;
+}
+
+.error-popup-content {
+	display: none;
+}
+
+.error-popup-content.visible {
+	display: block;
+	background-color: #fefefe;
+	position: fixed;
+	z-index: 9999;
+	max-width: 500px;
+	max-height: 600px;
+	width: 90%;
+	height: 70%;
+	margin: auto;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	border-radius: 20px;
+}
+
+.error-popup-content .close-icon {
+	position: absolute;
+	top: 15px;
+	right: 20px;
+	width: 5vw;
+	height: 5vh;
+	background: transparent url("https://static.cherehapa.ru/i/latest/mobile/x.svg") no-repeat 50% 50%;
+	background-size: 5vh 5vw;
+}
+
+.error-popup-content .error-header {
+	font: 1.375em/120% PFSquareSansProBold,Tahoma,Verdana,Segoe,sans-serif;
+	text-align: center;
+	width: 100%;
+	margin: 10vh 0 1vh;
+}
+
+.error-popup-content .error-message {
+	font: 1em/120% PFSquareSansProMediumRegular,Tahoma,Verdana,Segoe,sans-serif;
+	text-align: center;
+	padding: 5vw;
+}
+
+.error-popup-content .additional-button {
+	position: absolute;
+	bottom: 50px;
+}
+
+@media (min-width:600px) {
+	.error-popup-content .additional-button.apply {
+		margin-left: -70px;
+	}
+}
+
+.corona-message {
+	background: #2baac2;
+	width: 100%;
+	padding: 0 0 5px;
+	display: block;
+}
+
+.corona-closeButton {
+	display: block;
+	width: 90px;
+	height: 30px;
+	margin: 0 auto;
+	border: none;
+	border-radius: 5px;
+	color: #333;
+	background: #ffe605;
+	cursor: pointer;
+	font: 16px/100% PFSquareSansPro,Tahoma,Verdana,Segoe,sans-serif;
+	font-weight: 600!important;
+}
+
+.corona-textMessage {
+	color: #fff;
+	text-align: center;
+	font: 14px/150% PFSquareSansPro,Tahoma,Verdana,Segoe,sans-serif;
+	font-weight: 700!important;
+	padding-bottom: 5px;
+}
+
+/*# sourceMappingURL=mobile-react.css.map*/

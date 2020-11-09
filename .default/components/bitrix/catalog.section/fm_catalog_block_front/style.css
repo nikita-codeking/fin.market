@@ -1,0 +1,17 @@
+.sku_props .bx_item_section_name{display:none;}
+.bx_catalog_item_scu .bx_item_detail_scu ul li .cnt_item{width:100px !important; height:40px !important;}
+.ajax_load.block .footer_button{display: none !important;}
+@media (max-width: 550px){
+    .disable_mobile{display: none !important;}
+}
+@media (min-width: 992px) and (max-width: 1340px){
+    .fast_view_block_href{height: 100%; width: 100%; position: absolute; top: 0; z-index: 10; display: block; }
+    .mobile .with_fast_view .image_wrapper_block .fast_view_block{ display: none; z-index: 20; }
+}
+
+@media (max-width: 500px){
+    .cost.prices.clearfix{ display: none; }
+    body .ce_cmp .tabs_slider .catalog_item.main_item_wrapper .inner_wrap { padding: 15px 14px 0 15px; }
+}
+
+

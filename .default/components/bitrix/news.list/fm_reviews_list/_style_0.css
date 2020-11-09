@@ -1,0 +1,8 @@
+.banners-small.blog .item .inner-item{padding-bottom: 0px !important;position: relative;}
+.banners-small.blog .item .title {position: absolute;bottom: 8px; text-shadow: 1px 1px 1px #1976d2, 0 0 0.5em #a15bf1; }
+.banners-small.blog .card { position:relative; display:inline-block; }
+.banners-small.blog .card > img{ border-radius:8px;}
+.banners-small.blog .card > canvas{position:absolute;top:0;left:0; width:100%; height:100%; border-radius:8px; }
+.banners-small.blog .items .item{box-shadow:none !important;}
+.banners-small.blog .ajax_load_btn{display: none;}
+.banners-small .item .image{border-radius: 8px;}

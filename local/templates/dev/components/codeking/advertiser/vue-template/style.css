@@ -1,0 +1,290 @@
+/*
+*{
+	margin:0;
+	padding:0;
+	font-family:"Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+}
+label{
+	display:block;
+	margin: 7px 0px;
+}
+fieldset{
+	padding:5px;
+}
+#api-app{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content: space-around;
+	position:relative;
+}
+.pointer{
+	cursor:pointer;
+}
+#popup_wrap{
+	background:gray;
+	opacity:0.5;
+	z-index:2;
+	position:fixed;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+}
+#popup-form{
+	z-index:3;
+	position:fixed;
+	top:5%;
+	left:4%;
+	width:90%;
+	background:white;
+	padding:25px;
+	height: 90%;
+	overflow: scroll;
+}
+.hide{
+	display:none;
+}
+.chosen-results li{
+	color:SkyBlue;
+}
+.chosen-results{
+	overflow: scroll;
+	height:100px;
+}
+main{
+	width:100%;
+	min-width:1000px;
+	max-width:1900px;
+	margin:0 auto;
+}
+#app-wrap{
+	margin:0 auto;
+	margin-top:100px;
+	width:100%;
+	min-width:1000px;
+	max-width:1900px;
+}
+#block-1{
+	width:150px;
+	box-sizing: border-box;
+	//padding: 10px;
+	flex-grow:1;
+}
+#block-2{
+	width:850px;
+	flex-grow: 1;
+}
+#search-field{
+	width: 700px;
+	margin:0 auto;
+}
+#excursion, #excursion *, #comparison, #comparison *{
+	border: 1px solid black;
+	border-radius: 4px;
+	margin: 10px;
+	font-size:13px;
+}
+h2{
+	text-align:center;
+	margin:20px 0;
+	font-size:30px;
+}
+#search{
+	margin: 10px;
+	padding:5px;
+	background:white;
+	border: 1px solid skyblue;
+	height: 33px;
+	width: 100px;
+}
+th {
+		min-width: 80px;
+    height: 40px;
+}
+#show_types span{
+	cursor:pointer;
+}
+#show_types span.checked{
+	border-bottom:1px solid SkyBlue;
+}
+.excursion_item {
+border: 3px solid skyblue;
+margin-bottom: 10px;
+width:300px;
+}
+.excursion_item-2 {
+border: 3px solid skyblue;
+margin-bottom: 10px;
+}
+.excursion_item hr{
+	margin: 0px 10px;
+}
+.excursion_item-2 hr{
+	margin-right: 10px;
+}
+.i_name, .i_desc{
+	margin: 10px;
+}
+.i_name-2, .i_desc-2{
+	margin: 10px;
+}
+.i_desc > p,.i_desc-2 > p{
+	overflow:hidden;
+}
+.i_desc-2 > p{
+	height:21px;
+}
+.i_desc > p{
+	height:60px;
+}
+.i_props{
+	margin: 5px 10px;
+}
+.i_props-2{
+	margin: 5px 10px;
+	height: 110px;
+}
+.i_name > p, .i_name-2 > p{
+	text-decoration:underline;
+}
+.i_name > p{
+	min-height: 80px;
+}
+.i_img_wrap img{
+	margin: 10px;
+	width: 280px;
+}
+.i_img_wrap-2 img{
+	margin: 10px;
+	width: 280px;
+}
+.i_img_wrap-2 {
+	width:300px;
+	float:left;
+}
+.i_name{
+	font-size:25px;
+}
+.i_name-2{
+	font-size:25px;
+}
+#excursion_wrapper{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content: space-around;
+}
+.comp{
+	margin-left: 8px;
+	margin-bottom: 10px;
+	display:inline-block;
+	border:1px solid SkyBlue;
+	padding: 10px;
+	width: 88px;
+	font-size: 11px;
+}
+.comp:first-child{
+	margin-left:0px;
+}
+.button_wrapper .comp:first-child{
+	margin-left:10px;
+}
+comp.list{
+	margin:0px;
+	margin-left:100px;
+	margin-bottom:10px;
+}
+.comp:hover{
+	background:SkyBlue;
+	color:#fff;
+}
+#duration_field{
+	margin-left:10px;
+}
+#show_types, #count{
+	margin: 20px;
+}
+.clear{
+	clear:both;
+}
+.button_wrapper-2{
+	text-align: left;
+	margin-top: 23px;
+	padding-left: 10px;
+}
+#main_block{
+	position: absolute;
+	right: 190px;
+	top: -160px;
+}
+button > a{
+	text-decoration:none;
+	color:black;
+}
+button:hover > a{
+	color:white;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0
+}
+#adv_filter_stats_wrapper > div{
+	width: 167px;
+	display: inline-block;
+	border: 1px solid #d02c2c;
+	color: #d02c2c;
+	vertical-align: middle;
+	min-height: 40px;
+	padding: 10px;
+	border-radius: 10px;
+}
+#adv_filter_stats_wrapper #child_filter_indicator, #adv_filter_stats_wrapper #is_new_filter_indicator, #adv_filter_stats_wrapper #tripster_filter_indicator,#adv_filter_stats_wrapper #sputnik_filter_indicator,
+#adv_filter_stats_wrapper #group_filter_indicator{
+	width: 72px;
+}
+#adv_filter_stats_wrapper #private_filter_indicator{
+	width:81px;
+}
+#adv_filter_stats_wrapper #online_filter_indicator{
+	width:60px;
+}
+#adv_filter_stats_wrapper #offline_filter_indicator{
+	width:63px;
+}
+#adv_filter_stats_wrapper .cats_filter_indicator{
+	min-width: 78px;
+	width:auto;
+}
+#adv_filter_stats_wrapper .tags_filter_indicator{
+	min-width: 36px;
+	width:auto;
+}
+#adv_filter_stats_wrapper #surpriseme_filter_indicator{
+	width:88px;
+}
+#adv_filter_stats_wrapper #mobile_adv_filter_indicator{
+	width: 116px;
+}
+#adv_filter_stats_wrapper #weatlas_filter_indicator{
+	width: 68px;
+}
+.cross{
+	display: block;
+	margin: 0 auto;
+	width: 10px;
+	cursor:pointer;
+}
+.chosen-search-input{
+	width: 500px;
+	height: 34px;
+}
+h2.left{
+	text-align:left;
+}
+#sort label{
+	display:inline;
+}
+#sort{
+	margin:20px;
+}*/

@@ -1,0 +1,5 @@
+.wrapper_block.recomendation .image_wrapper_block a{height: 120px;}
+.wrapper_block.recomendation .image_wrapper_block{height: 120px;}
+
+.viewed_block .item_block .item_wrap.item.has-item {height: 80px !important;}
+.viewed_block.horizontal .outer_wrap.flexslider.shadow.items{height: 120px;}
