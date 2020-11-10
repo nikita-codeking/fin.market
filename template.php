@@ -414,6 +414,20 @@ ob_end_clean();?>
                 });
             });
 
-            
+            viewBanner();
+            $(window).resize(function(){
+                viewBanner();
+            });
+            function viewBanner()
+            {
+                if ($(window).width() <= '500'){
+                    $('.mobileBnnerSravni').show();
+                    $('.desctopBnnerSravni').hide();
+                }
+                else{
+                    $('.desctopBnnerSravni').show();
+                    $('.mobileBnnerSravni').hide();
+                }
+            }
         </script>
 </div>
