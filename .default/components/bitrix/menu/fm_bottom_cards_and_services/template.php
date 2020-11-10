@@ -9,7 +9,7 @@
 			<?foreach( $arResult as $arItem ){?>
                 <?if($arItem['IS_PARENT']>0):?>
                     <?if($open_div):?></div><?endif;?>
-                    <div class="colum_menu_footerNone">
+                    <div class="colum_menu_footer ">
                     <?
                     $open_div    = true;
                     $count_child = 0;

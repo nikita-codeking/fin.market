@@ -73,7 +73,7 @@ $newArResult[] = Array(
 /**
  * На мобилие Рейтинги и Сюжеты отдельными разделами
  */
-/*
+
 $newArResult[] = Array(
     'TEXT' => 'Рейтинги',
     'LINK' => '/ratings/',
@@ -101,6 +101,6 @@ $newArResult[] = Array(
     'DEPTH_LEVEL' => 1,
     'IS_PARENT' => 1
 );
-*/
+
 $arResult = $newArResult;
 ?>
