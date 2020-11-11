@@ -143,7 +143,7 @@ $(document).ready(function() {
                 hoverEl.children().each(function () {
                     el++;
                     if (el >= 5) {
-                        $(this).attr("style", "display:none;");
+                        $(this).attr("style", "display:block;");
                     }
                 });
                 //hoverEl.removeAttr("style");
