@@ -764,7 +764,6 @@ foreach($arResult["resultImgProp"]["VALUE"] as &$valueImgProp) {
 
 
 //Сопоставление раздела с баннером сравни
-
 $arResult['BANNERS_COMPRESION'] = Array();
 $arSelect = Array('ID','PROPERTY_MOBILE_VERSION', 'DETAIL_TEXT');
 $arFilter = Array("IBLOCK_ID"=>44, "ACTIVE_DATE"=>"Y", "ACTIVE"=>"Y","PROPERTY_BANNERS_SECTION"=>$arResult['ORIGINAL_PARAMETERS']['SECTION_ID']);
