@@ -765,7 +765,7 @@ foreach($arResult["resultImgProp"]["VALUE"] as &$valueImgProp) {
 
 //Сопоставление раздела с баннером сравни
 
-/*$arResult['BANNERS_COMPRESION'] = Array();
+$arResult['BANNERS_COMPRESION'] = Array();
 $arSelect = Array('ID','PROPERTY_MOBILE_VERSION', 'DETAIL_TEXT');
 $arFilter = Array("IBLOCK_ID"=>44, "ACTIVE_DATE"=>"Y", "ACTIVE"=>"Y","PROPERTY_BANNERS_SECTION"=>$arResult['ORIGINAL_PARAMETERS']['SECTION_ID']);
 $prop_banners = CIBlockElement::GetList(Array(), $arFilter, false, Array(), $arSelect);
@@ -779,7 +779,7 @@ while($section_banners = $prop_banners->Fetch())
         $arResult['BANNERS_COMPRESION']['DETAIL_TEXT_MOBILE'] = $section_banners['DETAIL_TEXT'];
     }
 
-}*/
+}
 //Сопоставление раздела с баннером 1 заявка.
 /*$arResult['BANNERS_ONE_REQUEST'] = Array();
 $arSelect = Array('ID','PROPERTY_MOBILE_VERSION', 'DETAIL_TEXT');
