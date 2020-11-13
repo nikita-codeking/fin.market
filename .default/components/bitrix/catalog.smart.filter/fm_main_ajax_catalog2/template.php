@@ -323,6 +323,7 @@ if($arResult["ITEMS"] && $pos_strahovki===false){?>
                     $rkoPage = strpos($this_url, 'raschetnye_scheta');
                     $harPage = strpos($this_url, 'kreditnye_karty');
                     $avtoCreditPage = strpos($this_url, 'avtokredity');
+                    $zaimiPage = strpos($this_url, 'zaymy');
                     ?>
 
                     <style>
@@ -331,7 +332,7 @@ if($arResult["ITEMS"] && $pos_strahovki===false){?>
                         }
                     </style>
                     <?//see($group_filters, true);?>
-                    <div class="bx_filter_parameters_box <?if($docPage > 0 && $group_filters == 'Документы' || $rkoPage > 0 && $group_filters == 'Документы' || $harPage > 0 && $group_filters == 'Характеристики' || $avtoCreditPage > 0 && $group_filters == 'Характеристики' || $avtoCreditPage > 0 && $group_filters == 'Сервисы'){echo 'ifclasses';}else{'';}?>" data-expanded="N" data-prop_code="" data-property_id="">
+                    <div class="bx_filter_parameters_box <?if($zaimiPage > 0 && $group_filters == 'Сервисы' || $docPage > 0 && $group_filters == 'Документы' || $rkoPage > 0 && $group_filters == 'Документы' || $harPage > 0 && $group_filters == 'Характеристики' || $avtoCreditPage > 0 && $group_filters == 'Характеристики' || $avtoCreditPage > 0 && $group_filters == 'Сервисы'){echo 'ifclasses';}else{'';}?>" data-expanded="N" data-prop_code="" data-property_id="">
                         <span data-f="Показать" data-fi="товар" data-fr="товара" data-frm="товаров" class="bx_filter_container_modef"></span>
                             <div class="bx_filter_parameters_box_title parent icons_fa">
                                 <div>
