@@ -677,6 +677,8 @@ $pos_rko = strpos($this_url,'raschetnye_scheta');
                                                 ?>
                                                 <?php if(strpos($nameProp, 'Срок')!==false && strpos($_SERVER['REQUEST_URI'], 'kredity_nalichnymi') || strpos($nameProp, 'Срок')!==false && strpos($_SERVER['REQUEST_URI'], 'ipoteka') || strpos($nameProp, 'Срок')!==false && strpos($_SERVER['REQUEST_URI'], 'avtokredity') || strpos($nameProp, 'Срок')!==false && strpos($_SERVER['REQUEST_URI'], 'refinansirovanie')): ?>
                                                     <td><span>до <?=formatToHuman($valP), ' ', declension($valP, array('год', 'года', 'лет'));?> <?=$edIzm?></span></td>
+                                                <?php elseif(strpos($nameProp, 'Ставка')!==false && strpos($_SERVER['REQUEST_URI'], 'zaymy') || strpos($nameProp, 'Ставка')!==false && strpos($_SERVER['REQUEST_URI'], 'kredity_nalichnymi')):?>
+                                                    <td><span>от <?=formatToHuman($valP);?> <?=$edIzm?></span></td>
                                                 <?php elseif(strpos($nameProp, 'лимит')!==false): ?>
                                                     <td><span>до <?=formatToHuman($valP);?> <?=$edIzm?></span></td>
                                                 <?php elseif(strpos($nameProp, 'Сумма займа')!==false): ?>
