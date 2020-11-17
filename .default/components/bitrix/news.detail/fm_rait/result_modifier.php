@@ -92,16 +92,17 @@ $queryUserRes["PERSONAL_PHOTO"] = CFile::GetPath($queryUserRes["PERSONAL_PHOTO"]
 $arResult["USER"] = $queryUserRes;
 
 //получение раздела для баннера сравни.
+$idSection = current($arResult['PROPERTIES']['SECTIONS_INCLUDE']['VALUE']);
 $arrIdBanner = Array();
-foreach ($arResult['PROPERTIES']['SECTIONS_INCLUDE']['VALUE'] as $itemVid) {
-    $arSelectBannerID = Array("ID", "NAME");
-    $arFilterBannerID = Array("IBLOCK_ID" => 35, 'SECTION_ID' => $itemVid, "ACTIVE" => "Y");
-    $resElementBannerID = CIBlockElement::GetList(Array('IBLOCK_SECTION_ID' => $itemVid), $arFilterBannerID, false, Array(), $arSelectBannerID);
 
-    while ($elementBannerID = $resElementBannerID->Fetch()) {
-        $arrIdBanner[] = $elementBannerID['ID'];
+//see($itemVid);
+$arSelectBannerID = Array("ID", "NAME");
+$arFilterBannerID = Array("IBLOCK_ID" => 35, 'SECTION_ID' => $idSection, "ACTIVE" => "Y");
+$resElementBannerID = CIBlockElement::GetList(Array('IBLOCK_SECTION_ID' => $idSection), $arFilterBannerID, false, Array(), $arSelectBannerID);
 
-    }
+while ($elementBannerID = $resElementBannerID->Fetch()) {
+    $arrIdBanner[] = $elementBannerID['ID'];
+
 }
 $arResult['ELEMENT_BANNER_ID'] = $arrIdBanner;
 ?>
