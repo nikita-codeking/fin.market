@@ -7374,4 +7374,8 @@ summary .listElement::before {
     -webkit-filter: hue-rotate(12deg) saturate(0.8) brightness(1.4) opacity(0.5);
     filter: hue-rotate(12deg) saturate(0.8) brightness(1.4) opacity(0.5);
 }
+.leftSaidbar{
+    width: 52px;
+    margin-right: 17px;
+}
 

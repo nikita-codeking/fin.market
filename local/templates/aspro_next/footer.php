@@ -40,7 +40,7 @@
                                                             <a href="/ratings/?section=327" rel="nofollow">Дебетовые карты</a>
                                                             <a href="/ratings/?section=331" rel="nofollow">Ипотека</a>
                                                             <a href="/ratings/?section=335" rel="nofollow">Расчетные счета</a>
-                                                            <a href="/ratings/?section=332" rel="nofollow"> <img src="/upload/resize_cache/iblock/cb4/150_150_1/cb4118f18033e0994ff0bb8af731d05c.png" style="width: 52px; margin-right: 17px;" class="123"> Автокредиты</a>
+                                                            <a href="/ratings/?section=332" rel="nofollow"> <img src="/upload/resize_cache/iblock/cb4/150_150_1/cb4118f18033e0994ff0bb8af731d05c.png" class="leftSaidbar"> Автокредиты</a>
                                                         </div>
                                                     </div>
                                                 </noindex>
