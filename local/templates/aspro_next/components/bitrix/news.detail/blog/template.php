@@ -110,14 +110,15 @@ $bShowTopBanner = (isset($arResult['SECTION_BNR_CONTENT'] ) && $arResult['SECTIO
             if(isset($arResult['PROPERTIES']['SECTIONS_INCLUDE']['VALUE']))
             {
 
-                ?><div class="mobileBnnerSravni"><?
-                    echo $arResult['BANNER_MOBILE'][0]['DETAIL_TEXT'];
-                ?></div><?
+                $trimStrBannerSravni = implode('|', $arResult['ELEMENT_BANNER_ID']);
+                ?><a class="mobileBnnerSravni" href="/catalog/comparisons/?products=<?=$trimStrBannerSravni;?>"><?
+                echo $arResult['BANNER_MOBILE'][0]['DETAIL_TEXT'];
+                ?></a><?
 
 
-                ?><div class="desctopBnnerSravni"><?
-                    echo $arResult['BANNER_DESK'][0]['DETAIL_TEXT'];
-                ?></div><?
+                ?><a class="desctopBnnerSravni" href="/catalog/comparisons/?products=<?=$trimStrBannerSravni;?>"><?
+                echo $arResult['BANNER_DESK'][0]['DETAIL_TEXT'];
+                ?></a><?
                 //foreach ($arResult['PROPERTIES']['SECTIONS_INCLUDE']['VALUE'] as $itemV)
             }//if(isset($arResult['PROPERTIES']['SECTIONS_INCLUDE']['VALUE']))
 
@@ -255,7 +256,7 @@ $frame->setAnimation(true);
     }
 
     $(document).ready(function() {
-        $('.stories-banner-lg').click(function (e) {
+        $('.desctopBnnerSravni').click(function (e) {
             e.preventDefault();
 
             var arrayOfStrings1 = $('.elementsBannersSravni').text().split("|");

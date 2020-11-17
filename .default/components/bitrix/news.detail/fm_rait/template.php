@@ -141,14 +141,16 @@ ob_end_clean();?>
             if(isset($arResult['PROPERTIES']['SECTIONS_INCLUDE']['VALUE']))
             {
 
-                ?><div class="mobileBnnerSravni"><?
+                $trimStrBannerSravni = implode('|', $arResult['ELEMENT_BANNER_ID']);
+                //see($arResult);
+                ?><a class="mobileBnnerSravni" href="/catalog/comparisons/?products=<?=$trimStrBannerSravni;?>"><?
                 echo $arResult['BANNER_MOBILE'][0]['DETAIL_TEXT'];
-                ?></div><?
+                ?></a><?
 
 
-                ?><div class="desctopBnnerSravni"><?
+                ?><a class="desctopBnnerSravni" href="/catalog/comparisons/?products=<?=$trimStrBannerSravni;?>"><?
                 echo $arResult['BANNER_DESK'][0]['DETAIL_TEXT'];
-                ?></div><?
+                ?></a><?
                 //foreach ($arResult['PROPERTIES']['SECTIONS_INCLUDE']['VALUE'] as $itemV)
             }//if(isset($arResult['PROPERTIES']['SECTIONS_INCLUDE']['VALUE']))
 
@@ -398,22 +400,57 @@ ob_end_clean();?>
             ?>
         </div>
 
+        <div class="allSravniClik" style="">
+            <?
+            $sravnenie = Array();
+            foreach($arResult["DISPLAY_PROPERTIES_FORMATTED"]['PRODUCTS']['LINK_ELEMENT_VALUE'] as $arItem){
+                $sravnenie[] = $arItem['ID'];
+                //see($sravnenie);
+            }
+            //echo $sravnenie;
+            $trimStrSravni = implode('|', $sravnenie);
+            ?>
+        </div>
         <div class="links choose_extra_links">
-            <a class="steck_sravnenia btn btn-default" href="/catalog/comparisons/">Сравнить все</a> или <a class="btn btn-default" href="/request_online/card">Отправить 1 заявку во все банки</a>
+            <a class="steck_sravnenia btn btn-default" href="/catalog/comparisons/?products=<?=$trimStrSravni;?>">Сравнить все</a> <!-- или <a class="btn btn-default" href="/request_online/card">Отправить 1 заявку во все банки</a>  -->
         </div>
         <script>
+            function kk_add_to_comparisons(id,session){
+                $.ajax({
+                    type:'post',//тип запроса: get,post либо head
+                    url:'/ajax/add_item_copmparison.php',//url адрес файла обработчика
+                    data:"session="+session+"&id=" + id,//параметры запроса
+                    response:'text',//тип возвращаемого ответа text либо xml
+                    success:function (data) {//возвращаемый результат от сервера
+                        //location.href = '/basket/';
+                        console.log(data);
+                    }
+                });
+                setTimeout(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "/ajax/addIconComprCheck.php",
+                        success: function (data) {//возвращаемый результат от сервера
+                            $('.link_compare_icon').html(data);
+                        }
+                    });
+                },1000);
+
+            }
+
+            /*
             $(document).ready(function() {
                 $('.steck_sravnenia').click(function (e) {
                     e.preventDefault();
 
-                    var idStr = $('.steck_sravnenie_rait');
-                    //console.log($(this).parent().parent().children('.col-md-8').children('.top_wrapper').children('.catalog_block').children('.steck_sravnenie_rait').text());
-
-                    //var sravniRating1 = idStr.text().split("|");
-                    location.href = "/catalog/comparisons/?products="+idStr.text();
+                    var arrayOfStrings1 = $('.allSravniClik').text().split("|");
+                    $.each(arrayOfStrings1,function(index,value){
+                        kk_add_to_comparisons(value,'<?=session_id();?>')
+                    });
+                    location.href = "/catalog/comparisons/";
                 });
             });
-
+*/
             viewBanner();
             $(window).resize(function(){
                 viewBanner();
