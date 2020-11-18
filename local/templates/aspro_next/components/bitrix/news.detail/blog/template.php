@@ -57,7 +57,7 @@ $bShowTopBanner = (isset($arResult['SECTION_BNR_CONTENT'] ) && $arResult['SECTIO
 		});
 		</script>
 	<?else:?>
-		<div class="detailimage image-wide"><a href="<?=$arResult['DETAIL_PICTURE']['SRC']?>" class="fancybox""><img src="<?=$arResult['DETAIL_PICTURE']['SRC']?>" class="img-responsive" alt="<?=$atrAlt?>" /></a></div>
+		<div class="detailimage image-wide"><img src="<?=$arResult['DETAIL_PICTURE']['SRC']?>" class="img-responsive" alt="<?=$atrAlt?>" /></div>
 	<?endif;?>
 <?endif;?>
 <?// отобразить пользователя?>
