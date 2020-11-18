@@ -79,7 +79,14 @@
                                         <?if($bDetailLink):?></a><?endif;?>
                                 </div>
                             <?endif;?>
-                            <a class="steck_sravnenia srv_all btn btn-default" href="/catalog/comparisons/"><?=GetMessage('SRV_ALL_PAGE');?></a>
+                            <?
+                            $arrIdSravniAll = Array();
+                            foreach($arItem['PROPERTIES']['PRODUCTS']['VALUE'] as $valID){
+                                $arrIdSravniAll[] = $valID;
+                            }
+                            $trimStrSravni = implode('|', $arrIdSravniAll);
+                            ?>
+                            <a class="steck_sravnenia srv_all btn btn-default" href="/catalog/comparisons/?products=<?=$trimStrSravni;?>"><?=GetMessage('SRV_ALL_PAGE');?></a>
                             <?$imagePart = ob_get_clean();?>
                             <div class="col-md-12 rate__list-item">
                                 <?/*if($i):?>
@@ -173,7 +180,7 @@
     }
     
     $(document).ready(function() {
-        $('.steck_sravnenia').click(function (e) {
+        /*$('.steck_sravnenia').click(function (e) {
             e.preventDefault();
 
             var idStr = $(this).parent().parent().children('.col-md-8').children('.top_wrapper').children('.catalog_block').children('.steck_sravnenie_rait');
@@ -181,7 +188,7 @@
 
             //var sravniRating1 = idStr.text().split("|");
             location.href = "/catalog/comparisons/?products="+idStr.text();
-        });
+        });*/
         /**
          * после загрузки страницы - грузим области с картами
          */
