@@ -114,9 +114,13 @@ $APPLICATION->SetTitle($titleComprSection);
                         <?if($arResult['ITEMS'][0]['PROPERTIES'][$itemP['CODE']]['PROPERTY_TYPE'] == 'L' && $arResult['ITEMS'][0]['PROPERTIES'][$itemP['CODE']]['TYPE_MULTIPLE'] == 'Y'):?>
 
                             <!-- #netwiz->start выведения значений множествееного списка в выпадающий список по клику на название свойства.-->
-                            <div class="elementListProperty">
+                            <?if($property_name == 'Документы' && strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'kreditnye_karty') || strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'ipoteka') || strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'karty_rassrochki') || strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'avtokredity') || strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'refinansirovanie') || strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'zaymy')){?>
+                                <div class="elementListProperty" style="display: none;"></div>
+                            <?}
+                            else{?>
+                                <div class="elementListProperty">
                                 <details>
-                                <summary><?= $property_name; ?></summary>
+                                <summary><? echo $property_name ?></summary>
                                     <? $property_enums = CIBlockPropertyEnum::GetList(Array(), Array("IBLOCK_ID" => 35, "CODE" => $arResult['ITEMS'][0]['PROPERTIES'][$itemP['CODE']]));
                                     while ($enum_fields = $property_enums->Fetch()):?>
                                         <?//see($enum_fields["VALUE"], true);?>
@@ -134,6 +138,7 @@ $APPLICATION->SetTitle($titleComprSection);
                                     <?endwhile;?>
                                 </details>
                             </div>
+                            <?}?>
                         <?else:?>
                             <?echo $property_name;?>
                         <?endif;?>
