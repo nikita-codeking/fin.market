@@ -198,7 +198,7 @@ $actualItem = $arResult["OFFERS"] ? (isset($arResult['OFFERS'][$arResult['OFFERS
                 shuffle($arResult["PROPERTIES"]);
                 ?>
                 <?php foreach($arResult["PROPERTIES"] as $prop): ?>
-                    <?php if($prop["VALUE"] == 'Да' && $prop["SHOW_IN_TAGS"] == 'Y'): ?>
+                    <?php if($prop["VALUE"] == 'Да'): ?>
                         <span class="s-text swiper-slide"><?=$prop["NAME"];?></span>
                     <?php endif; ?>
                 <?php endforeach; ?>

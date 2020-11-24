@@ -809,7 +809,7 @@ $pos_rko = strpos($this_url,'raschetnye_scheta');
                                     <?//arDiscounts?>
 				    <?php shuffle($arItem["PROPERTIES"])?>
                                     <?php foreach($arItem["PROPERTIES"] as $prop): ?>
-                                        <?php if($prop["VALUE"] == 'Да' && $prop["SHOW_IN_TAGS"] == 'Y'): ?>
+                                        <?php if($prop["VALUE"] == 'Да'): ?>
                                             <div class="sticker_s_nizkim_protsentom swiper-slide"><?=$prop["NAME"];?></div>
                                         <?elseif($prop['CODE'] == 'USLOVIYA_OBESPECHENIE_DA_NET'):?>
                                             <div class="sticker_s_nizkim_protsentom swiper-slide"><?=$prop["NAME"];?></div>
