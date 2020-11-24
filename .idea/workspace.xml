@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be1066c7-56f5-417c-84cd-0c596b3982ea" name="Default Changelist" comment="" />
+    <list default="true" id="b7d02f7c-1ee0-4a8a-911e-f143e2e5090b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +13,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1k35lpD9U12H7nUnYoDacplfpcD" />
+  <component name="ProjectId" id="1kgfwMdQSTjwNg6LRTRJoUFfvQe" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -26,24 +26,19 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../projectWorkPHP" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="be1066c7-56f5-417c-84cd-0c596b3982ea" name="Default Changelist" comment="" />
-      <created>1604916588332</created>
+      <changelist id="b7d02f7c-1ee0-4a8a-911e-f143e2e5090b" name="Default Changelist" comment="" />
+      <created>1606127392403</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1604916588332</updated>
-      <workItem from="1604916590076" duration="5792000" />
-      <workItem from="1604988742568" duration="17734000" />
-      <workItem from="1605135572086" duration="173000" />
-      <workItem from="1605168575141" duration="6750000" />
-      <workItem from="1605254343049" duration="11903000" />
-      <workItem from="1605509559030" duration="28433000" />
-      <workItem from="1605687723660" duration="4478000" />
+      <updated>1606127392403</updated>
+      <workItem from="1606127393497" duration="61000" />
+      <workItem from="1606204161402" duration="2019000" />
     </task>
     <servers />
   </component>
@@ -51,21 +46,9 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="71" key="#Deployment" timestamp="1605261260364">
+    <state x="361" y="71" key="#Deployment" timestamp="1606204240111">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="71" key="#Deployment/0.0.1536.824@0.0.1536.824" timestamp="1605261260364" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1605263833464">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605263833464" />
-    <state x="624" y="311" key="WebDeployment.AddServerDialog.v.1" timestamp="1604916865136">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="624" y="311" key="WebDeployment.AddServerDialog.v.1/0.0.1536.824@0.0.1536.824" timestamp="1604916865136" />
-    <state x="57" y="86" width="760" height="534" key="find.popup" timestamp="1605612270338">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="57" y="86" width="760" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1605612270338" />
+    <state x="361" y="71" key="#Deployment/0.0.1536.824@0.0.1536.824" timestamp="1606204240111" />
   </component>
 </project>

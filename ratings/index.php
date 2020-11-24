@@ -1,3 +1,4 @@
+
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Лучшие предложения банков в 2020 году. Рейтинги банковских карт, ипотеки, кредитов и др.");
