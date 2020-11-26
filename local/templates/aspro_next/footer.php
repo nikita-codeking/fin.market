@@ -341,6 +341,7 @@
             <img style="width:119px; height:75px;" src="/local/templates/aspro_next/images/basket_fly.png">
         </div>
         <?$is_main = $APPLICATION->GetCurPage(false)==SITE_DIR;?>
+                        <?if(strpos($_SERVER['REQUEST_URI'], '/catalog/') > 0){?>
         <script>
             //отображать шапку, когда в нее летит сравнение.
 
@@ -419,6 +420,7 @@
             }
             
         </script>
+                        <?php}?>
 
         <?if(!isset($_COOKIE["COOKIE_AGREE"])):?>
             <?setcookie("COOKIE_AGREE", "agree");?>

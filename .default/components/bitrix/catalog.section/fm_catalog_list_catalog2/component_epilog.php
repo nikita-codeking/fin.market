@@ -25,6 +25,7 @@ while($ar_result = $db_list->GetNext())
 $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH."/js/owl.carousel.js");
 $APPLICATION->SetAdditionalCss(SITE_TEMPLATE_PATH.'/css/owl.carousel.css');
 $APPLICATION->SetAdditionalCss(SITE_TEMPLATE_PATH.'/css/owl.theme.default.css');
+$is_main = $APPLICATION->GetCurPage(false)==SITE_DIR;
 ?>
 <script>
 $(function(){
@@ -94,4 +95,77 @@ $(function(){
 		$(this).attr("scroll_top", $(this).offset().top);
 	});*/
 });
+//Полет сравнить
+$(document).ready(function(){
+    //console.log(11111111111);
+    $('.like_icons').click(function () {
+        var imgProduct = $(this).parent().children('.thumb').children().attr("src");
+        if(document.location.href.search("/?oid") > 0){
+            imgProduct = $(this).parent().parent().children('.item_slider').children('.slides').children('.offers_img').children('.popup_link').children('img').attr("src");
+        }else if(document.location.href.search("/offers/") > 0) {
+            imgProduct = $(this).parent().children('.thumb').children().attr("src");
+        }else if(document.location.href.search("/catalog/") > 0) {
+            imgProduct = $(this).parent().parent().parent().children('.image_block').children('.image_wrapper_block').children('.thumb').children().attr("src");
+        }
+        flyBacket($(this).offset()['top'],$(this).offset()['left'],imgProduct);
+    });
+
+});
+function flyBacket(cTop,cLeft,src) {
+    <?if(!$is_main):?>
+    if(document.location.href.search("/offers/") > 0) {
+    }else{
+        if (document.documentElement.clientWidth > 991) {
+            if(!$('#headerfixed').hasClass('fixed')){
+                $('#headerfixed').addClass('fixed');
+            }
+            $('.basket_animation>img').attr("src", src);
+            $('.basket_animation').css({'top': cTop - 50 + "px", 'left': cLeft - 50 + "px"});
+            $('.basket_animation').clone()
+                .css({
+                    'position': 'absolute',
+                    'display': 'block',
+                    'z-index': '11100',
+                    'top': cTop - 50,
+                    'left': cLeft - 50
+                })
+                .appendTo("body")
+                .animate({
+                    opacity: 0.2,
+                    left: $("#headerfixed .svg-inline-comparison").offset()['left'],
+                    top: $("#headerfixed .svg-inline-comparison").offset()['top'],
+                    width: 100
+                }, 1000, function () {
+                    $(this).remove();
+
+                });
+        }
+        else{
+            if(!$('#headerfixed').hasClass('fixed')){
+                $('#headerfixed').addClass('fixed');
+            }
+            $('.basket_animation>img').attr("src", src);
+            $('.basket_animation').css({'top': cTop - 50 + "px", 'left': cLeft - 50 + "px"});
+            $('.basket_animation').clone()
+                .css({
+                    'position': 'absolute',
+                    'display': 'block',
+                    'z-index': '11100',
+                    'top': cTop - 50,
+                    'left': cLeft - 50
+                })
+                .appendTo("body")
+                .animate({
+                    opacity: 0.2,
+                    left: $("#mobileheader .svg-inline-comparison").offset()['left'],
+                    top: $("#mobileheader .svg-inline-comparison").offset()['top'],
+                    width: 100
+                }, 1000, function () {
+                    $(this).remove();
+
+                });
+        }
+    }
+    <?endif;?>
+}
 </script>
