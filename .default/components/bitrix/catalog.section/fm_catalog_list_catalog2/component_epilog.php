@@ -95,6 +95,15 @@ $(function(){
 		$(this).attr("scroll_top", $(this).offset().top);
 	});*/
 });
+</script>
+<div class="popap_ofo" style="display: none;">
+    <label class="popap_ofo-closer" id="popap_ofo-closer">&#215;</label>
+    <div></div>
+</div>
+<div style="position: absolute;" class="basket_animation" >
+    <img style="width:119px; height:75px;" src="/local/templates/aspro_next/images/basket_fly.png">
+</div>
+<script>
 //Полет сравнить
 $(document).ready(function(){
     //console.log(11111111111);
