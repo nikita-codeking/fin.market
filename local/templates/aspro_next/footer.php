@@ -341,7 +341,7 @@
             <img style="width:119px; height:75px;" src="/local/templates/aspro_next/images/basket_fly.png">
         </div>
         <?$is_main = $APPLICATION->GetCurPage(false)==SITE_DIR;?>
-                        <?if(strpos($_SERVER['REQUEST_URI'], '/catalog/') == 0){?>
+
         <script>
             //отображать шапку, когда в нее летит сравнение.
 
@@ -354,8 +354,6 @@
                         imgProduct = $(this).parent().parent().children('.item_slider').children('.slides').children('.offers_img').children('.popup_link').children('img').attr("src");
                     }else if(document.location.href.search("/offers/") > 0) {
                         imgProduct = $(this).parent().children('.thumb').children().attr("src");
-                    }else if(document.location.href.search("/catalog/") > 0) {
-                        imgProduct = $(this).parent().parent().parent().children('.image_block').children('.image_wrapper_block').children('.thumb').children().attr("src");
                     }
                     flyBacket($(this).offset()['top'],$(this).offset()['left'],imgProduct);
                 });
@@ -420,8 +418,6 @@
             }
             
         </script>
-                        <?php}?>
-
         <?if(!isset($_COOKIE["COOKIE_AGREE"])):?>
             <?setcookie("COOKIE_AGREE", "agree");?>
             <div class="cookieConsentContainer" id="cookieConsentContainer" style="opacity: 1;display: block;-webkit-box-shadow: 0px 0px 19px 4px rgba(54, 54, 54, 0.2);-moz-box-shadow: 0px 0px 19px 4px rgba(54, 54, 54, 0.2);box-shadow: 0px 0px 19px 4px rgba(54, 54, 54, 0.2);">

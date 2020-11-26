@@ -109,11 +109,7 @@ $(document).ready(function(){
     //console.log(11111111111);
     $('.like_icons').click(function () {
         var imgProduct = $(this).parent().children('.thumb').children().attr("src");
-        if(document.location.href.search("/?oid") > 0){
-            imgProduct = $(this).parent().parent().children('.item_slider').children('.slides').children('.offers_img').children('.popup_link').children('img').attr("src");
-        }else if(document.location.href.search("/offers/") > 0) {
-            imgProduct = $(this).parent().children('.thumb').children().attr("src");
-        }else if(document.location.href.search("/catalog/") > 0) {
+        if(document.location.href.search("/catalog/") > 0) {
             imgProduct = $(this).parent().parent().parent().children('.image_block').children('.image_wrapper_block').children('.thumb').children().attr("src");
         }
         flyBacket($(this).offset()['top'],$(this).offset()['left'],imgProduct);
@@ -177,4 +173,33 @@ function flyBacket(cTop,cLeft,src) {
     }
     <?endif;?>
 }
+</script>
+<div id="tooltip"></div>
+<div id="srv_click"></div>
+
+<script>
+    $(document).ready(function() {
+        var session = '<?=session_id();?>';
+        $.ajax({
+            type: "POST",
+            url: "/ajax/addIconComprCheck.php",
+            data:"session="+session,
+            success: function (data) {//возвращаемый результат от сервера
+                $('.link_compare_icon').html(data);
+            }
+        });
+        $(".btn-default").click(function () {
+            setTimeout(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/ajax/addIconComprCheck.php",
+                    data:"session="+session,
+                    success: function (data) {//возвращаемый результат от сервера
+                        $('.link_compare_icon').html(data);
+                    }
+                });
+            },1000);
+        });
+    });
+
 </script>
