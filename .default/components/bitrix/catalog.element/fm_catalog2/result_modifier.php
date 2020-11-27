@@ -1373,6 +1373,7 @@ if(count($arrThisProp)>0)
             }//if(in_array($item['CODE'],$arrVisibleProperty))
         }//foreach ($arResult["PROPERTIES"] as $key=>$item)
         $arResult["PROPERTIES"] = $resultProperties;
+        sort($arResult["PROPERTIES"]);
     }//if(count($arrVisibleProperty)>0)
 
 }//if(count($arrThisProp))
