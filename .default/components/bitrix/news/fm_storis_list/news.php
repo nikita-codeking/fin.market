@@ -126,9 +126,12 @@ $itemsCnt = CNextCache::CIblockElement_GetList(array("CACHE" => array("TAG" => C
                 <a href="/articles/?section=335" rel="nofollow">Расчетные счета</a>
                 <a href="/articles/?section=327" rel="nofollow">Дебетовые карты</a>
                 <a href="/articles/?section=329" rel="nofollow">Кредиты</a>
+                <a href="/articles/?section=326" rel="nofollow">Карты рассрочки</a>
                 <a href="/articles/?section=325" rel="nofollow">Кредитные карты</a>
                 <a href="/articles/?section=331" rel="nofollow">Ипотека</a>
+                <a href="/articles/?section=330" rel="nofollow">Займы</a>
                 <a href="/articles/?section=333" rel="nofollow">Рефинансирование</a>
+                <a href="/articles/?section=332" rel="nofollow">Автокредиты</a>
             </div>
         </div>
     </noindex>

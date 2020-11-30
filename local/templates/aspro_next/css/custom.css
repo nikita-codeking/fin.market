@@ -7100,7 +7100,7 @@ summary .listElement::before {
     opacity: 1;
 }
 
-.blog-sidebar .search-tags-cloud .tags a[href="/articles/"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?tags=Расчетные%20счета"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?tags=Кредитные%20карты"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?tags=Кредиты"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?tags=Ипотека"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?tags=Карты%20рассрочки"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?tags=Дебетовые%20карты"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?tags=Рефинансирование"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?tags=Кредитные карты"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?tags=Ипотека"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?tags=Автокредиты"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?tags=Кредиты"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?tags=Расчетные счета"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?tags=Дебетовые карты"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?tags=Карты рассрочки"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?section=335"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?section=327"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?section=329"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?section=325"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?section=331"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?section=333"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?section=325"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?section=329"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?section=332"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?section=326"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?section=327"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?section=331"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?section=335"], .blog-sidebar .search-tags-cloud .tags a[href="/reviews/?section=325"], .blog-sidebar .search-tags-cloud .tags a[href="/reviews/?section=329"], .blog-sidebar .search-tags-cloud .tags a[href="/reviews/?section=326"], .blog-sidebar .search-tags-cloud .tags a[href="/reviews/?section=327"], .blog-sidebar .search-tags-cloud .tags a[href="/reviews/?section=331"], .blog-sidebar .search-tags-cloud .tags a[href="/reviews/?section=335"] {
+.blog-sidebar .search-tags-cloud .tags a[href="/articles/"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?tags=Займы"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?tags=Автокредиты"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?tags=Кредитные%20карты"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?tags=Кредиты"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?tags=Ипотека"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?tags=Карты%20рассрочки"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?tags=Дебетовые%20карты"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?tags=Рефинансирование"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?tags=Кредитные карты"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?tags=Ипотека"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?tags=Автокредиты"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?tags=Кредиты"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?tags=Расчетные счета"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?tags=Дебетовые карты"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?tags=Карты рассрочки"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?section=335"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?section=327"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?section=329"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?section=325"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?section=331"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?section=333"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?section=330"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?section=332"], .blog-sidebar .search-tags-cloud .tags a[href="/articles/?section=326"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?section=325"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?section=329"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?section=332"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?section=326"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?section=327"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?section=331"], .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?section=335"], .blog-sidebar .search-tags-cloud .tags a[href="/reviews/?section=325"], .blog-sidebar .search-tags-cloud .tags a[href="/reviews/?section=329"], .blog-sidebar .search-tags-cloud .tags a[href="/reviews/?section=326"], .blog-sidebar .search-tags-cloud .tags a[href="/reviews/?section=327"], .blog-sidebar .search-tags-cloud .tags a[href="/reviews/?section=331"], .blog-sidebar .search-tags-cloud .tags a[href="/reviews/?section=335"] {
     padding-left: 80px;
 }
 
@@ -7149,7 +7149,7 @@ summary .listElement::before {
     background-image: url("/local/templates/aspro_next/images/sections/kredity_ipoteka_2.svg");
 }
 
-.blog-sidebar .search-tags-cloud .tags a[href="/articles/?tags=Карты%20рассрочки"]::before, .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?section=326"]::before, .blog-sidebar .search-tags-cloud .tags a[href="/reviews/?section=326"]::before {
+.blog-sidebar .search-tags-cloud .tags a[href="/articles/?tags=Карты%20рассрочки"]::before, .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?section=326"]::before, .blog-sidebar .search-tags-cloud .tags a[href="/reviews/?section=326"]::before, .blog-sidebar .search-tags-cloud .tags a[href="/articles/?section=326"]::before{
     content: "";
     top: 15px;
     background-image: url("/local/templates/aspro_next/images/sections/karty_rassrochki_2.svg");
@@ -7165,6 +7165,11 @@ summary .listElement::before {
     content: "";
     top: 15px;
     background-image: url("/local/templates/aspro_next/images/sections/kredity_refinans_2.svg");
+}
+.blog-sidebar .search-tags-cloud .tags a[href="/articles/?tags=Займы"]::before, .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?section=330"]::before, .blog-sidebar .search-tags-cloud .tags a[href="/articles/?section=330"]::before, .blog-sidebar .search-tags-cloud .tags a[href="/reviews/?section=330"]::before {
+    content: "";
+    top: 15px;
+    background-image: url("/local/templates/aspro_next/images/sections/zaymy.svg");
 }
 
 @media (max-width: 768px) {
@@ -7195,6 +7200,9 @@ summary .listElement::before {
     }
     .blog-sidebar .search-tags-cloud .tags a[href="/articles/?tags=Карты%20рассрочки"]::before, .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?section=326"]::before, .blog-sidebar .search-tags-cloud .tags a[href="/reviews/?section=326"]::before {
         background-image: url("/local/templates/aspro_next/images/sections/karty_rassrochki_2.svg") !important;
+    }
+    .blog-sidebar .search-tags-cloud .tags a[href="/articles/?tags=Займы"]::before, .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?section=330"]::before, .blog-sidebar .search-tags-cloud .tags a[href="/reviews/?section=330"]::before {
+        background-image: url("/local/templates/aspro_next/images/sections/zaymy.svg") !important;
     }
 }
 
