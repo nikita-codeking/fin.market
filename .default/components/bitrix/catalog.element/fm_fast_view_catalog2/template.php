@@ -1540,8 +1540,10 @@ $elementName = ((isset($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']) && $
                                                                         <td class="char_value"><span itemprop="value"><?=formatToHuman(getObProp($itemPropOf['NAME'], round($itemPropOf['VALUE'])))?> <?=$edIzm?></span>
                                                                     <?}elseif($itemPropOf['PROPERTY_TYPE'] == 'L' && $itemPropOf['MULTIPLE'] == 'Y'){?>
                                                                         <td class="char_value" style="display: none;"><span itemprop="value"><?=getObProp($itemPropOf['NAME'], $itemPropOf['VALUE']) ?> <?=$edIzm?></span></td>
+                                                                    <?}elseif($itemPropOf['CODE'] == 'TREBOVANIYA_OBSHCHIY_STAZH_RABOTY_LET' && $itemPropOf['VALUE'] == 1){?>
+                                                                        <td class="char_value"><span itemprop="value"><?=getObProp($itemPropOf['NAME'], '12' . ' ' . 'мес.')?> <?=$edIzm?></span>
                                                                     <?}elseif($itemPropOf['CODE'] == 'TREBOVANIYA_OBSHCHIY_STAZH_RABOTY_LET'){?>
-                                                                        <td class="char_value"><span itemprop="value"><?=getObProp($itemPropOf['NAME'], $itemPropOf['VALUE'] . ' ' . declension($itemPropOf['VALUE'], array('год', 'года', 'лет')))?> <?=$edIzm?></span>
+                                                                        <td class="char_value"><span itemprop="value"><?=getObProp($itemPropOf['NAME'], $itemPropOf['VALUE'] . ' ' . 'мес.')?> <?=$edIzm?></span>
                                                                     <?}elseif($itemPropOf['CODE'] == 'TREBOVANIYA_VOZRAST_ZAYEMSHCHIKA'){?>
                                                                         <td class="char_value"><span itemprop="value"><?=getObProp($itemPropOf['NAME'], $itemPropOf['VALUE'][0] . ' - ' . $itemPropOf['VALUE'][1] . ' ' . declension($itemPropOf['VALUE'][1], array('год', 'года', 'лет')))?> <?=$edIzm?></span>
                                                                     <?}else{?>

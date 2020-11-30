@@ -213,9 +213,12 @@ $APPLICATION->SetTitle($titleComprSection);
                                                 echo formatToHuman($itemC['PROPERTIES'][$itemP['CODE']]['VALUE']) . '  ' . $itemC['PROPERTIES'][$itemP['CODE']]['VALUE_DESCRIPTION'];
                                             }
                                             else{
-                                                
-                                                if($itemC['PROPERTIES'][$itemP['CODE']]['CODE'] == 'TREBOVANIYA_OBSHCHIY_STAZH_RABOTY_LET'){
-                                                    echo $itemC['PROPERTIES'][$itemP['CODE']]['VALUE'], ' ', declension($itemC['PROPERTIES'][$itemP['CODE']]['VALUE'], array('год', 'года', 'лет'));
+
+                                                if($itemC['PROPERTIES'][$itemP['CODE']]['CODE'] == 'TREBOVANIYA_OBSHCHIY_STAZH_RABOTY_LET' && $itemC['PROPERTIES'][$itemP['CODE']]['VALUE'] == 1){
+                                                    echo '12' . ' ' . 'мес.';
+                                                }
+                                                elseif ($itemC['PROPERTIES'][$itemP['CODE']]['CODE'] == 'TREBOVANIYA_OBSHCHIY_STAZH_RABOTY_LET' && $itemC['PROPERTIES'][$itemP['CODE']]['VALUE'] != 1){
+                                                    echo $itemC['PROPERTIES'][$itemP['CODE']]['VALUE'] . ' '. 'мес.';
                                                 }
                                                 else {
                                                     echo $itemC['PROPERTIES'][$itemP['CODE']]['VALUE'] . '  ' . $itemC['PROPERTIES'][$itemP['CODE']]['VALUE_DESCRIPTION'];
