@@ -1345,17 +1345,20 @@ $actualItem = $arResult["OFFERS"] ? (isset($arResult['OFFERS'][$arResult['OFFERS
                                                                             <?$property_enums = CIBlockPropertyEnum::GetList(Array(), Array("IBLOCK_ID" => 35, "CODE" => $itemPropOf['CODE']));
                                                                             while($enum_fields = $property_enums->GetNext())
                                                                             {
-                                                                                ?><div class="prop_row"><span><?
+                                                                            $valuePropList = $enum_fields["VALUE"];
+                                                                            if(in_array($valuePropList, $itemPropOf['VALUE'])){
+                                                                            ?><div class="prop_row" style="margin-top: 9px; margin-left: 9px; margin-bottom: 9px;"><span><?
                                                                                     echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
-                                                                                    $valuePropList = $enum_fields["VALUE"];
 
-                                                                                    if(in_array($valuePropList, $itemPropOf['VALUE'])){
+                                                                                    echo 'Да' . "" ;
+                                                                                    }else{?>
+                                                                                        <div class="prop_row" style="display: none"><span><?
+                                                                                                echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
 
-                                                                                        echo 'Да' . "" ;
-
-                                                                                    }else{echo ' - ' . "" ;}
-                                                                                    ?></span></div><?                                                              }
-                                                                            ?>
+                                                                                                echo '-' . "" ;;
+                                                                                                }
+                                                                                                ?></span></div><?
+                                                                                    }?>
 
                                                                         </details>
                                                                     <?}
