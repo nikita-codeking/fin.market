@@ -198,7 +198,7 @@ $APPLICATION->SetTitle($titleComprSection);
                                     }else{
                                         if($itemC['PROPERTIES'][$itemP['CODE']]['VALUE']==0)
                                         {
-                                            echo '';
+                                            echo $itemC['PROPERTIES'][$itemP['CODE']]['VALUE'];
                                         }
                                         else
                                         {
