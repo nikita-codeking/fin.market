@@ -1329,22 +1329,26 @@ $elementName = ((isset($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']) && $
                                                                     <td class="char_name">
                                                                         <div class="props_item ">
                                                                             <?if($itemPropOf['PROPERTY_TYPE'] == 'L' && $itemPropOf['MULTIPLE'] == 'Y'){?>
-                                                                                <details>
+                                                                                <details open>
                                                                                     <summary><span class="kk-tooltip listElement" itemprop="name"><?=$itemPropOf['NAME'] ?><?if(strlen($itemPropOf['DESCRIPTION'])>0):?><span><?=$itemPropOf['DESCRIPTION']?></span><?endif;?></span></summary>
+
                                                                                     <?$property_enums = CIBlockPropertyEnum::GetList(Array(), Array("IBLOCK_ID" => 35, "CODE" => $itemPropOf['CODE']));
                                                                                     while($enum_fields = $property_enums->GetNext())
                                                                                     {
-                                                                                        ?><div class="prop_row"><span><?
+                                                                                    $valuePropList = $enum_fields["VALUE"];
+                                                                                    if(in_array($valuePropList, $itemPropOf['VALUE'])){
+                                                                                    ?><div class="prop_row"><span><?
                                                                                             echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
-                                                                                            $valuePropList = $enum_fields["VALUE"];
 
-                                                                                            if(in_array($valuePropList, $itemPropOf['VALUE'])){
+                                                                                            echo 'Да' . "" ;
+                                                                                            }else{?>
+                                                                                    <div class="prop_row" style="display: none"><span><?
+                                                                                            echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
 
-                                                                                                echo 'Да' . "" ;
-
-                                                                                            }else{echo ' - ' . "" ;}
-                                                                                            ?></span></div><?                                                              }
-                                                                                    ?>
+                                                                                            echo '-' . "" ;;
+                                                                                            }
+                                                                                            ?></span></div><?
+                                                                                            }?>
 
                                                                                 </details>
                                                                             <?}
@@ -1508,22 +1512,26 @@ $elementName = ((isset($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']) && $
                                                                     <td class="char_name">
                                                                         <div class="props_item ">
                                                                             <?if($itemPropOf['PROPERTY_TYPE'] == 'L' && $itemPropOf['MULTIPLE'] == 'Y'){?>
-                                                                                <details>
+                                                                                <details open>
                                                                                     <summary><span class="kk-tooltip listElement" itemprop="name"><?=$itemPropOf['NAME'] ?><?if(strlen($itemPropOf['DESCRIPTION'])>0):?><span><?=$itemPropOf['DESCRIPTION']?></span><?endif;?></span></summary>
+
                                                                                     <?$property_enums = CIBlockPropertyEnum::GetList(Array(), Array("IBLOCK_ID" => 35, "CODE" => $itemPropOf['CODE']));
                                                                                     while($enum_fields = $property_enums->GetNext())
                                                                                     {
-                                                                                        ?><div class="prop_row"><span><?
+                                                                                    $valuePropList = $enum_fields["VALUE"];
+                                                                                    if(in_array($valuePropList, $itemPropOf['VALUE'])){
+                                                                                    ?><div class="prop_row"><span><?
                                                                                             echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
-                                                                                            $valuePropList = $enum_fields["VALUE"];
 
-                                                                                            if(in_array($valuePropList, $itemPropOf['VALUE'])){
+                                                                                            echo 'Да' . "" ;
+                                                                                            }else{?>
+                                                                                    <div class="prop_row" style="display: none"><span><?
+                                                                                            echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
 
-                                                                                                echo 'Да' . "" ;
-
-                                                                                            }else{echo ' - ' . "" ;}
-                                                                                            ?></span></div><?                                                              }
-                                                                                    ?>
+                                                                                            echo '-' . "" ;;
+                                                                                            }
+                                                                                            ?></span></div><?
+                                                                                            }?>
 
                                                                                 </details>
                                                                             <?}
@@ -1585,24 +1593,25 @@ $elementName = ((isset($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']) && $
                                                                     <td class="char_name">
                                                                         <div class="props_item ">
                                                                             <?if($itemPropOf['PROPERTY_TYPE'] == 'L' && $itemPropOf['MULTIPLE'] == 'Y'){?>
-                                                                                <details>
+                                                                                <details open>
                                                                                     <summary><span class="kk-tooltip listElement" itemprop="name"><?=$itemPropOf['NAME'] ?><?if(strlen($itemPropOf['DESCRIPTION'])>0):?><span><?=$itemPropOf['DESCRIPTION']?></span><?endif;?></span></summary>
+
                                                                                     <?$property_enums = CIBlockPropertyEnum::GetList(Array(), Array("IBLOCK_ID" => 35, "CODE" => $itemPropOf['CODE']));
                                                                                     while($enum_fields = $property_enums->GetNext())
                                                                                     {
                                                                                     $valuePropList = $enum_fields["VALUE"];
                                                                                     if(in_array($valuePropList, $itemPropOf['VALUE'])){
-                                                                                    ?><div class="prop_row" style="margin-top: 9px; margin-left: 9px; margin-bottom: 9px;"><span><?
+                                                                                    ?><div class="prop_row"><span><?
                                                                                             echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
 
                                                                                             echo 'Да' . "" ;
                                                                                             }else{?>
-                                                                                        <div class="prop_row" style="display: none"><span><?
-                                                                                                echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
+                                                                                    <div class="prop_row" style="display: none"><span><?
+                                                                                            echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
 
-                                                                                                echo '-' . "" ;;
-                                                                                                }
-                                                                                                ?></span></div><?
+                                                                                            echo '-' . "" ;;
+                                                                                            }
+                                                                                            ?></span></div><?
                                                                                             }?>
 
                                                                                 </details>
@@ -1660,22 +1669,26 @@ $elementName = ((isset($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']) && $
                                                                     <td class="char_name">
                                                                         <div class="props_item ">
                                                                             <?if($itemPropOf['PROPERTY_TYPE'] == 'L' && $itemPropOf['MULTIPLE'] == 'Y'){?>
-                                                                                <details>
+                                                                                <details open>
                                                                                     <summary><span class="kk-tooltip listElement" itemprop="name"><?=$itemPropOf['NAME'] ?><?if(strlen($itemPropOf['DESCRIPTION'])>0):?><span><?=$itemPropOf['DESCRIPTION']?></span><?endif;?></span></summary>
+
                                                                                     <?$property_enums = CIBlockPropertyEnum::GetList(Array(), Array("IBLOCK_ID" => 35, "CODE" => $itemPropOf['CODE']));
                                                                                     while($enum_fields = $property_enums->GetNext())
                                                                                     {
-                                                                                        ?><div class="prop_row"><span><?
+                                                                                    $valuePropList = $enum_fields["VALUE"];
+                                                                                    if(in_array($valuePropList, $itemPropOf['VALUE'])){
+                                                                                    ?><div class="prop_row"><span><?
                                                                                             echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
-                                                                                            $valuePropList = $enum_fields["VALUE"];
 
-                                                                                            if(in_array($valuePropList, $itemPropOf['VALUE'])){
+                                                                                            echo 'Да' . "" ;
+                                                                                            }else{?>
+                                                                                    <div class="prop_row" style="display: none"><span><?
+                                                                                            echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
 
-                                                                                                echo 'Да' . "" ;
-
-                                                                                            }else{echo ' - ' . "" ;}
-                                                                                            ?></span></div><?                                                              }
-                                                                                    ?>
+                                                                                            echo '-' . "" ;;
+                                                                                            }
+                                                                                            ?></span></div><?
+                                                                                            }?>
 
                                                                                 </details>
                                                                             <?}
