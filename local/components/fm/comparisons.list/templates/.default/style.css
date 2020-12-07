@@ -1470,3 +1470,8 @@ overflow-y: auto; */
 		padding: 1px 0;
 	}
 }
+.null_valueCompr {
+	color: red;
+	font-size: 25px;
+	font-weight: 500;
+}

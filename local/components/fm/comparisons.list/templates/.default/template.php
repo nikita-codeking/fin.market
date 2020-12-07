@@ -179,7 +179,7 @@ $APPLICATION->SetTitle($titleComprSection);
 
                         <?php else: ?>
                             <!-- #netwiz->start Вывод значений свойств для каждого продкута, проверка есть в ли два значение для свойства что бы вывоить "от " и "до".-->
-                            <?if(!empty($itemC['PROPERTIES'][$itemP['CODE']]['VALUE'])) {
+                            <?if(isset($itemC['PROPERTIES'][$itemP['CODE']]['VALUE'])) {
                                 if(is_array ($itemC['PROPERTIES'][$itemP['CODE']]['VALUE'])){
                                     if($itemC['PROPERTIES'][$itemP['CODE']]['VALUE_DESCRIPTION'] == '%'){
                                         $a  = $itemC['PROPERTIES'][$itemP['CODE']]['VALUE']['0'];
@@ -198,7 +198,7 @@ $APPLICATION->SetTitle($titleComprSection);
                                     }else{
                                         if($itemC['PROPERTIES'][$itemP['CODE']]['VALUE']==0)
                                         {
-                                            echo $itemC['PROPERTIES'][$itemP['CODE']]['VALUE'];
+                                            echo $itemC['PROPERTIES'][$itemP['CODE']]['VALUE']. '  ' . $itemC['PROPERTIES'][$itemP['CODE']]['VALUE_DESCRIPTION'];
                                         }
                                         else
                                         {
@@ -230,7 +230,12 @@ $APPLICATION->SetTitle($titleComprSection);
                                     }
                                 }
 
-                            }?>
+                            }
+                            else{?>
+                                <div class="null_valueCompr"><?echo 'X';?></div>
+                            <?}
+
+                            ?>
                             <!-- #netwiz->end Вывод значений свойств для каждого продкута-->
                         <?php endif; ?>
                         <?if(strlen($itemC['PROPERTIES'][$itemP['CODE']]['DESCRIPTION']) > 0):?>
