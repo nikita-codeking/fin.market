@@ -44,66 +44,6 @@
                                                         </div>
                                                     </div>
                                                 </noindex>
-                                            <?elseif(strpos($APPLICATION->GetCurPage(false),'/ratings/')!==false):?>
-                                                <?$APPLICATION->IncludeComponent("bitrix:news.list", "fm_sidebar", array(
-                                                    "IBLOCK_TYPE" => "aspro_next_content",
-                                                    "IBLOCK_ID" => 32,
-                                                    "NEWS_COUNT" => 5,
-                                                    "TITLE_BLOCK" => "Это интересно",
-                                                    "SORT_BY1" => "ACTIVE_FROM",
-                                                    "SORT_ORDER1" => "DESC",
-                                                    "SORT_BY2" => "SORT",
-                                                    "SORT_ORDER2" => "ASC",
-                                                    "FILTER_NAME" => "arAlsoFilter",
-                                                    "FIELD_CODE" => array(
-                                                        0 => "NAME",
-                                                        1 => "PREVIEW_TEXT",
-                                                        2 => "DETAIL_PICTURE",
-                                                        3 => "DATE_ACTIVE_FROM",
-                                                    ),
-                                                    "PROPERTY_CODE" => array(
-                                                        0 => "DOCUMENTS",
-                                                        1 => "POST",
-                                                    ),
-                                                    "CHECK_DATES" => "Y",
-                                                    "DETAIL_URL" => "",
-                                                    "AJAX_MODE" => "N",
-                                                    "AJAX_OPTION_JUMP" => "N",
-                                                    "AJAX_OPTION_STYLE" => "Y",
-                                                    "AJAX_OPTION_HISTORY" => "N",
-                                                    "CACHE_TYPE" => "A",
-                                                    "CACHE_TIME" => "36000000",
-                                                    "CACHE_FILTER" => "Y",
-                                                    "CACHE_GROUPS" => "N",
-                                                    "PREVIEW_TRUNCATE_LEN" => "",
-                                                    "ACTIVE_DATE_FORMAT" => "j F Y",
-                                                    "SET_TITLE" => "N",
-                                                    "SET_STATUS_404" => "N",
-                                                    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-                                                    "ADD_SECTIONS_CHAIN" => "N",
-                                                    "HIDE_LINK_WHEN_NO_DETAIL" => "N",
-                                                    "PARENT_SECTION" => "",
-                                                    "PARENT_SECTION_CODE" => "",
-                                                    "INCLUDE_SUBSECTIONS" => "Y",
-                                                    "PAGER_TEMPLATE" => ".default",
-                                                    "DISPLAY_TOP_PAGER" => "N",
-                                                    "DISPLAY_BOTTOM_PAGER" => "Y",
-                                                    "PAGER_TITLE" => "�������",
-                                                    "PAGER_SHOW_ALWAYS" => "N",
-                                                    "PAGER_DESC_NUMBERING" => "N",
-                                                    "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-                                                    "PAGER_SHOW_ALL" => "N",
-                                                    "VIEW_TYPE" => "list",
-                                                    "SHOW_TABS" => "N",
-                                                    "SHOW_IMAGE" => "Y",
-                                                    "SHOW_NAME" => "Y",
-                                                    "SHOW_DETAIL" => "Y",
-                                                    "IMAGE_POSITION" => "left",
-                                                    "COUNT_IN_LINE" => "3",
-                                                    "AJAX_OPTION_ADDITIONAL" => ""
-                                                ),
-                                                    false, array("HIDE_ICONS" => "Y")
-                                                );?>
 											<?php endif; ?>
 
 											<?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "sect", "AREA_FILE_SUFFIX" => "sidebar", "AREA_FILE_RECURSIVE" => "Y"), false);?>
@@ -486,5 +426,13 @@
                 }, 500);
             }
         </script>
+                        <script>
+                            $('.sidearea .tags a').click(function(){
+                                //удаляет у всех актив
+                                $('.sidearea .tags a').removeClass('active');
+                                //ставит актив по кликнутой
+                                $(this).addClass('active');
+                            });
+                        </script>
 	</body>
 </html>
