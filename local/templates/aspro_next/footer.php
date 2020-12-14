@@ -8,10 +8,10 @@
                                     <?else:?>
                                         </div> <?// class=col-md-9 col-sm-9 col-xs-8 content-md?>
                                     <?endif;?>
-									<div class="col-md-3 col-sm-3 right-menu-md blog-sidebar">
-										<div class="sidearea">
-											<?$APPLICATION->ShowViewContent('under_sidebar_content');?>
-											<?CNext::get_banners_position('SIDE', 'Y');?>
+                                    <div class="col-md-3 col-sm-3 right-menu-md blog-sidebar">
+                                        <div class="sidearea">
+                                            <?$APPLICATION->ShowViewContent('under_sidebar_content');?>
+                                            <?CNext::get_banners_position('SIDE', 'Y');?>
                                             <?php if($APPLICATION->GetCurDir() == '/reviews/'):?>
                                                 <noindex>
                                                     <div class="search-tags-cloud" id="ajax-menu">
@@ -28,7 +28,7 @@
                                                     </div>
                                                 </noindex>
                                             <?php endif; ?>
-											<?php if($APPLICATION->GetCurDir() == '/ratings/'):?>
+                                            <?php if($APPLICATION->GetCurDir() == '/ratings/'):?>
                                                 <noindex>
                                                     <div class="search-tags-cloud" id="ajax-menu">
                                                         <div class="title-block-middle">Рейтинги</div>
@@ -44,7 +44,23 @@
                                                         </div>
                                                     </div>
                                                 </noindex>
-											<?php endif; ?>
+                                            <?php elseif($APPLICATION->GetCurDir() == '/articles'):?>
+                                                <noindex>
+                                                    <div class="search-tags-cloud" id="ajax-menu">
+                                                        <div class="title-block-middle">Сторис - Тэги</div>
+                                                        <div class="tags">
+                                                            <a href="/articles/" rel="nofollow">Все сторисы</a>
+                                                            <a href="/articles/?section=335" rel="nofollow">Расчетные счета</a>
+                                                            <a href="/articles/?section=327" rel="nofollow">Дебетовые карты</a>
+                                                            <a href="/articles/?section=329" rel="nofollow">Кредиты</a>
+                                                            <a href="/articles/?section=325" rel="nofollow">Кредитные карты</a>
+                                                            <a href="/articles/?section=331" rel="nofollow">Ипотека</a>
+                                                            <a href="/articles/?section=333" rel="nofollow">Рефинансирование</a>
+                                                        </div>
+                                                    </div>
+                                                </noindex>
+
+                                            <?endif;?>
 
 											<?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "sect", "AREA_FILE_SUFFIX" => "sidebar", "AREA_FILE_RECURSIVE" => "Y"), false);?>
 										</div>
