@@ -104,10 +104,13 @@ $(document).ready(function(){
 		}
 
 	}
+	/*
 	cardTypePosition();
 	$(window).on('resize', function () {
 		cardTypePosition();
 	});
+	*/
+	 */
 })
 
 ;
