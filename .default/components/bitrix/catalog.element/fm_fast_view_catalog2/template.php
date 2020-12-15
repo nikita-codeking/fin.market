@@ -1340,7 +1340,7 @@ $elementName = ((isset($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']) && $
                                                                                     ?><div class="prop_row"><span><?
                                                                                             echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
 
-                                                                                            echo 'Да' . "" ;
+                                                                                            echo '' . "" ;
                                                                                             }else{?>
                                                                                     <div class="prop_row" style="display: none"><span><?
                                                                                             echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
@@ -1423,7 +1423,7 @@ $elementName = ((isset($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']) && $
                                                                                     ?><div class="prop_row"><span><?
                                                                                             echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
 
-                                                                                            echo 'Да' . "" ;
+                                                                                            echo '' . "" ;
                                                                                             }else{?>
                                                                                     <div class="prop_row" style="display: none"><span><?
                                                                                             echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
@@ -1523,7 +1523,7 @@ $elementName = ((isset($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']) && $
                                                                                     ?><div class="prop_row"><span><?
                                                                                             echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
 
-                                                                                            echo 'Да' . "" ;
+                                                                                            echo '' . "" ;
                                                                                             }else{?>
                                                                                     <div class="prop_row" style="display: none"><span><?
                                                                                             echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
@@ -1604,7 +1604,7 @@ $elementName = ((isset($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']) && $
                                                                                     ?><div class="prop_row"><span><?
                                                                                             echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
 
-                                                                                            echo 'Да' . "" ;
+                                                                                            echo '' . "" ;
                                                                                             }else{?>
                                                                                     <div class="prop_row" style="display: none"><span><?
                                                                                             echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
@@ -1680,7 +1680,7 @@ $elementName = ((isset($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']) && $
                                                                                     ?><div class="prop_row"><span><?
                                                                                             echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
 
-                                                                                            echo 'Да' . "" ;
+                                                                                            echo '' . "" ;
                                                                                             }else{?>
                                                                                     <div class="prop_row" style="display: none"><span><?
                                                                                             echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";

@@ -1090,7 +1090,7 @@ $actualItem = $arResult["OFFERS"] ? (isset($arResult['OFFERS'][$arResult['OFFERS
                                                                             ?><div class="prop_row" style="margin-top: 9px; margin-left: 9px; margin-bottom: 9px;"><span><?
                                                                                     echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
 
-                                                                                    echo 'Да' . "" ;
+                                                                                    echo '' . "" ;
                                                                                     }else{?>
                                                                                         <div class="prop_row" style="display: none"><span><?
                                                                                                 echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
@@ -1174,7 +1174,7 @@ $actualItem = $arResult["OFFERS"] ? (isset($arResult['OFFERS'][$arResult['OFFERS
                                                                             ?><div class="prop_row" style="margin-top: 9px; margin-left: 9px; margin-bottom: 9px;"><span><?
                                                                                     echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
 
-                                                                                    echo 'Да' . "" ;
+                                                                                    echo '' . "" ;
                                                                                     }else{?>
                                                                                         <div class="prop_row" style="display: none"><span><?
                                                                                                 echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
@@ -1274,7 +1274,7 @@ $actualItem = $arResult["OFFERS"] ? (isset($arResult['OFFERS'][$arResult['OFFERS
                                                                             ?><div class="prop_row" style="margin-top: 9px; margin-left: 9px; margin-bottom: 9px;"><span><?
                                                                                     echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
 
-                                                                                    echo 'Да' . "" ;
+                                                                                    echo '' . "" ;
                                                                                     }else{?>
                                                                                         <div class="prop_row" style="display: none"><span><?
                                                                                                 echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
@@ -1358,7 +1358,7 @@ $actualItem = $arResult["OFFERS"] ? (isset($arResult['OFFERS'][$arResult['OFFERS
                                                                             ?><div class="prop_row" style="margin-top: 9px; margin-left: 9px; margin-bottom: 9px;"><span><?
                                                                                     echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
 
-                                                                                    echo 'Да' . "" ;
+                                                                                    echo '' . "" ;
                                                                                     }else{?>
                                                                                         <div class="prop_row" style="display: none"><span><?
                                                                                                 echo $enum_fields['VALUE']  . "</span><span class='yeaElementMutl'>";
