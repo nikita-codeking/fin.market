@@ -104,13 +104,12 @@ $(document).ready(function(){
 		}
 
 	}
-	/*
+	/* отвечает за отображения лого системы платежа после ресайза.
 	cardTypePosition();
 	$(window).on('resize', function () {
 		cardTypePosition();
 	});
 	*/
-	 */
 })
 
 ;
