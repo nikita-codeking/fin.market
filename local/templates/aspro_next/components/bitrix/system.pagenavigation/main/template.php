@@ -71,8 +71,12 @@
 					<link rel="canonical" href="<?=$arResult["sUrlPath"]?>" />
 				<?endif;?>
 				<?if(!$bNextDisabled):?>
-					<li class="flex-nav-next "><a href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=($arResult["NavPageNomer"]+1)?>" class="flex-next"></a></li>
-					<link rel="next" href="<?=$arResult["sUrlPath"].'?'.$strNavQueryString.'PAGEN_'.$arResult["NavNum"].'='.($arResult["NavPageNomer"]+1)?>" />
+                    <?
+                    $arrUrlString = explode('&', $_SERVER['REQUEST_URI']);
+                    $strNavQueryString = "";
+                    ?>
+					<li class="flex-nav-next "><a href="<?=$arrUrlString[0]?>&<?=$arrUrlString[1]?><?=$strNavQueryString?>&PAGEN_<?=$arResult["NavNum"]?>=<?=($arResult["NavPageNomer"]+1)?>" class="flex-next"></a></li>
+					<link rel="next" href="<?=$arrUrlString[0]?>&<?=$arrUrlString[1]?><?=$strNavQueryString?>&PAGEN_<?=$arResult["NavNum"]?>=<?=($arResult["NavPageNomer"]+1)?>" />
 				<?endif;?>
 			</ul>
 			<?if($arResult["nStartPage"] > 1):?>
