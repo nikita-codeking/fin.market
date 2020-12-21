@@ -70,7 +70,9 @@
 					<link rel="prev" href="<?=$arResult["sUrlPath"].$url?>" />
 					<link rel="canonical" href="<?=$arResult["sUrlPath"]?>" />
 				<?endif;?>
+                //функционал показать еще работает от стрелик далее в скрытом блоке навигации, в урд передается верное направление сортировки по параму начало
 				<?if(!$bNextDisabled):?>
+
                     <?
                     $arrUrlString = explode('&', $_SERVER['REQUEST_URI']);
                     $strNavQueryString = "";
@@ -78,6 +80,7 @@
 					<li class="flex-nav-next "><a href="<?=$arrUrlString[0]?>&<?=$arrUrlString[1]?><?=$strNavQueryString?>&PAGEN_<?=$arResult["NavNum"]?>=<?=($arResult["NavPageNomer"]+1)?>" class="flex-next"></a></li>
 					<link rel="next" href="<?=$arrUrlString[0]?>&<?=$arrUrlString[1]?><?=$strNavQueryString?>&PAGEN_<?=$arResult["NavNum"]?>=<?=($arResult["NavPageNomer"]+1)?>" />
 				<?endif;?>
+                //функционал показать еще работает от стрелик далее в скрытом блоке навигации, в урд передается верное направление сортировки по параму конец
 			</ul>
 			<?if($arResult["nStartPage"] > 1):?>
 				<a href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=1" class="dark_link">1</a>
