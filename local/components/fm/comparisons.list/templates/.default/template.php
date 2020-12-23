@@ -52,7 +52,9 @@ $APPLICATION->SetTitle($titleComprSection);
                                 $referer=trim($item['URL']) ."&sa=".$_COOKIE['utm_source'] ;
                             }
                             ?>
-                            <a class="btn btn-default ofo-href desc" onClick="ym('56316898','reachGoal', 'oformit');" target="_blank" href="<?=$referer?>">Оформить</a>
+                            <div class="helperBlock_button">
+                                <a class="btn btn-default ofo-href desc" onClick="ym('56316898','reachGoal', 'oformit');" target="_blank" href="<?=$referer?>">Оформить</a>
+                            </div>
                         <?endif;?>
                     </div>
                 <?endforeach;?>

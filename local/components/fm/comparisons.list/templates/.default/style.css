@@ -1492,3 +1492,9 @@ overflow-y: auto; */
 	border-radius: 4px;
 	padding: 17px 17px 0px 1px;
 }
+.helperBlock_button{
+	display: none;
+}
+.item-prod-c:hover .helperBlock_button{
+	display: block;
+}
