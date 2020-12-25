@@ -125,12 +125,11 @@ $APPLICATION->SetTitle($titleComprSection);
                                 <summary><? echo $property_name ?></summary>
                                     <? $property_enums = CIBlockPropertyEnum::GetList(Array(), Array("IBLOCK_ID" => 35, "CODE" => $arResult['ITEMS'][0]['PROPERTIES'][$itemP['CODE']]));
                                     while ($enum_fields = $property_enums->Fetch()):?>
-                                        <?//see($enum_fields["VALUE"], true);?>
                                         <div class="item-c prop-comparison">
                                             <?//see($enum_fields["VALUE"], true);?>
                                             <div class="item-prop-c main" style="margin-left: -49px;"><?=$enum_fields["VALUE"]; ?></div>
                                             <?foreach ($arResult['ITEMS'] as $itemC):?>
-                                                <?if($itemC['PROPERTIES'][$itemP['CODE']]['VALUE'] == $enum_fields["VALUE"]):?>
+                                                <?if(in_array($enum_fields["VALUE"], $itemC['PROPERTIES'][$itemP['CODE']]['VALUE'])):?>
                                                     <div class="item-prod-c kk-tooltip yes"></div>
                                                 <?else:?>
                                                     <div class="item-prod-c"></div>
