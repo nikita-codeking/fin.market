@@ -1498,3 +1498,6 @@ overflow-y: auto; */
 .item-prod-c:hover .helperBlock_button{
 	display: block;
 }
+.item-c.prop-comparison.repeat{
+	display: none;
+}

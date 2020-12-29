@@ -98,7 +98,7 @@ $APPLICATION->SetTitle($titleComprSection);
             }//if($pos_point_in_name>0)
             ?>
 
-            <div class="item-c prop-comparison">
+            <div class="item-c prop-comparison <?if($arResult['ITEMS'][0]['PROPERTIES'][$itemP['CODE']]['PROPERTY_TYPE'] == 'L' && $arResult['ITEMS'][0]['PROPERTIES'][$itemP['CODE']]['TYPE_MULTIPLE'] == 'Y' && !is_array($arResult['ITEMS'][0]['PROPERTIES'][$itemP['CODE']]['VALUE'])): echo 'repeat'; elseif($property_name == 'Документы' && strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'kreditnye_karty') || strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'ipoteka') || strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'karty_rassrochki') || strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'avtokredity') || strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'refinansirovanie') || strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'zaymy')): echo 'repeat'; endif;?>">
                 <div class="item-prop-c main <?if($arResult['ITEMS'][0]['PROPERTIES'][$itemP['CODE']]['PROPERTY_TYPE'] == 'N'):?>sort <?endif;?>" id="<?=$itemP['CODE'];?>">
                     <div class="arrow-4" data-info="Сортировать по свойству '<?=$property_name;?>'">
                         <!--<span class="arrow-4-left"></span>
@@ -114,12 +114,7 @@ $APPLICATION->SetTitle($titleComprSection);
                     </div>
                     <span>
                         <?if($arResult['ITEMS'][0]['PROPERTIES'][$itemP['CODE']]['PROPERTY_TYPE'] == 'L' && $arResult['ITEMS'][0]['PROPERTIES'][$itemP['CODE']]['TYPE_MULTIPLE'] == 'Y'):?>
-
                             <!-- #netwiz->start выведения значений множествееного списка в выпадающий список по клику на название свойства.-->
-                            <?if($property_name == 'Документы' && strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'kreditnye_karty') || strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'ipoteka') || strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'karty_rassrochki') || strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'avtokredity') || strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'refinansirovanie') || strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'zaymy')){?>
-                                <div class="elementListProperty" style="display: none;"></div>
-                            <?}
-                            else{?>
                                 <div class="elementListProperty">
                                 <details>
                                 <summary><? echo $property_name ?></summary>
@@ -139,7 +134,6 @@ $APPLICATION->SetTitle($titleComprSection);
                                     <?endwhile;?>
                                 </details>
                             </div>
-                            <?}?>
                         <?else:?>
                             <?echo $property_name;?>
                         <?endif;?>
