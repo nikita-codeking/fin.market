@@ -3269,7 +3269,7 @@ footer .horizontal.viewed_block .item_info {
 
 .menu-row .mega-menu table td.wide_menu:hover>.wrap>.dropdown-menu {
     display: block !important;
-    width: auto !important;
+    width: 550px !important;
     min-width: auto !important;
     left: auto;
     max-height: none;
