@@ -114,7 +114,7 @@
                                                     }//if(strlen($id_product)==0)
                                                 ?>
                                             <?endforeach;?>
-                                            <div class="col-md-8 col-sm-7 col-xs-12 product-list" title="<?=$id_product?>"><div class="text"><?=$textPart?></div>
+                                            <div class="col-md-8 col-sm-7 col-xs-12 product-list" id="<?=$id_product?>"><div class="text"><?=$textPart?></div>
 
                                             </div>
                                         <?endif;?>
@@ -195,7 +195,7 @@
         setTimeout(function () {
             $('.product-list').each(function () {
                 var thisEl = $(this);
-                var idPr   = $(this).attr('title');
+                var idPr   = $(this).attr('id');
                 $.ajax({
                     type:'post',//тип запроса: get,post либо head
                     url:'/ajax/after_load_ratings.php',//url адрес файла обработчика
