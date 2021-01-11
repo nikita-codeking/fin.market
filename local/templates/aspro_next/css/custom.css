@@ -3276,7 +3276,7 @@ footer .horizontal.viewed_block .item_info {
     padding: 0 15px 10px 0;
 }
 
-.menu-row .mega-menu table td.wide_menu:nth-last-child(-n+3):hover>.wrap>.dropdown-menu {
+.menu-row .mega-menu table td.wide_menu:nth-last-child(-n+4):hover>.wrap>.dropdown-menu {
     width: 550px !important;
 }
 
