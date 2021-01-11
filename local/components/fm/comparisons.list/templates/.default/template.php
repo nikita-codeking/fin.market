@@ -127,7 +127,7 @@ $APPLICATION->SetTitle($titleComprSection);
                                                 <?if(in_array($enum_fields["VALUE"], $itemC['PROPERTIES'][$itemP['CODE']]['VALUE'])):?>
                                                     <div class="item-prod-c kk-tooltip yes"></div>
                                                 <?else:?>
-                                                    <div class="item-prod-c"></div>
+                                                    <div class="item-prod-c" style="color: red; font-size: 27px; font-weight: 500">X</div>
                                                 <?endif;?>
                                             <?endforeach;?>
                                         </div>
