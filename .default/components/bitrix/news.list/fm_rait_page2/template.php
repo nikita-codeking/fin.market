@@ -1,6 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();?>
 <?$this->setFrameMode(true);?>
-<!--<div id="ajax-cont">-->
+<div id="ajax-cont">
 <div class="catalog item-views list big-img <?=($arParams["IMAGE_POSITION"] ? "image_".$arParams["IMAGE_POSITION"] : "")?> <?=$templateName;?>">
     <?// top pagination?>
     <?if($arParams["DISPLAY_TOP_PAGER"]):?>
@@ -210,4 +210,4 @@
     });
 
 </script>
-<!--</div>-->
+</div>
