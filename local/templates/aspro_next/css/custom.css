@@ -4915,7 +4915,7 @@ button.button, input.button, .button, #header ul.menu.full.opened li:not(.search
     font-size: 14px;
 }
 
-.blog-sidebar .search-tags-cloud .tags a:hover, .blog-sidebar .categorys:hover {
+.blog-sidebar .search-tags-cloud .tags a:hover, .blog-sidebar .categorys:hover, .blog-sidebar .search-tags-cloud .tags a.active {
     color: white;
     background: #6fa5f3;
     background: linear-gradient(135deg, #00d7ff, #4b6cf9);
