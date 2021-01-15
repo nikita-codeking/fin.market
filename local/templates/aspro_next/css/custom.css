@@ -7104,7 +7104,7 @@ summary .listElement::before {
     padding-left: 80px;
 }
 
-.blog-sidebar .search-tags-cloud .tags a:hover::before {
+.blog-sidebar .search-tags-cloud .tags a:hover::before, .blog-sidebar .search-tags-cloud .tags a.active::before {
     -webkit-filter: brightness(0) invert(1);
     filter: brightness(0) invert(1);
 }
@@ -7176,7 +7176,7 @@ summary .listElement::before {
     .blog-sidebar .search-tags-cloud .tags a[href="/articles/?tags=Расчетные%20счета"]::before, .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?section=335"]::before, .blog-sidebar .search-tags-cloud .tags a[href="/articles/?section=335"]::before, .blog-sidebar .search-tags-cloud .tags a[href="/reviews/?section=335"]::before {
         background-image: url("/local/templates/aspro_next/images/banners/biz.svg") !important;
     }
-    .blog-sidebar .search-tags-cloud .tags a:hover::before {
+    .blog-sidebar .search-tags-cloud .tags a:hover::before, .blog-sidebar .search-tags-cloud .tags a.active::before {
         -webkit-filter: brightness(0) invert(1);
         filter: brightness(0) invert(1);
     }
