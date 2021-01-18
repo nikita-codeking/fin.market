@@ -7169,7 +7169,7 @@ summary .listElement::before {
 .blog-sidebar .search-tags-cloud .tags a[href="/articles/?tags=Займы"]::before, .blog-sidebar .search-tags-cloud .tags a[href="/ratings/?section=330"]::before, .blog-sidebar .search-tags-cloud .tags a[href="/articles/?section=330"]::before, .blog-sidebar .search-tags-cloud .tags a[href="/reviews/?section=330"]::before {
     content: "";
     top: 15px;
-    background-image: url("/local/templates/aspro_next/images/sections/zaymy.svg");
+    background-image: url("/local/templates/aspro_next/images/sections/kredity_zaimy_2.png");
 }
 
 @media (max-width: 768px) {
