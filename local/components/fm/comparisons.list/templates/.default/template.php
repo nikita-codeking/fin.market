@@ -40,8 +40,9 @@ $APPLICATION->SetTitle($titleComprSection);
                                 </div>
                             </a>
                         </div>
-                        <a class="del" href="/ajax/delete_item_comparison.php?id=<?=$item['ID']?>&session=<?=$arResult['SESSION']?>"></a>
-
+                        <div class="helperBlock_button">
+                            <a class="del" href="/ajax/delete_item_comparison.php?id=<?=$item['ID']?>&session=<?=$arResult['SESSION']?>"></a>
+                        </div>
 
                         <?if(strlen(trim($item['URL']))>0):?>
                             <?
@@ -65,13 +66,14 @@ $APPLICATION->SetTitle($titleComprSection);
         <?//see($arResult['ITEMS'][0]['LIST_PRODUCT'], true);?>
         <div class="btn_wrap">
             <?if(count($arResult['ITEMS'])>0){
-                ?><a class="btn btn-default" href="<?=$arResult['ITEMS'][0]['LIST_PRODUCT']?>">Добавить продукты к сравнению</a><?
+                ?><a class="btn btn-default add" href="<?=$arResult['ITEMS'][0]['LIST_PRODUCT']?>">Добавить продукты к сравнению</a><?
             }else{
-                ?><a class="btn btn-default" href="/catalog/">Добавить продукты к сравнению</a><?
+                ?><a class="btn btn-default add" href="/catalog/">Добавить продукты к сравнению</a><?
             }?>
-            <a class="btn btn-default" href="/ajax/delete_item_comparison.php?&session=<?=$arResult['SESSION']?>">Очистить</a>
-            <button class="transform" data-info="Изменить ориентацию таблицы">
-                <span></span><span></span><span></span>
+            <a class="btn btn-default clean" href="/ajax/delete_item_comparison.php?&session=<?=$arResult['SESSION']?>">Очистить</a>
+            <button class="transform">
+                <img src="/local/templates/aspro_next/images/svg/compr_icon/turn.svg">
+                Перевернуть
             </button>
         </div>
     </div>
@@ -99,7 +101,7 @@ $APPLICATION->SetTitle($titleComprSection);
             ?>
 
             <div class="item-c prop-comparison <?if($arResult['ITEMS'][0]['PROPERTIES'][$itemP['CODE']]['PROPERTY_TYPE'] == 'L' && $arResult['ITEMS'][0]['PROPERTIES'][$itemP['CODE']]['TYPE_MULTIPLE'] == 'Y' && !is_array($arResult['ITEMS'][0]['PROPERTIES'][$itemP['CODE']]['VALUE'])): echo 'repeat'; elseif($property_name == 'Документы' && strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'kreditnye_karty') || strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'ipoteka') || strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'karty_rassrochki') || strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'avtokredity') || strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'refinansirovanie') || strpos($arResult['ITEMS'][0]['LIST_PRODUCT'], 'zaymy')): echo 'repeat'; endif;?>">
-                <div class="item-prop-c main <?if($arResult['ITEMS'][0]['PROPERTIES'][$itemP['CODE']]['PROPERTY_TYPE'] == 'N'):?>sort <?endif;?>" id="<?=$itemP['CODE'];?>">
+                <div class="item-prop-c main scroll_trans_table<?if($arResult['ITEMS'][0]['PROPERTIES'][$itemP['CODE']]['PROPERTY_TYPE'] == 'N'):?>sort <?endif;?>" id="<?=$itemP['CODE'];?>">
                     <div class="arrow-4" data-info="Сортировать по свойству '<?=$property_name;?>'">
                         <!--<span class="arrow-4-left"></span>
                         <span class="arrow-4-right"></span>-->
@@ -113,7 +115,7 @@ $APPLICATION->SetTitle($titleComprSection);
 
                     </div>
                     <span>
-                        <?if($arResult['ITEMS'][0]['PROPERTIES'][$itemP['CODE']]['PROPERTY_TYPE'] == 'L' && $arResult['ITEMS'][0]['PROPERTIES'][$itemP['CODE']]['TYPE_MULTIPLE'] == 'Y'):?>
+                        <?if($arResult['ITEMS'][0]['PROPERTIES'][$itemP['CODE']]['PROPERTY_TYPE'] == 'L' && $arResult['ITEMS'][0]['PROPERTIES'][$itemP['CODE']]['TYPE_MULTIPLE'] == 'Y' && is_array($arResult['ITEMS'][0]['PROPERTIES'][$itemP['CODE']]['VALUE'])):?>
                             <!-- #netwiz->start выведения значений множествееного списка в выпадающий список по клику на название свойства.-->
                                 <div class="elementListProperty">
                                 <details>
@@ -260,7 +262,14 @@ $APPLICATION->SetTitle($titleComprSection);
 <h2><?echo $seoComprSection;?></h2>
 
 <script>
-
+    var scrollLine = $('.scroll_wrap');
+    var scrollWidth = $('.item-group-c').width();
+    //scrollLine.css('width', scrollWidth);
+    /* скрывыет стрелки, но скрывает их всегда, а надто только когда много товаров или в перевернуом виле таблицы.
+    if (scrollWidth < scrollLine.width()) {
+        scrollLine.hide();
+    }
+*/
     var box = $('.comparisons .wrapper-c');
     /*  var boxx = $('.comparisons_nav .head-comparison'); */
     var boxx = $('.comparisons_nav .item-group-c');
@@ -279,12 +288,34 @@ $APPLICATION->SetTitle($titleComprSection);
             scrollLeft: '+=' + (distance * $(this).data('factor'))
         });
     });
-
+    //скролл таблицы
+    var scrollingEv = false;
+    var timerScroll;
+    box.scroll(function () {
+        if (!scrollingEv) {
+            clearTimeout(timerScroll);
+            timerScroll = setTimeout(function () {
+                scrollingEv = true;
+                boxx.scrollLeft(box.scrollLeft());
+                scrollingEv = false;
+            }, 10);
+        }
+    });
+    boxx.scroll(function () {
+        if (!scrollingEv) {
+            clearTimeout(timerScroll);
+            timerScroll = setTimeout(function () {
+                scrollingEv = true;
+                box.scrollLeft(boxx.scrollLeft());
+                scrollingEv = false;
+            }, 10);
+        }
+        /*
     box.scroll(function () {
         boxx.scrollLeft(box.scrollLeft());
     });
     boxx.scroll(function () {
-        box.scrollLeft(boxx.scrollLeft());
+        box.scrollLeft(boxx.scrollLeft());*/
     });
 </script>
 <script>	
@@ -314,7 +345,10 @@ $APPLICATION->SetTitle($titleComprSection);
         var tableHeader = $('.comparisons:not(.tab_transform) .wrapper-c .item-group-c:nth-child(1) .head-comparison');
         /* var tableFirstRow = $('.comparisons .wrapper-c .prop-comparison:nth-of-type(2)'); */
         var tableHeaderImg = $('.comparisons:not(.tab_transform) .item-group-c:nth-child(1) .prod_img');
+        var scrollArrows = $('.scroll_wrap');
+        var arrowPosition = ($('.comparisons_nav').height() / 2) + 20;
 
+        /*scrollArrows.css('transform', 'translateY(' + arrowPosition + 'px)');*/
         if(scrollPosition>=tableHeaderPosition - 200){
             /* tableHeader.attr("style","position: fixed; top:0px;min-width: 565px; max-width: 1110px;overflow: hidden;");
             tableFirstRow.attr("style","margin-top: 140px;"); */
