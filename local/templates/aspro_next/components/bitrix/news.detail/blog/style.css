@@ -1,4 +1,11 @@
 .content .elementsBannersSravni svg{width: 100%;height: auto; border-radius: 25px;}
 .content ul li{
-    list-style-type: disc
+    list-style-type: disc;
+    padding-left: 0px;
+}
+.content ul li::marker{
+    color: #1976d2;
+}
+.content ul{
+    margin-left: 15px;
 }
