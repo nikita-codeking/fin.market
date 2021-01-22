@@ -98,7 +98,8 @@ $iVisibleItemsMenu = ($arTheme['MAX_VISIBLE_ITEMS_MENU']['VALUE'] ? $arTheme['MA
                                                     endif;
                                                 endif;
                                                 ?>
-                                                <span class="name subsection_name"><?=$name_cat?></span><?=($arSubItem["CHILD"] && $bShowChilds ? '<span class="arrow"><i></i></span>' : '')?>
+                                                /*временный костыль для переименования "все займы" в "займы", уберем когда будут другие названия подразделов в НОВОМ каталоге*/
+                                                <span class="name subsection_name"><?if($name_cat == 'Все займы'): echo 'Займы'; else: echo $name_cat; endif;?></span><?=($arSubItem["CHILD"] && $bShowChilds ? '<span class="arrow"><i></i></span>' : '')?>
                                             </a>
                                             <?if($arSubItem["CHILD"] && $bShowChilds):?>
                                                 <?$iCountChilds = count($arSubItem["CHILD"]);?>

@@ -27,8 +27,9 @@
                         endif;
                     endif;
                     ?>
-					<div class="menu_item"><a href="<?if($arItem['IS_PARENT']>0 && $name_cat!="Рейтинги" && $name_cat!="Сторис" && $name_cat!="Обзоры"):?>javascript:void(0);<?else:?><?=$arItem["LINK"]?><?endif;?>" class="dark_link"><?=$name_cat?></a></div>
-				</div>
+                    /*временный костыль для переименования "все займы" в "займы", уберем когда будут другие названия подразделов в НОВОМ каталоге*/
+                    <div class="menu_item"><a href="<?if($arItem['IS_PARENT']>0 && $name_cat!="Рейтинги" && $name_cat!="Сторис" && $name_cat!="Обзоры" && $name_cat!="Все займы"):?>javascript:void(0);<?else:?><?if($arItem["LINK"] == '/catalog/zaymy/'): $name_cat = ''; else: echo $arItem["LINK"]; endif;?><?endif;?>" class="dark_link"><?if($name_cat == 'Все займы'): echo 'Займы'; else: echo $name_cat; endif;?></a></div>
+                </div>
 			<?}?>
             <?if($open_div):?></div><?endif;?>
         </div>
