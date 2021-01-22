@@ -16,6 +16,13 @@
           </advancedOptions>
         </fileTransfer>
       </webServer>
+      <webServer id="44abab99-736e-4c64-baf9-d610c6c8c746" name="codeking_copy2" url="http://31.31.198.162">
+        <fileTransfer host="31.31.198.162" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>
