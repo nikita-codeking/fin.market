@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7d02f7c-1ee0-4a8a-911e-f143e2e5090b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.default/components/bitrix/news.detail/fm_rait/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/.default/components/bitrix/news.detail/fm_rait/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +132,11 @@
       <workItem from="1611305330855" duration="21000" />
       <workItem from="1611305386257" duration="36000" />
       <workItem from="1611305477819" duration="3000" />
-      <workItem from="1611305967299" duration="6783000" />
+      <workItem from="1611305967299" duration="7680000" />
+      <workItem from="1611573202721" duration="6020000" />
+      <workItem from="1611644551107" duration="598000" />
+      <workItem from="1611645355082" duration="3545000" />
+      <workItem from="1611732814577" duration="1674000" />
     </task>
     <servers />
   </component>

@@ -8,3 +8,13 @@
 }
 /*.blog-content{width: 100% !important;}*/
 .elementsBannersSravni svg{width: 100%;height: auto; border-radius: 25px;}
+.fixed_wrapper ul li{
+    list-style-type: disc;
+    padding-left: 0px;
+}
+.fixed_wrapper ul li::marker{
+    color: #1976d2;
+}
+.fixed_wrapper ul{
+    margin-left: 15px;
+}
