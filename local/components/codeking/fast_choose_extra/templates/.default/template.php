@@ -4,16 +4,22 @@
 <h3>Быстрый подбор</h3>
 <div class="sections">
     <div class="swiper-container fc-sections-slider">
-        <div class="swiper-wrapper">
+        <ul class="swiper-wrapper">
             <?$first = true;?>
+            <?//see($arResult["SECTIONS"]);?>
             <?php foreach($arResult["SECTIONS"] as $idsec => $sec):?>
+                <li class="swiper-slide fc-sections-item <?if($first):?>active<?endif;?> <?if($sec["BANNER"]>0):?>one_click_in_bank<?endif;?>" data-sect_id="<?=$idsec?>">
+                    <span><?=$sec['NAME']?></span>
+                </li>
+                <?/*
                 <div class="swiper-slide fc-sections-item <?if($first):?>active<?endif;?> <?if($sec["BANNER"]>0):?>one_click_in_bank<?endif;?>" data-sect_id="<?=$idsec?>">
                     <?$img = CFile::ResizeImageGet($sec["PICTURE"], array( "width" => 300,"height" => 300), BX_RESIZE_IMAGE_PROPORTIONAL, true );?>
-                    <img src="<?=$img['src'];?>" alt="<?=$sec['NAME']?>">
+                    <span ><?=$sec['NAME']?></span>
                 </div>
+            */?>
                 <?$first=false;?>
             <?php endforeach;?>
-        </div>
+        </ul>
         <div class="fc-sections swiper-button-prev"></div>
         <div class="fc-sections swiper-button-next"></div>
     </div>

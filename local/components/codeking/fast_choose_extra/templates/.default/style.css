@@ -27,15 +27,16 @@
     cursor: pointer;
 }
 .all_lists span, .hit_lists span {
-    cursor: pointer;
-    height: 53px;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background: white;
+    position: relative;
+    display: block;
+    margin: 5px;
+    font-size: 12px;
+    line-height: 14px;
+    width: auto;
+    white-space: nowrap;
+    border: 1px solid #6fa5f3;
     border-radius: 8px;
-    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.3);
-    transition: .3s;
+    padding: 5px 10px 4px;
 }
 .all_lists span:hover, .hit_lists span:hover {
     color: white;
@@ -213,4 +214,40 @@ div.swiper-button-prev.swiper-button-disabled, div.swiper-button-next.swiper-but
 /*отступы уменьшить*/
 .fast-choose-wrap h3 {
     margin: 15px 0;
+}
+
+li.fc-sections-item span{
+    cursor: pointer;
+    height: 53px;
+
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px 0px rgb(0 0 0 / 30%);
+    transition: .3s;
+}
+li.fc-sections-item {
+    min-width: 140px;
+    max-width: 220px;
+    width: fit-content;
+    line-height: 1.2em;
+    font-weight: 700;
+    color: black;
+    white-space: nowrap;
+    padding-left: 0;
+    margin-bottom: 5px;
+}
+ul li.swiper-slide.fc-sections-item.active span{
+    /* color: #4b6cf9; */
+    color: white;
+    background: #6fa5f3;
+    transition: 0;
+}
+ul li.swiper-slide.fc-sections-item span:hover{
+    /* color: #4b6cf9; */
+    color: white;
+    background: #6fa5f3;
+    transition: 0;
 }
