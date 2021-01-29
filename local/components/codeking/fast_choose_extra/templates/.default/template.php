@@ -65,5 +65,7 @@
     <a class="btn btn-default compar" href="javascript:void(0);">Сравнить все</a>
     <span>или</span>
     <a class="btn btn-default otp_1" href="/request_online/card">Отправить 1 заявку во все банки</a>
+    <span>или</span>
+    <a class="btn btn-default otp_1" href="/personalny-podbor-kredita/">Персональный подбор кредита</a>
 </div>
 </div>
