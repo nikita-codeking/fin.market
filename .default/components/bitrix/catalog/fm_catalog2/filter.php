@@ -81,8 +81,8 @@
 			"SORT_BUTTONS" => $arParams["SORT_BUTTONS"],
 			"SORT_PRICES" => $arParams["SORT_PRICES"],
 			"AVAILABLE_SORT" => $arAvailableSort,
-			"SORT" => $sort,
-			"SORT_ORDER" => $sort_order,
+			"SORT" =>  $_GET["sort"],
+			"SORT_ORDER" =>  $_GET["method"],
 		),
 		$component);
 	?>

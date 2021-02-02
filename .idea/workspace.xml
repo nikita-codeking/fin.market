@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7d02f7c-1ee0-4a8a-911e-f143e2e5090b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.default/components/bitrix/catalog/fm_catalog2/filter.php" beforeDir="false" afterPath="$PROJECT_DIR$/.default/components/bitrix/catalog/fm_catalog2/filter.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,7 +139,9 @@
       <workItem from="1611732814577" duration="8625000" />
       <workItem from="1611834683501" duration="65000" />
       <workItem from="1611834797761" duration="2262000" />
-      <workItem from="1611908500848" duration="6667000" />
+      <workItem from="1611908500848" duration="8057000" />
+      <workItem from="1612170492949" duration="1426000" />
+      <workItem from="1612256225483" duration="2713000" />
     </task>
     <servers />
   </component>
