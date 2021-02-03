@@ -178,14 +178,12 @@
             });
         },1000);
     }
-    
+
     $(document).ready(function() {
         /*$('.steck_sravnenia').click(function (e) {
             e.preventDefault();
-
             var idStr = $(this).parent().parent().children('.col-md-8').children('.top_wrapper').children('.catalog_block').children('.steck_sravnenie_rait');
             //console.log($(this).parent().parent().children('.col-md-8').children('.top_wrapper').children('.catalog_block').children('.steck_sravnenie_rait').text());
-
             //var sravniRating1 = idStr.text().split("|");
             location.href = "/catalog/comparisons/?products="+idStr.text();
         });*/
@@ -195,18 +193,35 @@
         setTimeout(function () {
             $('.product-list').each(function () {
                 var thisEl = $(this);
-                var idPr   = $(this).attr('id');
+                var idPr = $(this).attr('id');
                 $.ajax({
-                    type:'post',//тип запроса: get,post либо head
-                    url:'/ajax/after_load_ratings.php',//url адрес файла обработчика
-                    data:"id=" + idPr,//параметры запроса
-                    response:'html',//тип возвращаемого ответа text либо xml
-                    success:function (data) {//возвращаемый результат от сервера
+                    type: 'post',//тип запроса: get,post либо head
+                    url: '/ajax/after_load_ratings.php',//url адрес файла обработчика
+                    data: "id=" + idPr,//параметры запроса
+                    response: 'html',//тип возвращаемого ответа text либо xml
+                    success: function (data) {//возвращаемый результат от сервера
                         thisEl.children().after(data);
                     }
                 });
             });
-        },2000);
+        }, 1000);
+        $('.tags a').click(function() {
+            setTimeout(function () {
+                $('.product-list').each(function () {
+                    var thisEl = $(this);
+                    var idPr = $(this).attr('id');
+                    $.ajax({
+                        type: 'post',//тип запроса: get,post либо head
+                        url: '/ajax/after_load_ratings.php',//url адрес файла обработчика
+                        data: "id=" + idPr,//параметры запроса
+                        response: 'html',//тип возвращаемого ответа text либо xml
+                        success: function (data) {//возвращаемый результат от сервера
+                            thisEl.children().after(data);
+                        }
+                    });
+                });
+            }, 1000);
+        });
     });
 
 </script>
