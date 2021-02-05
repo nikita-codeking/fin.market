@@ -365,12 +365,66 @@ if($arResult["ITEMS"]){?>
                                                                 id="<?echo $arItem["VALUES"]["MAX"]["CONTROL_ID"]?>"
                                                                 value="<?echo $arItem["VALUES"]["MAX"]["HTML_VALUE"]?>"
                                                                 size="5"
-                                                                placeholder="<?if($arItem['CODE'] == 'USLOVIYA_PROTSENT_ZA_SNYATIE_NALICHNYKH'): echo round($value5, 1); elseif($arItem['CODE'] == 'USLOVIYA_PLATA_ZA_PROPUSK_PLATEZHA_'): echo round($value5, 2); elseif($arItem['CODE'] == 'USLOVIYA_M_PROTSENTNAYA_STAVKA_NA_POKUPKI'): echo round($value5, 2); else: echo $value5; endif;?>"
+                                                                placeholder="<?
+                                                                if($arParams['SECTION_ID'] == 325){
+                                                                        if($arItem['CODE'] == 'USLOVIYA_PROTSENT_ZA_SNYATIE_NALICHNYKH'):
+                                                                            echo round($value5, 1);
+                                                                        elseif($arItem['CODE'] == 'USLOVIYA_PLATA_ZA_PROPUSK_PLATEZHA_'):
+                                                                            echo round($value5, 1);
+                                                                        elseif($arItem['CODE'] == 'USLOVIYA_M_PROTSENTNAYA_STAVKA_NA_POKUPKI'):
+                                                                            echo round($value5, 1);
+                                                                        else:
+                                                                            echo $value5;
+                                                                        endif;
+                                                                   }
+                                                                   elseif($arParams['SECTION_ID'] == 326){
+                                                                       if($arItem['CODE'] == 'USLOVIYA_M_PROTSENTNAYA_STAVKA_PROTSENT'):
+                                                                           echo round($value5, 1);
+                                                                       elseif($arItem['CODE'] == 'USLOVIYA_M_PROTSENTNAYA_STAVKA_NA_NALICHNYE'):
+                                                                            echo round($value5, 1);
+                                                                       elseif($arItem['CODE'] == 'USLOVIYA_M_PROTSENTNAYA_STAVKA_NA_POKUPKI'):
+                                                                            echo round($value5, 1);
+                                                                       else:
+                                                                            echo $value5;
+                                                                       endif;
+                                                                   }
+                                                                   elseif($arParams['SECTION_ID'] == 327){
+                                                                       if($arItem['CODE'] == 'USLOVIYA_PROTSENT_ZA_SNYATIE_NALICHNYKH'):
+                                                                           echo round($value5, 1);
+                                                                       else:
+                                                                           echo $value5;
+                                                                       endif;
+                                                                   }
+                                                                   elseif($arParams['SECTION_ID'] == 333){
+                                                                       if($arItem['CODE'] == 'USLOVIYA_M_PROTSENTNAYA_STAVKA_PROTSENT'):
+                                                                            echo round($value5, 1);
+                                                                       else:
+                                                                            echo $value5;
+                                                                       endif;
+                                                                   }
+                                                                   elseif($arParams['SECTION_ID'] == 332){
+                                                                       if($arItem['CODE'] == 'USLOVIYA_M_PROTSENTNAYA_STAVKA_PROTSENT'):
+                                                                            echo round($value5, 1);
+                                                                       else:
+                                                                            echo $value5;
+                                                                       endif;
+                                                                   }
+                                                                   elseif($arParams['SECTION_ID'] == 42601){
+                                                                        if($arItem['CODE'] == 'STAVKA_V_DEN'):
+                                                                            echo round($value5, 1);
+                                                                       else:
+                                                                            echo $value5;
+                                                                       endif;
+                                                                   }
+                                                                   else{
+                                                                        echo $value5;
+                                                                   }
+                                                                ?>"
                                                                 onkeyup="smartFilter.keyup(this)"
                                                             />
                                                         </div>
                                                     </div>
-                                                    <span class="divider"></span>
+                                                    <?/*<span class="divider"></span>*/?>
                                                     <div style="clear: both;"></div>
                                                 </div>
                                                 <div class="wrapp_slider iblock">

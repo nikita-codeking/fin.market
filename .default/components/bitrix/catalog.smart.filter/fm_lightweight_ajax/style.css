@@ -340,3 +340,19 @@ div[id^=smartFilterDropDown] {
 		padding: 20px !important;
 	}
 }
+.bx_filter .bx_filter_parameters_box_container .bx_filter_input_container input{
+	padding: 0px 0px 0px;
+	background: #fff;
+	border-color: white;
+	position: relative;
+	margin-bottom: -2px;
+}
+.bx_filter .bx_filter_parameters_box_container .bx_filter_input_container input.max-price{
+	text-align: right;
+}
+.bx_filter .bx_filter_parameters_box_container .bx_filter_input_container input.min-price{
+	text-align: left;
+}
+.wrapp_slider.iblock{
+	margin-top: -28px;
+}
