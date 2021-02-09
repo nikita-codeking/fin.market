@@ -29,7 +29,16 @@
                 {
                     $('.choose_extra_links span').attr('style','display: inline-block;');
                     $('.choose_extra_links .otp_1').attr('style','display: inline-block;');
-                }else{
+                }
+                else if(section_id == 327 || section_id == 326 || section_id == 335){
+                    $('.choose_extra_links span').attr('style','display: none;');
+                    $('.choose_extra_links .pers_podbor').attr('style','display: none;');
+                }
+                else if(section_id != 327 || section_id != 326 || section_id != 335){
+                    $('.choose_extra_links span').attr('style','display: inline-block;');
+                    $('.choose_extra_links .pers_podbor').attr('style','display: inline-block;');
+                }
+                else{
                     $('.choose_extra_links span').attr('style','display: none;');
                     $('.choose_extra_links .otp_1').attr('style','display: none;');
                 }
