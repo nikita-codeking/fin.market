@@ -1220,7 +1220,7 @@ $actualItem = $arResult["OFFERS"] ? (isset($arResult['OFFERS'][$arResult['OFFERS
                                                                     <?elseif($itemPropOf['VALUE'] > 366):?>
                                                                         <?$yearsSrokZaim = intdiv($itemPropOf['VALUE'], 365);?>
                                                                         <?$monthSrokZaim = $itemPropOf['VALUE'] % 12?>
-                                                                        <td class="char_value"><span itemprop="value"><?=getObProp($itemPropOf['NAME'], declension($yearsSrokZaim, array('год', 'года', 'лет')))?><?= $monthSrokZaim . ' ' . 'мес.'?></span>
+                                                            <td class="char_value"><span itemprop="value"><?=$yearsSrokZaim?><?= ' ' . getObProp($itemPropOf['NAME'], declension($yearsSrokZaim, array('год', 'года', 'лет')))?><?= ' ' . $monthSrokZaim . ' ' . 'мес.'?></span>
                                                                     <?else:?>
                                                                 <td class="char_value"><span itemprop="value"><?=getObProp($itemPropOf['NAME'], $itemPropOf['VALUE'])?> <?echo 'дн.'?></span>
                                                                     <?endif;?>
