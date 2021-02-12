@@ -108,7 +108,8 @@ $(function(){
 $(document).ready(function(){
     //console.log(11111111111);
     $('.like_icons').click(function () {
-        var imgProduct = $(this).parent().children('.thumb').children().attr("src");
+        var imgProduct = $(this).parent().parent().parent().children('.image_block').children('.image_wrapper_block').children('.thumb').children().attr("src");
+        flyBacket($(this).offset()['top'],$(this).offset()['left'],imgProduct);
         if(document.location.href.search("/catalog/") > 0) {
             imgProduct = $(this).parent().parent().parent().children('.image_block').children('.image_wrapper_block').children('.thumb').children().attr("src");
         }
