@@ -69,7 +69,37 @@ $template = "catalog_".$display;
                         $_GET["method"] = 'desc';
 
                         $sortResult = str_replace('property_','',$_GET["sort"]);
-                    }//if($itemSort['PROPERTY_CODE_PROP_VALUE']=='USLOVIYA_KREDIT_LIMIT')
+                    }
+                    elseif($itemSort['PROPERTY_CODE_PROP_VALUE'] == 'STAVKA_V_DEN')
+                    {
+                        $_GET["sort"]   = 'property_' . $itemSort['PROPERTY_CODE_PROP_VALUE'];
+                        $_GET["method"] = 'desc';
+
+                        $sortResult = str_replace('property_','',$_GET["sort"]);
+                    }
+                    elseif($itemSort['PROPERTY_CODE_PROP_VALUE'] == 'USLOVIYA_PERIOD_RASSROCHKI_DLYA_KART_RASSROCHKI')
+                    {
+                        $_GET["sort"]   = 'property_' . $itemSort['PROPERTY_CODE_PROP_VALUE'];
+                        $_GET["method"] = 'desc';
+
+                        $sortResult = str_replace('property_','',$_GET["sort"]);
+                    }
+                    elseif($itemSort['PROPERTY_CODE_PROP_VALUE'] == 'USLOVIYA_VNESHNIE_PEREVODY_ZA_PLATEZH_')
+                    {
+                        $_GET["sort"]   = 'property_' . $itemSort['PROPERTY_CODE_PROP_VALUE'];
+                        $_GET["method"] = 'desc';
+
+                        $sortResult = str_replace('property_','',$_GET["sort"]);
+                    }
+                    elseif($itemSort['PROPERTY_CODE_PROP_VALUE'] == 'USLOVIYA_GOD_OBSL')
+                    {
+                        $_GET["sort"]   = 'property_' . $itemSort['PROPERTY_CODE_PROP_VALUE'];
+                        $_GET["method"] = 'desc';
+
+                        $sortResult = str_replace('property_','',$_GET["sort"]);
+                    }
+
+                    //if($itemSort['PROPERTY_CODE_PROP_VALUE']=='USLOVIYA_KREDIT_LIMIT')
                 }//foreach($arSort as $itemSort)
             }//if(count($arraySortPrintFirst)==0)
 
