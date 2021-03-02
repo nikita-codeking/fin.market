@@ -659,7 +659,7 @@ $actualItem = $arResult["OFFERS"] ? (isset($arResult['OFFERS'][$arResult['OFFERS
                                 }//if ($razdelP=="Характеристики")
                                 if ($razdelP=="Документы")
                                 {
-                                    if (strlen($itemPropOf['VALUE']) > 0 || count($itemPropOf['VALUE']) > 1) {
+                                    if (strlen($itemPropOf['VALUE']) > 0 || count($itemPropOf['VALUE']) > 1 || is_array($itemPropOf['VALUE'])) {
                                         $doc = true;
                                     }
                                 }//if ($razdelP=="Документы")
@@ -1342,7 +1342,7 @@ $actualItem = $arResult["OFFERS"] ? (isset($arResult['OFFERS'][$arResult['OFFERS
                                                 }
                                                 if($razdelP == 'Документы')
                                                 {
-                                                    if(strlen($itemPropOf['VALUE'])>0 || count($itemPropOf['VALUE'])>1):?>
+                                                    if(strlen($itemPropOf['VALUE']) > 0 || count($itemPropOf['VALUE']) > 1 || is_array($itemPropOf['VALUE'])):?>
                                                         <tr itemprop="additionalProperty">
                                                             <td class="char_name">
                                                                 <div class="props_item ">
