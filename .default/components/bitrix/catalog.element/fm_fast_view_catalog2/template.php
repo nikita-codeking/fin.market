@@ -602,7 +602,7 @@ $elementName = ((isset($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']) && $
                                     }//if ($razdelP=="Характеристики")
                                     if ($razdelP=="Документы")
                                     {
-                                        if (strlen($itemPropOf['VALUE']) > 0 || count($itemPropOf['VALUE']) > 1) {
+                                        if (strlen($itemPropOf['VALUE']) > 0 || count($itemPropOf['VALUE']) > 1 || is_array($itemPropOf['VALUE'])) {
                                             $doc = true;
                                         }
                                     }//if ($razdelP=="Документы")
@@ -1588,7 +1588,7 @@ $elementName = ((isset($arResult['IPROPERTY_VALUES']['ELEMENT_PAGE_TITLE']) && $
                                                         }
                                                         if($razdelP == 'Документы')
                                                         {
-                                                            if(strlen($itemPropOf['VALUE'])>0 || count($itemPropOf['VALUE'])>1):?>
+                                                            if(strlen($itemPropOf['VALUE']) > 0 || count($itemPropOf['VALUE']) > 1 || is_array($itemPropOf['VALUE'])):?>
                                                                 <tr itemprop="additionalProperty">
                                                                     <td class="char_name">
                                                                         <div class="props_item ">
