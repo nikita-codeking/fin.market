@@ -354,12 +354,17 @@ if($arResult["ITEMS"]){?>
                                                                 placeholder="<?
                                                                 if($arParams['SECTION_ID'] == 331){
                                                                     if($arItem['CODE'] == 'USLOVIYA_NEUSTOYKA_OT_SUMMY_PROSROCHENNOGO_PLATEZH'):
-                                                                            echo round($value5, 1);
+                                                                            echo round($value1, 2);
                                                                     elseif($arItem['CODE'] == 'USLOVIYA_M_PROTSENTNAYA_STAVKA_PROTSENT'):
-                                                                        echo round($value5, 1);
+                                                                        echo round($value1, 1);
                                                                     elseif($arItem['CODE'] == 'STAVKA_V_DEN'):
-                                                                        echo round($value5, 1);
+                                                                        echo round($value1, 1);
+                                                                    else:
+                                                                        echo $value1;
                                                                     endif;
+                                                                }
+                                                                else{
+                                                                    echo $value1;
                                                                 }
                                                                 ?>"
                                                                 onkeyup="smartFilter.keyup(this)"
