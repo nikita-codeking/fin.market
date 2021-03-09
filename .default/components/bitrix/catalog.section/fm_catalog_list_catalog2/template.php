@@ -622,8 +622,12 @@ $pos_rko = strpos($this_url,'raschetnye_scheta');
                                                     $valP = $strRP;
                                                 }
                                                 ?>
-                                                <?php if(strpos($nameProp, 'Срок')!==false): ?>
-                                                    <td><b><span>до <?=formatToHuman($valP);?> <?=$edIzm?></span></b></td>
+                                                <?php if(strpos($nameProp, 'Срок')!==false && strpos($_SERVER['REQUEST_URI'], 'kredity_nalichnymi') || strpos($nameProp, 'Срок')!==false && strpos($_SERVER['REQUEST_URI'], 'ipoteka') || strpos($nameProp, 'Срок')!==false && strpos($_SERVER['REQUEST_URI'], 'avtokredity') || strpos($nameProp, 'Срок')!==false && strpos($_SERVER['REQUEST_URI'], 'refinansirovanie')): ?>
+                                                    <?if($valP > 1){?>
+                                                        <td><b><span>до <?=formatToHuman($valP)?> <?='Лет'?></span></b></td>
+                                                    <?}else{?>
+                                                        <td><b><span>до <?=formatToHuman($valP), ' ', declension($valP, array('Года'));?> <?=$edIzm?></span></b></td>
+                                                    <?}?>
                                                 <?php elseif(strpos($nameProp, 'лимит')!==false): ?>
                                                     <td><b><span>до <?=formatToHuman($valP);?> <?=$edIzm?></span></b></td>
                                                 <?php elseif(strpos($nameProp, 'Ставка')!==false && strpos($_SERVER['REQUEST_URI'], 'zaymy') || strpos($nameProp, 'Ставка')!==false && strpos($_SERVER['REQUEST_URI'], 'kredity_nalichnymi')):?>
