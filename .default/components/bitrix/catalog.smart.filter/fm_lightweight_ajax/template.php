@@ -359,6 +359,15 @@ if($arResult["ITEMS"]){?>
                                                                         echo round($value1, 1);
                                                                     elseif($arItem['CODE'] == 'STAVKA_V_DEN'):
                                                                         echo round($value1, 1);
+                                                                    else:   
+                                                                        echo $value1;
+                                                                    endif;
+                                                                }
+                                                                elseif($arParams['SECTION_ID'] == 42601){
+                                                                    if($arItem['CODE'] == 'USLOVIYA_M_PROTSENTNAYA_STAVKA_PROTSENT'):
+                                                                        echo round($value1, 1);
+                                                                    elseif($arItem['CODE'] == 'STAVKA_V_DEN'):
+                                                                        echo round($value1, 1);
                                                                     else:
                                                                         echo $value1;
                                                                     endif;
