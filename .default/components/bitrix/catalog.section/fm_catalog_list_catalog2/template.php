@@ -572,6 +572,13 @@ $pos_rko = strpos($this_url,'raschetnye_scheta');
                                         foreach ($arItem['PROPERTIES'] as $itemPr)
                                         {
 
+                                            if($itemPr['CODE'] == 'USLOVIYA_M_PROTSENTNAYA_STAVKA_PROTSENT'){
+                                                $valueProtsStavka = $itemPr['VALUE'][0];
+                                            }
+                                            if($itemPr['CODE'] == 'USLOVIYA_M_PROTSENTNAYA_STAVKA_PROTSENT_OT'){
+                                                $itemPr['VALUE'] = $valueProtsStavka;
+                                            }
+                                            
                                             if(in_array($itemPr['CODE'],$arrProp))
                                             {
                                                 if($itemPr['CODE']==$sortResult)
@@ -606,7 +613,11 @@ $pos_rko = strpos($this_url,'raschetnye_scheta');
                                                     foreach ($valP as $itemAP)
                                                     {
                                                         if(strlen($strRP)==0){
-                                                            $strRP = $itemAP;
+                                                            if(count($valP) == 1){
+                                                                $strRP = 'от ' . $itemAP;
+                                                            }else{
+                                                                $strRP = $itemAP;
+                                                            }
                                                         }else{
                                                             if($edIzm=="%")
                                                             {
@@ -621,6 +632,15 @@ $pos_rko = strpos($this_url,'raschetnye_scheta');
                                                     }
                                                     $valP = $strRP;
                                                 }
+
+                                                $IBLOCK_ID = 35;
+                                                $ELEMENT_ID = $arItem['ID'];  // код элемента
+                                                $PROPERTY_CODE = "USLOVIYA_M_PROTSENTNAYA_STAVKA_PROTSENT_OT";  // код свойства
+                                                $PROPERTY_VALUE = "$valP";  // значение свойства
+
+                                                // Установим новое значение для данного свойства данного элемента
+                                                CIBlockElement::SetPropertyValuesEx($ELEMENT_ID, false, array($PROPERTY_CODE => $PROPERTY_VALUE));
+
                                                 ?>
                                                 <?php if(strpos($nameProp, 'Срок')!==false && strpos($_SERVER['REQUEST_URI'], 'kredity_nalichnymi') || strpos($nameProp, 'Срок')!==false && strpos($_SERVER['REQUEST_URI'], 'ipoteka') || strpos($nameProp, 'Срок')!==false && strpos($_SERVER['REQUEST_URI'], 'avtokredity') || strpos($nameProp, 'Срок')!==false && strpos($_SERVER['REQUEST_URI'], 'refinansirovanie')): ?>
                                                     <?if($valP > 1){?>
@@ -630,7 +650,7 @@ $pos_rko = strpos($this_url,'raschetnye_scheta');
                                                     <?}?>
                                                 <?php elseif(strpos($nameProp, 'лимит')!==false): ?>
                                                     <td><b><span>до <?=formatToHuman($valP);?> <?=$edIzm?></span></b></td>
-                                                <?php elseif(strpos($nameProp, 'Ставка')!==false && strpos($_SERVER['REQUEST_URI'], 'zaymy') || strpos($nameProp, 'Ставка')!==false && strpos($_SERVER['REQUEST_URI'], 'kredity_nalichnymi')):?>
+                                                <?php elseif(strpos($nameProp, 'ставка') == true && strpos($_SERVER['REQUEST_URI'], 'zaymy') || strpos($nameProp, 'ставка')!==false && strpos($_SERVER['REQUEST_URI'], 'kredity_nalichnymi') || strpos($nameProp, 'ставка')!==false && strpos($_SERVER['REQUEST_URI'],'kreditnye_karty')):?>
                                                     <td><b><span>от <?=$valP;?> <?=$edIzm?></span></b></td>
                                                 <?php elseif(strpos($nameProp, 'Сумма займа')!==false): ?>
                                                     <td><b><span>до <?=formatToHuman($valP);?> <?=$edIzm?></span></b></td>
